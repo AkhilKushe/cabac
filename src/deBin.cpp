@@ -1,21 +1,7 @@
 #include "deBin.h"
 #include "arith_dec.h"
+#include "utils.h"
 
-#ifndef __SYNTHESIS__
-	template <typename T, typename S>
-	void printArray(const char* name, int xdim, int ydim, T* arr){
-		std::cout << name << " :" << std::endl;
-		T val;
-		for(int x=0; x<xdim; x++){
-			for(int y=0; y<ydim; y++){
-				val = arr[x*ydim+y];
-				std::cout << (S)val << " ";
-			}
-			std::cout << std::endl;
-		}
-		std::cout << std::endl;
-	}
-#endif
 
 void parseSAOTypeIdx(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
 	symbolVal = 0;

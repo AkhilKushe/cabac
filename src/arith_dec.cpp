@@ -58,9 +58,10 @@ void decode_regular(arith_t& state, bool& binVal, UChar* bStream, UInt ctxAddr, 
 	}
 #ifndef __SYNTHESIS__
 	std::cout << "Decoding Mode : Regular" << std::endl;
-	std::cout << "Currr Range : " << state.ivlCurrRange << std::endl;
-	std::cout << "Offset : " << state.ivlOffset << std::endl;
-	std::cout << "Bin Val : "<< binVal << std::endl;
+	std::cout << "Currr Range : " << std::hex << state.ivlCurrRange << std::endl;
+	std::cout << "Offset : " << std::hex << state.ivlOffset << std::endl;
+	std::cout << "Bin Val : "<< std::hex << binVal << std::endl;
+	std::cout << "input  context : "<< (int)ctxState << std::endl;
 #endif
 }
 
@@ -81,9 +82,9 @@ void decode_bypass(arith_t& state, bool& binVal, UChar* bStream){
 	}
 #ifndef __SYNTHESIS__
 	std::cout << "Decode Mode : Bypass" << std::endl;
-	std::cout << "Currr Range : " << state.ivlCurrRange << std::endl;
-	std::cout << "Offset : " << state.ivlOffset << std::endl;
-	std::cout << "Bin Val : "<< binVal << std::endl;
+	std::cout << "Currr Range : "<< std::hex << state.ivlCurrRange << std::endl;
+	std::cout << "Offset : "<< std::hex << state.ivlOffset << std::endl;
+	std::cout << "Bin Val : "<< std::hex << binVal << std::endl;
 #endif
 }
 void decode_terminate(arith_t& state, bool& binVal, UChar* bStream){

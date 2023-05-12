@@ -17,7 +17,7 @@ void printArray(const char* name, int xdim, int ydim, T* arr){
 	for(int x=0; x<xdim; x++){
 		for(int y=0; y<ydim; y++){
 			val = arr[x*ydim+y];
-			std::cout << flip << ")" << (S)val << " ";
+			std::cout << (S)val << " ";
 			flip = !flip;
 		}
 		std::cout <<std::endl <<"----------------"<< std::endl;
@@ -41,6 +41,15 @@ int main() {
 	testBitStream.write(170);
 	testBitStream.write(71);
 	testBitStream.write(30);
+	testBitStream.write(3);
+	testBitStream.write(223);
+	testBitStream.write(239);
+	testBitStream.write(110);
+	testBitStream.write(40);
+	testBitStream.write(151);
+	testBitStream.write(65);
+	testBitStream.write(45);
+	testBitStream.write(87);
 	hls::stream<UInt, 32> bOut;
 
 	// Setting input buffers
@@ -72,7 +81,7 @@ int main() {
 
 
 	std::cout << "TEST BENCH RESULTS" << std::endl;
-	for(int i=0; i < 5; i++) {
+	for(int i=0; i < 8; i++) {
 		std::cout << (int)globalCtx[i] << std::endl;
 
 		//if(expected[i] != globalCtx[i]){

@@ -3,6 +3,8 @@
 #include "utils.h"
 #include "arith_dec.h"
 #include "deBin.h"
+#include "intra_se.h"
+#include "quad_tree.h"
 
 void load_ram(UChar ctxTable[MAX_NUM_CTX_MOD], hls::stream<UChar>& inpStream, UInt cnt){
 	for(int i=0; i < cnt; i++) {
@@ -41,8 +43,8 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bi
 
 
 
-	UChar tempBst[7];
-	for(int i=0; i<7; i++){
+	UChar tempBst[15];
+	for(int i=0; i<15; i++){
 		tempBst[i] = bitStream.read();
 	}
 	// Initialize Arith decoder
@@ -50,9 +52,115 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bi
 	arith_t baeState;
 	arith_init(tempBst, baeState);
 
-
-
 	sao_top(data_in, data_out, baeState, tempBst, ctxTables);
+
+	CU_t cu1;
+	internal_data_t dint;
+	UInt symbolVal;
+
+	cu1.depth = 0;
+	cu1.log2CbSize = 6;
+	cu1.x = 0;
+	cu1.y = 0;
+
+	// Manual decode
+	parseSplitCuFlag(cu1, data_in, data_out, dint, baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "1 Split flag symbol val :" << symbolVal << std::endl << std::endl;
+#endif
+
+	cu1.depth = 1;
+	cu1.log2CbSize = 5;
+	cu1.x = 0;
+	cu1.y = 0;
+
+	// Manual decode
+	parseSplitCuFlag(cu1, data_in, data_out, dint, baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "2 Split flag symbol val :" << symbolVal << std::endl << std::endl;
+#endif
+
+	cu1.depth = 2;
+	cu1.log2CbSize = 4;
+	cu1.x = 0;
+	cu1.y = 0;
+
+	// Manual decode
+	parseSplitCuFlag(cu1, data_in, data_out, dint, baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "3 Split flag symbol val :" << symbolVal << std::endl << std::endl;
+#endif
+
+	cu1.depth = 3;
+	cu1.log2CbSize = 3;
+	cu1.x = 0;
+	cu1.y = 0;
+
+	parsePartMode(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "4 part mode symbol val :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.part_mode = symbolVal;
+
+	parsePrevIntraLumaPredFlag(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "5 prev intra luma pred flag :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.prev_intra_luma_pred_flag[0] = symbolVal;
+
+	parsePrevIntraLumaPredFlag(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "6 prev intra luma pred flag :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.prev_intra_luma_pred_flag[1] = symbolVal;
+
+	parsePrevIntraLumaPredFlag(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "7 prev intra luma pred flag :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.prev_intra_luma_pred_flag[2] = symbolVal;
+
+	parsePrevIntraLumaPredFlag(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "8 prev intra luma pred flag :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.prev_intra_luma_pred_flag[3] = symbolVal;
+
+	parseMpmIdx(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "9 mpm idx :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.mpm_idx[0] = symbolVal;
+
+	parseMpmIdx(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "10 mpm idx :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.mpm_idx[1] = symbolVal;
+
+	parseRemIntraLumaPredMode(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "11 rem intra luma pred :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.rem_intra_luma_pred_mode[2] = symbolVal;
+
+	parseMpmIdx(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "12 mpm idx :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.mpm_idx[3] = symbolVal;
+
+	parseIntraChromaPredMode(baeState, tempBst, ctxTables, symbolVal);
+#ifndef __SYNTHESIS__
+	std::cout << "13 Intra Chroma Pred Mode :" << symbolVal << std::endl << std::endl;
+#endif
+	cu1.intra_chroma_pred_mode=symbolVal;
+
+	setIntraPredMode(0, 4, cu1, data_in, data_out, dint);
+	setIntraPredMode(1, 4, cu1, data_in, data_out, dint);
+	setIntraPredMode(2, 4, cu1, data_in, data_out, dint);
+	setIntraPredMode(3, 4, cu1, data_in, data_out, dint);
+
 	data_out_s.write(data_out);
 
 	store_global_ram(globalCtx, ctxTables, ctxWritten);

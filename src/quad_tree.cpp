@@ -10,29 +10,29 @@ void parseSplitCuFlag(CU_t& cu, data_in_t& din, data_out_t& dout, internal_data_
 	// Left availability check
 	if(cu.x==0) {
 		if (din.left_ctu.is_available) {
-			ctxInc += (din.left_ctu.cqtDepth[cu.y] > cu.cqtDepth);
+			ctxInc += (din.left_ctu.cqtDepth[cu.y] > cu.depth);
 		}
 	} else {
-		ctxInc += (dinternal.cqtDepth[cu.x-1][cu.y] > cu.cqtDepth);
+		ctxInc += (dinternal.cqtDepth[cu.x-1][cu.y] > cu.depth);
 	}
 
 	// Right availability check
 	if (cu.y==0){
 		if (din.up_ctu.is_available) {
-			ctxInc += (din.up_ctu.cqtDepth[cu.x] > cu.cqtDepth);
+			ctxInc += (din.up_ctu.cqtDepth[cu.x] > cu.depth);
 		}
 	} else {
-		ctxInc += (dinternal.cqtDepth[cu.x][cu.y-1] > cu.cqtDepth);
+		ctxInc += (dinternal.cqtDepth[cu.x][cu.y-1] > cu.depth);
 	}
 
 	//Decoding bin
 	bool bitVal;
-	decode_decision(BYPASS, state, bitVal, bStream, SPLIT_FLAG_CTX_ADDR+ctxInc, ctxTables);
+	decode_decision(REGULAR, state, bitVal, bStream, SPLIT_FLAG_CTX_ADDR+ctxInc, ctxTables);
 	symbolVal = bitVal;
 
 #ifndef __SYNTHESIS__
 	std::cout << "Decoding split_cu_flag" << std::endl;
-	std:cout << "Ctx Inc : " << ctxInc << std::endl;
+	std::cout << "Ctx Inc : " << ctxInc << std::endl;
 	std::cout << "Symbol Val : " << symbolVal << std::endl << std::endl;
 #endif
 

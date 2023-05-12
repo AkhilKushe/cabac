@@ -36,7 +36,7 @@ INIT_SPLIT_FLAG[NUMBER_OF_SLICE_TYPES][NUM_SPLIT_FLAG_CTX] =
 
 // ROM for each frame group
 static const UChar
-I_FRAME_INIT_VALS[5] = {
+I_FRAME_INIT_VALS[8] = {
 		//SAO Merge Flag
 		153,
 		//SAO type idx
@@ -45,10 +45,16 @@ I_FRAME_INIT_VALS[5] = {
 		139,
 		141,
 		157,
+		//part_mode
+		184,
+		// prev_intra_luma_pred_flag
+		184,
+		// Intra chroma pred mode
+		63,
 };
 
 static const UChar
-P_FRAME_INIT_VALS[8] = {
+P_FRAME_INIT_VALS[5] = {
 		//SAO Merge Flag
 		153,
 		//SAO type idx
@@ -57,12 +63,7 @@ P_FRAME_INIT_VALS[8] = {
 		107,
 		139,
 		126,
-		//part_mode
-		184,
-		// prev_intra_luma_pred_flag
-		184,
-		// Intra chroma pred mode
-		63,
+
 };
 
 static const UChar

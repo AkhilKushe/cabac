@@ -1,6 +1,5 @@
 #include "intra_se.h"
-
-
+#include "utils.h"
 
 void parsePartMode(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
 	symbolVal = 0;
@@ -13,7 +12,6 @@ void parsePartMode(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_M
 #endif
 
 }
-
 
 
 void parsePrevIntraLumaPredFlag(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
@@ -104,48 +102,52 @@ void setIntraPredMode(UChar partIdx, UChar partSize, CU_t& cu ,data_in_t& din, d
 	}
 
 	// for A
-	if (availableA) {
+	if (!availableA) {
 		candIntraPredModeA = 1;				// INTRA_DC
 	} else {
 		if (x -1 < 0) {
 			candIntraPredModeA = din.left_ctu.IntraPredModeY[y];
 		} else {
-			candIntraPredModeA = dinternal.IntraPredModeY[x][y];
+			candIntraPredModeA = dinternal.IntraPredModeY[x-1][y];
+
 		}
 	}
 
 	// For B
-	if (availableB) {
+	if (!availableB) {
 		candIntraPredModeB = 1;				// INTRA_DC
 	} else {
 		if (y -1 < 0) {
 			candIntraPredModeB = din.up_ctu.IntraPredModeY[x];
 		} else {
-			candIntraPredModeB = dinternal.IntraPredModeY[x][y];
+			candIntraPredModeB = dinternal.IntraPredModeY[x][y-1];
+
 		}
 	}
 
 	if (candIntraPredModeA==candIntraPredModeB){
 		if (candIntraPredModeA < 2) {
-			candModeList = {0, 1, 26};
+			candModeList[0] = 0;
+			candModeList[1] = 1;
+			candModeList[2] = 26;
 		} else {
 			candModeList[0] = candIntraPredModeA;
 			candModeList[1] = 2+((candIntraPredModeA+29)%32);
-			candModeList[3] = 2+((candIntraPredModeA-2+1)%32);
+			candModeList[2] = 2+((candIntraPredModeA-2+1)%32);
 		}
 	} else {
 		if ((candIntraPredModeA != 0)&&(candIntraPredModeB!=0)){
 			candModeList[0] = candIntraPredModeA;
 			candModeList[1] = candIntraPredModeB;
-			candModeList[3] = 0;
+			candModeList[2] = 0;
 		} else if ((candIntraPredModeA != 1)&&(candIntraPredModeB!=1)){
 			candModeList[0] = candIntraPredModeA;
 			candModeList[1] = candIntraPredModeB;
-			candModeList[3] = 1;
+			candModeList[2] = 1;
 		} else{
 			candModeList[0] = candIntraPredModeA;
 			candModeList[1] = candIntraPredModeB;
-			candModeList[3] = 26;
+			candModeList[2] = 26;
 		}
 	}
 
@@ -177,7 +179,7 @@ void setIntraPredMode(UChar partIdx, UChar partSize, CU_t& cu ,data_in_t& din, d
 	}
 
 	if (partIdx==0) {
-		switch(cu.intra_chroma_pred_mode[partIdx]) {
+		switch(cu.intra_chroma_pred_mode) {
 		case 0: PredModeC = 0;
 				break;
 		case 1: PredModeC = 26;
@@ -190,24 +192,54 @@ void setIntraPredMode(UChar partIdx, UChar partSize, CU_t& cu ,data_in_t& din, d
 				break;
 		}
 
-		if ((PredModeC==PredModeY)&&(cu.intra_chroma_pred_mode[partIdx]!=4)){
+		if ((PredModeC==PredModeY)&&(cu.intra_chroma_pred_mode!=4)){
 			PredModeC  =34;
 		}
 		if (PredModeC==34) {
 			PredModeC = PredModeY;
 		}
 
-		if (cu.part_mode==PART_NXN){
+		if (cu.part_mode==PART_NxN){
 			// set pred buffer chroma
-
+			for(int i=0; i<(x+partSize); i++) {
+				for(int j=0; j<(y+partSize); j++){
+					dinternal.IntraPredModeC[i][j] = PredModeC;
+				}
+			}
+		} else {
+			for(int i=x; i<(x+2*partSize); i++) {
+				for(int j=y; j<(y+2*partSize); j++){
+					dinternal.IntraPredModeC[i][j] = PredModeC;
+				}
+			}
 		}
 	}
 	// set pred buffer luma
+	for(int i=x; i<(x+partSize); i++) {
+		for(int j=y; j<(y+partSize); j++){
+			dinternal.IntraPredModeY[i][j] = PredModeY;
+		}
+	}
 
+#ifndef __SYNTHESIS__
+	std::cout << "Part Idx : " << std::dec << (int)partIdx << std::endl;
+	std::cout << "Part size : "<< std::dec <<  (int)partSize << std::endl;
+	std::cout << "Avail A : " << availableA << std::endl;
+	std::cout << "avail B : " << availableB << std::endl;
+	std::cout << "CandIntraPredModeA : " <<  (int)candIntraPredModeA << std::endl;
+	std::cout << "CandIntraPredModeB : " <<  (int)candIntraPredModeB << std::endl;
 
+	printArray<UChar, int>("Candidate mode list", 3, 1, candModeList);
+
+	std::cout << "Pred Mode Luma : " << (int) PredModeY << std::endl;
+	std::cout << "Pred Mode Chroma : " << (int) PredModeC << std::endl;
+
+	//printArray<UChar, int>("Pred mode luma arr :", 64, 64, (UChar*)dinternal.IntraPredModeY);
+	//printArray<UChar, int>("Pred mode CHroma arr :", 64, 64, (UChar*)dinternal.IntraPredModeC);
+
+	std::cout << std::endl <<std::endl;
+
+#endif
 
 }
-
-
-
 

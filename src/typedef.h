@@ -139,15 +139,26 @@ typedef struct _internal_data {
 	//Transform Unit
 	UChar TransCoeffLevel[64][64][3];
 
-	char cqtDepth[64];
+	char cqtDepth[64][64];
 
 } internal_data_t;
+
+#define PART_NxN 0
+#define PART_2Nx2N 1
 
 typedef struct _cu {
 	uint32_t x;
 	uint32_t y;
 	UChar log2CbSize;
 	UChar depth;
+
+	//SE
+	bool prev_intra_luma_pred_flag[4];
+	UChar mpm_idx[4];
+	UChar rem_intra_luma_pred_mode[4];
+	UChar intra_chroma_pred_mode;
+	bool part_mode;
+
 }CU_t;
 
 

@@ -1,5 +1,5 @@
 <root versionMajor = "1" versionMinor = "5">
-  <kernel name="cabac_top" language="c" vlnv="xilinx.com:hls:cabac_top:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="none" hwControlProtocol="ap_ctrl_chain">
+  <kernel name="cabac_top" language="c" vlnv="xilinx.com:hls:cabac_top:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="" hwControlProtocol="ap_ctrl_chain">
     <ports>
       <port name="M_AXI_CTX" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="8"/>
       <port name="BITSTREAM" mode="read_only" dataWidth="8" portType="stream"/>

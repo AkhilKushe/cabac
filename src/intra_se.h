@@ -15,6 +15,6 @@ void parseRemIntraLumaPredMode(arith_t& state, UChar* bStream, UChar ctxTables[M
 void parseIntraChromaPredMode(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal);
 
 
-void setIntraPredMode(data_in_t& din, data_out_t&dout, internal_data_t& dinternal);
+void setIntraPredMode(UChar partIdx, UChar partSize, CU_t& cu ,data_in_t& din, data_out_t&dout, internal_data_t& dinternal);
 
 #endif

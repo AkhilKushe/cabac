@@ -90,7 +90,7 @@ void Initialize::load_local(SliceType sliceType, int qp, bool cabac_init_flag, h
 	  std::cout << "InitVal: " << (int)initType << std::endl;
 #endif
 
-	stream_init_buffer(ctxTablePtr, 5, qp, initType, ctxOut, count);
+	stream_init_buffer(ctxTablePtr, 8, qp, initType, ctxOut, count);
 }
 
 void initialization_top(bool firstSlice, SliceType sliceType, int qp, bool cabac_init_flag, volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar> &ctxOut, UInt& count) {
