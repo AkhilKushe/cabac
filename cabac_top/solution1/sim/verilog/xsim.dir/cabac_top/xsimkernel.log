@@ -1,7 +1,0 @@
-Running: xsim.dir/cabac_top/xsimk -simmode gui -wdb cabac_top.wdb -simrunnum 0 -socket 59303
-Design successfully loaded
-Design Loading Memory Usage: 37016 KB (Peak: 37016 KB)
-Design Loading CPU Usage: 40 ms
-Simulation completed
-Simulation Memory Usage: 133008 KB (Peak: 176284 KB)
-Simulation CPU Usage: 300 ms

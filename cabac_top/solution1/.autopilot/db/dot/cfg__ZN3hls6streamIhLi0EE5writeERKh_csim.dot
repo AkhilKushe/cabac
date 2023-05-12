@@ -1,7 +1,0 @@
-digraph "CFG for 'hls::stream\<unsigned char, 0\>::write' function" {
-	label="CFG for 'hls::stream\<unsigned char, 0\>::write' function";
-
-	Node0x526b5d0 [shape=record,filename="",linenumber="",label="{.predFake}"];
-	Node0x526b5d0 -> Node0x52c3260[ callList="" memoryops="" filename="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/include/hls_stream_thread_unsafe.h" execusionnum="5"];
-	Node0x52c3260 [shape=record,filename="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/include/hls_stream_thread_unsafe.h",linenumber="378",label="{.succFake}"];
-}

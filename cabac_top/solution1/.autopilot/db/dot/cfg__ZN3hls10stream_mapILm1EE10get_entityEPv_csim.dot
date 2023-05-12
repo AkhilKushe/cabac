@@ -1,7 +1,0 @@
-digraph "CFG for 'hls::stream_map\<1ul\>::get_entity' function" {
-	label="CFG for 'hls::stream_map\<1ul\>::get_entity' function";
-
-	Node0x51944e0 [shape=record,filename="",linenumber="",label="{.predFake}"];
-	Node0x51944e0 -> Node0x5284a80[ callList="" memoryops="" filename="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/include/hls_stream_thread_unsafe.h" execusionnum="11"];
-	Node0x5284a80 [shape=record,filename="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/include/hls_stream_thread_unsafe.h",linenumber="233",label="{.succFake}"];
-}

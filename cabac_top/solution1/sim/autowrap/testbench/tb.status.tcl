@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/cabac_top/solution1/./sim/autowrap/testbench/top.cpp_pre.cpp.tb.cpp

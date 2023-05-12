@@ -1,7 +1,0 @@
-digraph "CFG for 'int Clip3\<int\>' function" {
-	label="CFG for 'int Clip3\<int\>' function";
-
-	Node0x52682d0 [shape=record,filename="",linenumber="",label="{.predFake}"];
-	Node0x52682d0 -> Node0x52c0ef0[ callList="7:19; 8:19" memoryops="" filename="../../../../src/utils.h" execusionnum="5"];
-	Node0x52c0ef0 [shape=record,filename="../../../../src/utils.h",linenumber="19",label="{.succFake}"];
-}
