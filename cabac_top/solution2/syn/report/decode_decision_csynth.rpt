@@ -1,0 +1,243 @@
+
+
+================================================================
+== Vitis HLS Report for 'decode_decision'
+================================================================
+* Date:           Thu Mar 30 10:45:20 2023
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        cabac_top
+* Solution:       solution2 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.757 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------------+------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                     |                                          |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                       Instance                      |                  Module                  |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +-----------------------------------------------------+------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_decode_decision_Pipeline_VITIS_LOOP_53_1_fu_354  |decode_decision_Pipeline_VITIS_LOOP_53_1  |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+        +-----------------------------------------------------+------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    623|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|     115|    481|    -|
+|Memory           |        1|    -|      14|     28|    -|
+|Multiplexer      |        -|    -|       -|    269|    -|
+|Register         |        -|    -|     541|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        1|    0|     670|   1401|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       ~0|    0|      ~0|      2|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------------------+------------------------------------------+---------+----+-----+-----+-----+
+    |                       Instance                      |                  Module                  | BRAM_18K| DSP|  FF | LUT | URAM|
+    +-----------------------------------------------------+------------------------------------------+---------+----+-----+-----+-----+
+    |grp_decode_decision_Pipeline_VITIS_LOOP_53_1_fu_354  |decode_decision_Pipeline_VITIS_LOOP_53_1  |        0|   0|  115|  461|    0|
+    |mux_42_8_1_1_U37                                     |mux_42_8_1_1                              |        0|   0|    0|   20|    0|
+    +-----------------------------------------------------+------------------------------------------+---------+----+-----+-----+-----+
+    |Total                                                |                                          |        0|   0|  115|  481|    0|
+    +-----------------------------------------------------+------------------------------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +------------+--------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |   Memory   |                Module                | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +------------+--------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |lpsTable_U  |decode_decision_lpsTable_ROM_AUTO_1R  |        1|  0|   0|    0|   256|    8|     1|         2048|
+    |transLPS_U  |decode_decision_transLPS_ROM_AUTO_1R  |        0|  7|  14|    0|   128|    7|     1|          896|
+    |transMPS_U  |decode_decision_transMPS_ROM_AUTO_1R  |        0|  7|  14|    0|   128|    7|     1|          896|
+    +------------+--------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total       |                                      |        1| 14|  28|    0|   512|   22|     3|         3840|
+    +------------+--------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+-----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT | Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+-----+------------+------------+
+    |add_ln14_fu_639_p2         |         +|   0|  0|   14|           9|           2|
+    |add_ln16_fu_663_p2         |         +|   0|  0|   15|           8|           2|
+    |add_ln6_fu_617_p2          |         +|   0|  0|   39|          32|           1|
+    |sub_ln229_1_fu_440_p2      |         -|   0|  0|   39|          32|          32|
+    |sub_ln229_2_fu_459_p2      |         -|   0|  0|   39|          32|          32|
+    |sub_ln229_fu_741_p2        |         -|   0|  0|   39|          32|          32|
+    |and_ln24_fu_595_p2         |       and|   0|  0|    8|           8|           8|
+    |icmp_ln1076_1_fu_454_p2    |      icmp|   0|  0|   18|          32|          32|
+    |icmp_ln1076_fu_735_p2      |      icmp|   0|  0|   18|          32|          32|
+    |icmp_ln13_fu_569_p2        |      icmp|   0|  0|   11|           8|           1|
+    |retVal_10_fu_649_p2        |      lshr|   0|  0|  100|          32|          32|
+    |or_ln1543_fu_713_p2        |        or|   0|  0|    9|           9|           9|
+    |retVal_12_fu_685_p3        |    select|   0|  0|    8|           1|           8|
+    |retVal_15_fu_693_p3        |    select|   0|  0|    9|           1|           9|
+    |ret_1_fu_753_p3            |    select|   0|  0|   32|           1|          32|
+    |select_ln1076_1_fu_483_p3  |    select|   0|  0|    7|           1|           7|
+    |select_ln1076_2_fu_496_p3  |    select|   0|  0|   32|           1|          32|
+    |select_ln1076_fu_476_p3    |    select|   0|  0|   32|           1|          32|
+    |select_ln13_1_fu_677_p3    |    select|   0|  0|    8|           1|           3|
+    |select_ln13_fu_669_p3      |    select|   0|  0|   32|           1|          32|
+    |shl_ln23_fu_579_p2         |       shl|   0|  0|  100|           8|          32|
+    |xor_ln1076_1_fu_470_p2     |       xor|   0|  0|    2|           1|           1|
+    |xor_ln1076_fu_464_p2       |       xor|   0|  0|    2|           1|           2|
+    |xor_ln23_fu_589_p2         |       xor|   0|  0|    8|           8|           2|
+    |xor_ln70_fu_747_p2         |       xor|   0|  0|    2|           1|           2|
+    +---------------------------+----------+----+---+-----+------------+------------+
+    |Total                      |          |   0|  0|  623|         293|         409|
+    +---------------------------+----------+----+---+-----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------------------------------+----+-----------+-----+-----------+
+    |                            Name                           | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                                  |  48|          9|    1|          9|
+    |ap_phi_mux_binVal_1_phi_fu_339_p4                          |   9|          2|    1|          2|
+    |ap_phi_mux_state_bstate_currIdx_2_phi_fu_312_p4            |   9|          2|   32|         64|
+    |ap_phi_mux_state_bstate_held_aligned_word_2_phi_fu_330_p4  |   9|          2|    8|         16|
+    |ap_phi_mux_state_bstate_n_bits_held_2_phi_fu_321_p4        |   9|          2|    8|         16|
+    |ap_phi_mux_state_ivlCurrRange_1_phi_fu_302_p4              |   9|          2|   32|         64|
+    |ap_phi_mux_state_ivlOffset_2_phi_fu_348_p4                 |   9|          2|   32|         64|
+    |ap_return_0                                                |   9|          2|   32|         64|
+    |ap_return_1                                                |   9|          2|   32|         64|
+    |ap_return_2                                                |   9|          2|    8|         16|
+    |ap_return_3                                                |   9|          2|    8|         16|
+    |ap_return_4                                                |   9|          2|    1|          2|
+    |ap_return_5                                                |   9|          2|   32|         64|
+    |binVal_1_reg_336                                           |   9|          2|    1|          2|
+    |ctxTables_address0                                         |  14|          3|    9|         27|
+    |state_bstate_currIdx_2_reg_309                             |   9|          2|   32|         64|
+    |state_bstate_currIdx_read_assign_reg_252                   |   9|          2|   32|         64|
+    |state_bstate_held_aligned_word_2_reg_327                   |   9|          2|    8|         16|
+    |state_bstate_held_aligned_word_read_assign_reg_276         |   9|          2|    8|         16|
+    |state_bstate_n_bits_held_2_reg_318                         |   9|          2|    8|         16|
+    |state_bstate_n_bits_held_read_assign_reg_264               |   9|          2|    8|         16|
+    |state_ivlCurrRange_1_reg_299                               |   9|          2|   32|         64|
+    |state_ivlCurrRange_V_read_assign_reg_240                   |   9|          2|   32|         64|
+    |state_ivlOffset_2_reg_345                                  |   9|          2|   32|         64|
+    |state_ivlOffset_V_read_assign_reg_288                      |   9|          2|   32|         64|
+    +-----------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                      | 269|         58|  461|        938|
+    +-----------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------------------+----+----+-----+-----------+
+    |                               Name                               | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                         |   8|   0|    8|          0|
+    |ap_return_0_preg                                                  |  32|   0|   32|          0|
+    |ap_return_1_preg                                                  |  32|   0|   32|          0|
+    |ap_return_2_preg                                                  |   8|   0|    8|          0|
+    |ap_return_3_preg                                                  |   8|   0|    8|          0|
+    |ap_return_4_preg                                                  |   1|   0|    1|          0|
+    |ap_return_5_preg                                                  |  32|   0|   32|          0|
+    |binVal_1_reg_336                                                  |   1|   0|    1|          0|
+    |ctxState_reg_815                                                  |   8|   0|    8|          0|
+    |ctxTables_addr_reg_810                                            |   1|   0|    9|          8|
+    |grp_decode_decision_Pipeline_VITIS_LOOP_53_1_fu_354_ap_start_reg  |   1|   0|    1|          0|
+    |or_ln1543_reg_888                                                 |   9|   0|    9|          0|
+    |retVal_12_reg_883                                                 |   8|   0|    8|          0|
+    |select_ln1076_2_reg_868                                           |  32|   0|   32|          0|
+    |select_ln1076_reg_863                                             |  32|   0|   32|          0|
+    |select_ln13_1_reg_878                                             |   8|   0|    8|          0|
+    |select_ln13_reg_873                                               |  32|   0|   32|          0|
+    |state_bstate_currIdx_2_reg_309                                    |  32|   0|   32|          0|
+    |state_bstate_currIdx_read_assign_reg_252                          |  32|   0|   32|          0|
+    |state_bstate_held_aligned_word_2_reg_327                          |   8|   0|    8|          0|
+    |state_bstate_held_aligned_word_read_assign_reg_276                |   8|   0|    8|          0|
+    |state_bstate_n_bits_held_2_reg_318                                |   8|   0|    8|          0|
+    |state_bstate_n_bits_held_read_assign_reg_264                      |   8|   0|    8|          0|
+    |state_ivlCurrRange_1_reg_299                                      |  32|   0|   32|          0|
+    |state_ivlCurrRange_V_read_assign_reg_240                          |  32|   0|   32|          0|
+    |state_ivlOffset_2_reg_345                                         |  32|   0|   32|          0|
+    |state_ivlOffset_V_read_assign_reg_288                             |  32|   0|   32|          0|
+    |sub_ln229_1_reg_831                                               |  32|   0|   32|          0|
+    |tmp_1_reg_893                                                     |  23|   0|   23|          0|
+    |xor_ln1076_1_reg_858                                              |   1|   0|    1|          0|
+    |zext_ln34_1_reg_826                                               |   8|   0|   32|         24|
+    +------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                             | 541|   0|  573|         32|
+    +------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------------+-----+-----+------------+-------------------------------------+--------------+
+|              RTL Ports              | Dir | Bits|  Protocol  |            Source Object            |    C Type    |
++-------------------------------------+-----+-----+------------+-------------------------------------+--------------+
+|ap_clk                               |   in|    1|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_rst                               |   in|    1|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_start                             |   in|    1|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_done                              |  out|    1|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_idle                              |  out|    1|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_ready                             |  out|    1|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_return_0                          |  out|   32|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_return_1                          |  out|   32|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_return_2                          |  out|    8|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_return_3                          |  out|    8|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_return_4                          |  out|    1|  ap_ctrl_hs|                      decode_decision|  return value|
+|ap_return_5                          |  out|   32|  ap_ctrl_hs|                      decode_decision|  return value|
+|init_offset                          |   in|    1|     ap_none|                          init_offset|        scalar|
+|mode_offset                          |   in|    1|     ap_none|                          mode_offset|        scalar|
+|state_ivlCurrRange_V_read            |   in|   32|     ap_none|            state_ivlCurrRange_V_read|        scalar|
+|state_ivlOffset_V_read               |   in|   32|     ap_none|               state_ivlOffset_V_read|        scalar|
+|state_bstate_currIdx_read            |   in|   32|     ap_none|            state_bstate_currIdx_read|        scalar|
+|state_bstate_n_bits_held_read        |   in|    8|     ap_none|        state_bstate_n_bits_held_read|        scalar|
+|state_bstate_held_aligned_word_read  |   in|    8|     ap_none|  state_bstate_held_aligned_word_read|        scalar|
+|bStream                              |   in|    8|     ap_none|                              bStream|       pointer|
+|bStream1                             |   in|    8|     ap_none|                             bStream1|       pointer|
+|p_read                               |   in|    8|     ap_none|                               p_read|        scalar|
+|p_read1                              |   in|    8|     ap_none|                              p_read1|        scalar|
+|ctxAddr_offset                       |   in|    1|     ap_none|                       ctxAddr_offset|        scalar|
+|ctxTables_address0                   |  out|    9|   ap_memory|                            ctxTables|         array|
+|ctxTables_ce0                        |  out|    1|   ap_memory|                            ctxTables|         array|
+|ctxTables_we0                        |  out|    1|   ap_memory|                            ctxTables|         array|
+|ctxTables_d0                         |  out|    8|   ap_memory|                            ctxTables|         array|
+|ctxTables_q0                         |   in|    8|   ap_memory|                            ctxTables|         array|
++-------------------------------------+-----+-----+------------+-------------------------------------+--------------+
+

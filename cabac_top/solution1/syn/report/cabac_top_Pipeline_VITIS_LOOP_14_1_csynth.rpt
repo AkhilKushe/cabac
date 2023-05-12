@@ -1,0 +1,194 @@
+
+
+================================================================
+== Vitis HLS Report for 'cabac_top_Pipeline_VITIS_LOOP_14_1'
+================================================================
+* Date:           Sun May  7 10:30:21 2023
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        cabac_top
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       75|      582|  0.750 us|  5.820 us|   75|  582|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  |   Trip  |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |- VITIS_LOOP_14_1  |        6|      513|         3|          1|          1|  5 ~ 512|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+---------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     30|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    383|    -|
+|Register         |        -|    -|      91|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      91|    413|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln14_fu_139_p2         |         +|   0|  0|  13|          10|           1|
+    |ap_block_pp0_stage0_11001  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln14_fu_134_p2        |      icmp|   0|  0|  11|          10|          10|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1    |       xor|   0|  0|   2|           2|           1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0|  30|          24|          15|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+-----+-----------+-----+-----------+
+    |           Name          | LUT | Input Size| Bits| Total Bits|
+    +-------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                |  329|         71|    1|         71|
+    |ap_enable_reg_pp0_iter1  |    9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2  |    9|          2|    1|          2|
+    |ctx_blk_n_AW             |    9|          2|    1|          2|
+    |ctx_blk_n_B              |    9|          2|    1|          2|
+    |ctx_blk_n_W              |    9|          2|    1|          2|
+    |i_fu_64                  |    9|          2|   10|         20|
+    +-------------------------+-----+-----------+-----+-----------+
+    |Total                    |  383|         83|   16|        101|
+    +-------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |  70|   0|   70|          0|
+    |ap_enable_reg_pp0_iter0  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2  |   1|   0|    1|          0|
+    |ctxTables_load_reg_181   |   8|   0|    8|          0|
+    |i_fu_64                  |  10|   0|   10|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  91|   0|   91|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+------------------------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |            Source Object           |    C Type    |
++--------------------+-----+-----+------------+------------------------------------+--------------+
+|ap_clk              |   in|    1|  ap_ctrl_hs|  cabac_top_Pipeline_VITIS_LOOP_14_1|  return value|
+|ap_rst              |   in|    1|  ap_ctrl_hs|  cabac_top_Pipeline_VITIS_LOOP_14_1|  return value|
+|ap_start            |   in|    1|  ap_ctrl_hs|  cabac_top_Pipeline_VITIS_LOOP_14_1|  return value|
+|ap_done             |  out|    1|  ap_ctrl_hs|  cabac_top_Pipeline_VITIS_LOOP_14_1|  return value|
+|ap_idle             |  out|    1|  ap_ctrl_hs|  cabac_top_Pipeline_VITIS_LOOP_14_1|  return value|
+|ap_ready            |  out|    1|  ap_ctrl_hs|  cabac_top_Pipeline_VITIS_LOOP_14_1|  return value|
+|m_axi_ctx_AWVALID   |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWREADY   |   in|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWADDR    |  out|   64|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWID      |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWLEN     |  out|   32|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWSIZE    |  out|    3|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWBURST   |  out|    2|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWLOCK    |  out|    2|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWCACHE   |  out|    4|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWPROT    |  out|    3|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWQOS     |  out|    4|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWREGION  |  out|    4|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_AWUSER    |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_WVALID    |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_WREADY    |   in|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_WDATA     |  out|    8|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_WSTRB     |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_WLAST     |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_WID       |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_WUSER     |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARVALID   |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARREADY   |   in|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARADDR    |  out|   64|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARID      |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARLEN     |  out|   32|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARSIZE    |  out|    3|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARBURST   |  out|    2|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARLOCK    |  out|    2|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARCACHE   |  out|    4|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARPROT    |  out|    3|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARQOS     |  out|    4|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARREGION  |  out|    4|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_ARUSER    |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_RVALID    |   in|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_RREADY    |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_RDATA     |   in|    8|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_RLAST     |   in|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_RID       |   in|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_RFIFONUM  |   in|   11|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_RUSER     |   in|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_RRESP     |   in|    2|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_BVALID    |   in|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_BREADY    |  out|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_BRESP     |   in|    2|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_BID       |   in|    1|       m_axi|                                 ctx|       pointer|
+|m_axi_ctx_BUSER     |   in|    1|       m_axi|                                 ctx|       pointer|
+|globalCtx           |   in|   64|     ap_none|                           globalCtx|        scalar|
+|ctxWritten          |   in|   10|     ap_none|                          ctxWritten|        scalar|
+|ctxTables_address0  |  out|    9|   ap_memory|                           ctxTables|         array|
+|ctxTables_ce0       |  out|    1|   ap_memory|                           ctxTables|         array|
+|ctxTables_q0        |   in|    8|   ap_memory|                           ctxTables|         array|
+|empty               |   in|   10|     ap_none|                               empty|        scalar|
++--------------------+-----+-----+------------+------------------------------------+--------------+
+

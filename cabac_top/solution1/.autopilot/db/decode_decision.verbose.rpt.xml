@@ -1,0 +1,180 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'decode_decision'" level="0">
+<item name = "Date">Sun May  7 10:30:19 2023
+</item>
+<item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
+<item name = "Project">cabac_top</item>
+<item name = "Solution">solution1 (Vitis Kernel Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.613 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_decode_regular_fu_193">decode_regular, ?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 279, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">1, -, 311, 604, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 248, -</column>
+<column name="Register">-, -, 218, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, ~0, 2, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_decode_regular_fu_193">decode_regular, 1, 0, 311, 604, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln14_fu_231_p2">+, 0, 0, 14, 9, 2</column>
+<column name="add_ln16_fu_279_p2">+, 0, 0, 15, 8, 2</column>
+<column name="add_ln6_fu_284_p2">+, 0, 0, 39, 32, 1</column>
+<column name="sub_ln229_fu_353_p2">-, 0, 0, 39, 32, 32</column>
+<column name="icmp_ln1076_fu_347_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="icmp_ln13_fu_221_p2">icmp, 0, 0, 11, 8, 1</column>
+<column name="retVal_23_fu_241_p2">lshr, 0, 0, 100, 32, 32</column>
+<column name="or_ln1543_fu_320_p2">or, 0, 0, 9, 9, 9</column>
+<column name="ret_9_fu_366_p3">select, 0, 0, 32, 1, 32</column>
+<column name="xor_ln76_fu_359_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">31, 6, 1, 6</column>
+<column name="ap_phi_mux_binVal_1_phi_fu_178_p4">9, 2, 1, 2</column>
+<column name="ap_phi_mux_state_bstate_currIdx_1_phi_fu_148_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_state_bstate_held_aligned_word_1_phi_fu_168_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_state_bstate_n_bits_held_1_phi_fu_158_p4">9, 2, 8, 16</column>
+<column name="ap_phi_mux_state_ivlOffset_1_phi_fu_187_p4">9, 2, 32, 64</column>
+<column name="ap_return_0">9, 2, 32, 64</column>
+<column name="ap_return_1">9, 2, 8, 16</column>
+<column name="ap_return_2">9, 2, 8, 16</column>
+<column name="ap_return_3">9, 2, 1, 2</column>
+<column name="ap_return_4">9, 2, 32, 64</column>
+<column name="bStream_address0">14, 3, 3, 9</column>
+<column name="bStream_ce0">14, 3, 1, 3</column>
+<column name="baeState_0_constprop_o">9, 2, 32, 64</column>
+<column name="baeState_0_constprop_o_ap_vld">9, 2, 1, 2</column>
+<column name="binVal_1_reg_175">9, 2, 1, 2</column>
+<column name="state_bstate_currIdx_0_reg_107">9, 2, 32, 64</column>
+<column name="state_bstate_currIdx_1_reg_145">9, 2, 32, 64</column>
+<column name="state_bstate_held_aligned_word_0_reg_127">9, 2, 8, 16</column>
+<column name="state_bstate_held_aligned_word_1_reg_165">9, 2, 8, 16</column>
+<column name="state_bstate_n_bits_held_0_reg_116">9, 2, 8, 16</column>
+<column name="state_bstate_n_bits_held_1_reg_155">9, 2, 8, 16</column>
+<column name="state_ivlOffset_1_reg_184">9, 2, 32, 64</column>
+<column name="val_reg_136">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">5, 0, 5, 0</column>
+<column name="ap_return_0_preg">32, 0, 32, 0</column>
+<column name="ap_return_1_preg">8, 0, 8, 0</column>
+<column name="ap_return_2_preg">8, 0, 8, 0</column>
+<column name="ap_return_3_preg">1, 0, 1, 0</column>
+<column name="ap_return_4_preg">32, 0, 32, 0</column>
+<column name="binVal_1_reg_175">1, 0, 1, 0</column>
+<column name="grp_decode_regular_fu_193_ap_start_reg">1, 0, 1, 0</column>
+<column name="retVal_24_reg_438">1, 0, 1, 0</column>
+<column name="state_bstate_currIdx_0_reg_107">32, 0, 32, 0</column>
+<column name="state_bstate_currIdx_1_reg_145">32, 0, 32, 0</column>
+<column name="state_bstate_held_aligned_word_0_reg_127">8, 0, 8, 0</column>
+<column name="state_bstate_held_aligned_word_1_reg_165">8, 0, 8, 0</column>
+<column name="state_bstate_n_bits_held_0_reg_116">8, 0, 8, 0</column>
+<column name="state_bstate_n_bits_held_1_reg_155">8, 0, 8, 0</column>
+<column name="state_ivlOffset_1_reg_184">32, 0, 32, 0</column>
+<column name="val_reg_136">1, 0, 9, 8</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_return_0">out, 32, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_return_1">out, 8, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_return_2">out, 8, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_return_3">out, 1, ap_ctrl_hs, decode_decision, return value</column>
+<column name="ap_return_4">out, 32, ap_ctrl_hs, decode_decision, return value</column>
+<column name="mode_offset">in, 1, ap_none, mode_offset, scalar</column>
+<column name="p_read">in, 32, ap_none, p_read, scalar</column>
+<column name="p_read1">in, 32, ap_none, p_read1, scalar</column>
+<column name="p_read2">in, 8, ap_none, p_read2, scalar</column>
+<column name="p_read3">in, 8, ap_none, p_read3, scalar</column>
+<column name="bStream_address0">out, 3, ap_memory, bStream, array</column>
+<column name="bStream_ce0">out, 1, ap_memory, bStream, array</column>
+<column name="bStream_q0">in, 8, ap_memory, bStream, array</column>
+<column name="ctxTables_address0">out, 9, ap_memory, ctxTables, array</column>
+<column name="ctxTables_ce0">out, 1, ap_memory, ctxTables, array</column>
+<column name="ctxTables_we0">out, 1, ap_memory, ctxTables, array</column>
+<column name="ctxTables_d0">out, 8, ap_memory, ctxTables, array</column>
+<column name="ctxTables_q0">in, 8, ap_memory, ctxTables, array</column>
+<column name="baeState_0_constprop_i">in, 32, ap_ovld, baeState_0_constprop, pointer</column>
+<column name="baeState_0_constprop_o">out, 32, ap_ovld, baeState_0_constprop, pointer</column>
+<column name="baeState_0_constprop_o_ap_vld">out, 1, ap_ovld, baeState_0_constprop, pointer</column>
+</table>
+</item>
+</section>
+</profile>

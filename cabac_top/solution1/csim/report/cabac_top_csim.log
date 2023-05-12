@@ -1,0 +1,351 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../tb_src/test_1.cpp in debug mode
+   Compiling ../../../../src/arith_dec.cpp in debug mode
+   Compiling ../../../../src/deBin.cpp in debug mode
+   Compiling ../../../../src/initializer.cpp in debug mode
+   Compiling ../../../../src/quad_tree.cpp in debug mode
+   Compiling ../../../../src/top.cpp in debug mode
+   Compiling ../../../../src/utils.cpp in debug mode
+   Generating csim.exe
+Slice Type :2
+InitVal: 2
+Init Val :153
+Slope : 0
+Offset : 56
+CtxState : 14
+Init Val :200
+Slope : 15
+Offset : 48
+CtxState : 29
+Init Val :139
+Slope : -5
+Offset : 72
+CtxState : 2
+Init Val :141
+Slope : -5
+Offset : 88
+CtxState : 29
+Init Val :157
+Slope : 0
+Offset : 88
+CtxState : 49
+Initial Offset : 374
+SAO DECODING 
+
+Decoding Mode : Regular
+Currr Range : 394
+Offset : 374
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 355
+Bin Val : 1
+Decoding SAO type IDX
+Symbol Val : 2
+
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 316
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 238
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 83
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 166
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 3
+
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 332
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 0
+
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 271
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 148
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 296
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 2
+
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 199
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 5
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 11
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 2
+
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 23
+Bin Val : 0
+Decode Mode : Bypass
+Currr Range : 394
+Offset : 46
+Bin Val : 0
+Decoding  SAO EO
+Symbol Val : 0
+
+Decoding Mode : Regular
+Currr Range : 299
+Offset : 46
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 93
+Bin Val : 0
+Decoding SAO type IDX
+Symbol Val : 1
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 187
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 0
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 76
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 153
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 1
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 8
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 17
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 1
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 34
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 0
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 69
+Bin Val : 0
+Decoding SAO abs Sign
+Symbol Val : 0
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 139
+Bin Val : 0
+Decoding SAO abs Sign
+Symbol Val : 0
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 279
+Bin Val : 0
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 259
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 220
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 141
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 283
+Bin Val : 0
+Decoding SAO BO
+Symbol Val : 14
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 267
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 236
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 173
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 47
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 95
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 4
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 190
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 0
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 81
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 162
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 1
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 26
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 53
+Bin Val : 0
+Decoding SAO abs offset
+Symbol Val : 1
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 107
+Bin Val : 0
+Decoding SAO abs Sign
+Symbol Val : 0
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 214
+Bin Val : 0
+Decoding SAO abs Sign
+Symbol Val : 0
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 129
+Bin Val : 1
+Decoding SAO abs Sign
+Symbol Val : 1
+
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 258
+Bin Val : 0
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 218
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 138
+Bin Val : 1
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 277
+Bin Val : 0
+Decode Mode : Bypass
+Currr Range : 299
+Offset : 256
+Bin Val : 1
+Decoding SAO BO
+Symbol Val : 13
+
+====================== Internal Sao Buffer =========================
+sao_offset_sign :
+0 0 1 1 
+0 0 0 0 
+0 0 0 1 
+
+sao_offset_abs :
+0)3 1)0 0)2 1)2 
+----------------
+0)0 1)1 0)1 1)0 
+----------------
+0)4 1)0 0)1 1)1 
+----------------
+
+TEST BENCH RESULTS
+14
+33
+2
+29
+49
+====================== Sao Buffer Output =========================
+SaoTypeIdx :
+0)2 
+----------------
+1)1 
+----------------
+0)1 
+----------------
+
+abc
+SaoEoClass :
+0)0 
+----------------
+1)0 
+----------------
+0)0 
+----------------
+
+abc
+SaoOffsetVal :
+0)0 1)3 0)0 1)-2 0)-2 
+----------------
+1)0 0)0 1)1 0)1 1)0 
+----------------
+0)0 1)4 0)0 1)1 0)-1 
+----------------
+
+abc
+sao_band_position :
+0)0 
+----------------
+1)14 
+----------------
+0)13 
+----------------
+
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

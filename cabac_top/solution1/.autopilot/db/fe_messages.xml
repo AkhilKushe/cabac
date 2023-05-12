@@ -1,0 +1,196 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-5287" msg_severity="WARNING" msg_loc="src/arith_dec.cpp:89:32" msg_body="unused parameter 'state'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5287" msg_severity="WARNING" msg_loc="src/arith_dec.cpp:89:45" msg_body="unused parameter 'binVal'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5287" msg_severity="WARNING" msg_loc="src/arith_dec.cpp:89:60" msg_body="unused parameter 'bStream'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:718:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:732:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:746:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5089" msg_severity="WARNING" msg_loc="src/deBin.cpp:143:43" msg_body="&amp; has lower precedence than ==; == will be evaluated first">
+        <args ClangWarningOption="parentheses"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-4423" msg_severity="INFO" msg_loc="src/deBin.cpp:143:43" msg_body="place parentheses around the '==' expression to silence this warning">
+        <args/>
+    </msg>
+    <msg msg_groups="" msg_id="207-4421" msg_severity="INFO" msg_loc="src/deBin.cpp:143:43" msg_body="place parentheses around the &amp; expression to evaluate it first">
+        <args/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5089" msg_severity="WARNING" msg_loc="src/deBin.cpp:143:95" msg_body="&amp; has lower precedence than &gt;; &gt; will be evaluated first">
+        <args ClangWarningOption="parentheses"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-4423" msg_severity="INFO" msg_loc="src/deBin.cpp:143:95" msg_body="place parentheses around the '&gt;' expression to silence this warning">
+        <args/>
+    </msg>
+    <msg msg_groups="" msg_id="207-4421" msg_severity="INFO" msg_loc="src/deBin.cpp:143:95" msg_body="place parentheses around the &amp; expression to evaluate it first">
+        <args/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5287" msg_severity="WARNING" msg_loc="src/deBin.cpp:41:62" msg_body="unused parameter 'ctxTables'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:718:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:732:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:746:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-4968" msg_severity="WARNING" msg_loc="src/initializer.cpp:69:9" msg_body="enumeration value 'NUMBER_OF_SLICE_TYPES' not handled in switch">
+        <args ClangWarningOption="switch"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-4968" msg_severity="WARNING" msg_loc="src/initializer.cpp:79:9" msg_body="enumeration value 'NUMBER_OF_SLICE_TYPES' not handled in switch">
+        <args ClangWarningOption="switch"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5287" msg_severity="WARNING" msg_loc="src/initializer.cpp:36:83" msg_body="unused parameter 'initType'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:718:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:732:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:746:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="" msg_id="207-5287" msg_severity="WARNING" msg_loc="src/top.cpp:22:141" msg_body="unused parameter 'bitOut'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:718:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:732:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:746:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/top.cpp:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="cabac_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=cabac_top" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/top.cpp:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cabac_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi bundle=ctx name=gCtx port=globalCtx" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/top.cpp:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cabac_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=globalCtx" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/top.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cabac_top" ARG_PragmaIsValid="1" ARG_PragmaOptions="depth=512 type=fifo variable=streamCtxRAM" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:718:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:732:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_ref.h:746:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/utils.h:20:0" msg_body="Inlining function 'int max&lt;int&gt;(int, int)' into 'int Clip3&lt;int&gt;(int, int, int)'">
+        <args Callee="int max&lt;int&gt;(int, int)" Caller="int Clip3&lt;int&gt;(int, int, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/utils.h:20:0" msg_body="Inlining function 'int min&lt;int&gt;(int, int)' into 'int Clip3&lt;int&gt;(int, int, int)'">
+        <args Callee="int min&lt;int&gt;(int, int)" Caller="int Clip3&lt;int&gt;(int, int, int)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/initializer.cpp:6:0" msg_body="Inlining function 'int Clip3&lt;int&gt;(int, int, int)' into 'Initialize::calc_ctxState(int, unsigned char)'">
+        <args Callee="int Clip3&lt;int&gt;(int, int, int)" Caller="Initialize::calc_ctxState(int, unsigned char)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/initializer.cpp:6:0" msg_body="Inlining function 'int max&lt;int&gt;(int, int)' into 'Initialize::calc_ctxState(int, unsigned char)'">
+        <args Callee="int max&lt;int&gt;(int, int)" Caller="Initialize::calc_ctxState(int, unsigned char)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/initializer.cpp:6:0" msg_body="Inlining function 'int min&lt;int&gt;(int, int)' into 'Initialize::calc_ctxState(int, unsigned char)'">
+        <args Callee="int min&lt;int&gt;(int, int)" Caller="Initialize::calc_ctxState(int, unsigned char)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/initializer.cpp:36:0" msg_body="Inlining function 'Initialize::calc_ctxState(int, unsigned char)' into 'Initialize::stream_init_buffer(unsigned char*, unsigned int, int, SliceType, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)'">
+        <args Callee="Initialize::calc_ctxState(int, unsigned char)" Caller="Initialize::stream_init_buffer(unsigned char*, unsigned int, int, SliceType, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/initializer.cpp:66:0" msg_body="Inlining function 'Initialize::stream_init_buffer(unsigned char*, unsigned int, int, SliceType, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)' into 'Initialize::load_local(SliceType, int, bool, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)'">
+        <args Callee="Initialize::stream_init_buffer(unsigned char*, unsigned int, int, SliceType, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)" Caller="Initialize::load_local(SliceType, int, bool, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/initializer.cpp:96:0" msg_body="Inlining function 'Initialize::load_local(SliceType, int, bool, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)' into 'initialization_top(bool, SliceType, int, bool, unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)'">
+        <args Callee="Initialize::load_local(SliceType, int, bool, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)" Caller="initialization_top(bool, SliceType, int, bool, unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/initializer.cpp:96:0" msg_body="Inlining function 'Initialize::load_global(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)' into 'initialization_top(bool, SliceType, int, bool, unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)'">
+        <args Callee="Initialize::load_global(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)" Caller="initialization_top(bool, SliceType, int, bool, unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/utils.cpp:10:0" msg_body="Inlining function '_read_byte(unsigned char volatile*, _bstream_t&amp;) (.33)' into 'bitStream_read_bits(unsigned char volatile*, unsigned char, _bstream_t&amp;) (.30)'">
+        <args Callee="_read_byte(unsigned char volatile*, _bstream_t&amp;) (.33)" Caller="bitStream_read_bits(unsigned char volatile*, unsigned char, _bstream_t&amp;) (.30)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/arith_dec.cpp:5:0" msg_body="Inlining function 'bitStream_read_bits(unsigned char volatile*, unsigned char, _bstream_t&amp;) (.30)' into 'arith_init(unsigned char*, _arith_t&amp;)'">
+        <args Callee="bitStream_read_bits(unsigned char volatile*, unsigned char, _bstream_t&amp;) (.30)" Caller="arith_init(unsigned char*, _arith_t&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/arith_dec.cpp:28:0" msg_body="Inlining function 'ctxLoad(unsigned char*, unsigned int)' into 'decode_regular(_arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.13.46.71.98.123.150.175.202)'">
+        <args Callee="ctxLoad(unsigned char*, unsigned int)" Caller="decode_regular(_arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.13.46.71.98.123.150.175.202)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/arith_dec.cpp:28:0" msg_body="Inlining function 'ctxUpdate(unsigned char*, unsigned int, bool)' into 'decode_regular(_arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.13.46.71.98.123.150.175.202)'">
+        <args Callee="ctxUpdate(unsigned char*, unsigned int, bool)" Caller="decode_regular(_arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.13.46.71.98.123.150.175.202)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/arith_dec.cpp:28:0" msg_body="Inlining function 'bitStream_read_bits(unsigned char volatile*, unsigned char, _bstream_t&amp;) (.30)' into 'decode_regular(_arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.13.46.71.98.123.150.175.202)'">
+        <args Callee="bitStream_read_bits(unsigned char volatile*, unsigned char, _bstream_t&amp;) (.30)" Caller="decode_regular(_arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.13.46.71.98.123.150.175.202)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/arith_dec.cpp:69:0" msg_body="Inlining function 'bitStream_read_bits(unsigned char volatile*, unsigned char, _bstream_t&amp;) (.30)' into 'decode_bypass(_arith_t&amp;, bool&amp;, unsigned char*) (.10.43.68.95.120.147.172.199)'">
+        <args Callee="bitStream_read_bits(unsigned char volatile*, unsigned char, _bstream_t&amp;) (.30)" Caller="decode_bypass(_arith_t&amp;, bool&amp;, unsigned char*) (.10.43.68.95.120.147.172.199)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/arith_dec.cpp:95:0" msg_body="Inlining function 'decode_bypass(_arith_t&amp;, bool&amp;, unsigned char*) (.10.43.68.95.120.147.172.199)' into 'decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)'">
+        <args Callee="decode_bypass(_arith_t&amp;, bool&amp;, unsigned char*) (.10.43.68.95.120.147.172.199)" Caller="decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/deBin.cpp:41:0" msg_body="Inlining function 'decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)' into 'parseSAOMergeFlag(_arith_t&amp;, unsigned char*, unsigned char*, unsigned int&amp;)'">
+        <args Callee="decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)" Caller="parseSAOMergeFlag(_arith_t&amp;, unsigned char*, unsigned char*, unsigned int&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/deBin.cpp:51:0" msg_body="Inlining function 'decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)' into 'parseSAOOffsetAbs(_arith_t&amp;, unsigned char*, unsigned int&amp;)'">
+        <args Callee="decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)" Caller="parseSAOOffsetAbs(_arith_t&amp;, unsigned char*, unsigned int&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/deBin.cpp:65:0" msg_body="Inlining function 'decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)' into 'parseSAOOffsetSign(_arith_t&amp;, unsigned char*, unsigned int&amp;)'">
+        <args Callee="decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)" Caller="parseSAOOffsetSign(_arith_t&amp;, unsigned char*, unsigned int&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/deBin.cpp:90:0" msg_body="Inlining function 'decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)' into 'parseSAOBO(_arith_t&amp;, unsigned char*, unsigned int&amp;)'">
+        <args Callee="decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)" Caller="parseSAOBO(_arith_t&amp;, unsigned char*, unsigned int&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/deBin.cpp:74:0" msg_body="Inlining function 'decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)' into 'parseSAOEO(_arith_t&amp;, unsigned char*, unsigned int&amp;)'">
+        <args Callee="decode_decision(BAEMode, _arith_t&amp;, bool&amp;, unsigned char*, unsigned int, unsigned char*) (.7.40.65.92.117.144.169.196)" Caller="parseSAOEO(_arith_t&amp;, unsigned char*, unsigned int&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/deBin.cpp:112:0" msg_body="Inlining function 'parseSAOTypeIdx(_arith_t&amp;, unsigned char*, unsigned char*, unsigned int&amp;)' into 'sao_top(_data_in&amp;, _data_out&amp;, _arith_t&amp;, unsigned char*, unsigned char*)'">
+        <args Callee="parseSAOTypeIdx(_arith_t&amp;, unsigned char*, unsigned char*, unsigned int&amp;)" Caller="sao_top(_data_in&amp;, _data_out&amp;, _arith_t&amp;, unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/deBin.cpp:112:0" msg_body="Inlining function 'parseSAOOffsetAbs(_arith_t&amp;, unsigned char*, unsigned int&amp;)' into 'sao_top(_data_in&amp;, _data_out&amp;, _arith_t&amp;, unsigned char*, unsigned char*)'">
+        <args Callee="parseSAOOffsetAbs(_arith_t&amp;, unsigned char*, unsigned int&amp;)" Caller="sao_top(_data_in&amp;, _data_out&amp;, _arith_t&amp;, unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/deBin.cpp:112:0" msg_body="Inlining function 'parseSAOOffsetSign(_arith_t&amp;, unsigned char*, unsigned int&amp;)' into 'sao_top(_data_in&amp;, _data_out&amp;, _arith_t&amp;, unsigned char*, unsigned char*)'">
+        <args Callee="parseSAOOffsetSign(_arith_t&amp;, unsigned char*, unsigned int&amp;)" Caller="sao_top(_data_in&amp;, _data_out&amp;, _arith_t&amp;, unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/deBin.cpp:112:0" msg_body="Inlining function 'parseSAOBO(_arith_t&amp;, unsigned char*, unsigned int&amp;)' into 'sao_top(_data_in&amp;, _data_out&amp;, _arith_t&amp;, unsigned char*, unsigned char*)'">
+        <args Callee="parseSAOBO(_arith_t&amp;, unsigned char*, unsigned int&amp;)" Caller="sao_top(_data_in&amp;, _data_out&amp;, _arith_t&amp;, unsigned char*, unsigned char*)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/top.cpp:22:0" msg_body="Inlining function 'initialization_top(bool, SliceType, int, bool, unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)' into 'cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)'">
+        <args Callee="initialization_top(bool, SliceType, int, bool, unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int&amp;)" Caller="cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/top.cpp:22:0" msg_body="Inlining function 'load_ram(unsigned char*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int)' into 'cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)'">
+        <args Callee="load_ram(unsigned char*, hls::stream&lt;unsigned char, 0&gt;&amp;, unsigned int)" Caller="cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/top.cpp:22:0" msg_body="Inlining function 'arith_init(unsigned char*, _arith_t&amp;)' into 'cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)'">
+        <args Callee="arith_init(unsigned char*, _arith_t&amp;)" Caller="cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/top.cpp:22:0" msg_body="Inlining function 'store_global_ram(unsigned char volatile*, unsigned char*, unsigned int)' into 'cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)'">
+        <args Callee="store_global_ram(unsigned char volatile*, unsigned char*, unsigned int)" Caller="cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="src/initializer.cpp:41:38" msg_body="The program may have out of bound array access"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="src/top.cpp:22:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'bitOut'">
+        <args Name="bitOut"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/hls_stream_39.h:173:9" msg_body="Inlining function '_llvm.fpga.pack.none.i336.s_struct._data_outs' into 'cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)'">
+        <args Callee="_llvm.fpga.pack.none.i336.s_struct._data_outs" Caller="cabac_top(unsigned char volatile*, hls::stream&lt;unsigned char, 0&gt;&amp;, hls::stream&lt;unsigned int, 0&gt;&amp;, hls::stream&lt;_data_in, 0&gt;&amp;, hls::stream&lt;_data_out, 0&gt;&amp;)"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

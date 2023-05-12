@@ -1,0 +1,7 @@
+digraph "CFG for 'Initialize::~Initialize' function" {
+	label="CFG for 'Initialize::~Initialize' function";
+
+	Node0x5299430 [shape=record,filename="",linenumber="",label="{.predFake}"];
+	Node0x5299430 -> Node0x52af650[ callList="" memoryops="" filename="../../../../src/initializer.h" execusionnum="1"];
+	Node0x52af650 [shape=record,filename="../../../../src/initializer.h",linenumber="9",label="{.succFake}"];
+}

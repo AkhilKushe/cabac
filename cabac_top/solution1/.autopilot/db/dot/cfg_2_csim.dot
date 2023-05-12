@@ -1,0 +1,12 @@
+digraph "CFG for 'initialization_top' function" {
+	label="CFG for 'initialization_top' function";
+
+	Node0x528f6a0 [shape=record,filename="",linenumber="",label="{.predFake1}"];
+	Node0x528f6a0 -> Node0x52ae7b0[ callList="" memoryops="" filename="../../../../src/initializer.cpp" execusionnum="1"];
+	Node0x52ae7b0 [shape=record,filename="../../../../src/initializer.cpp",linenumber="100",label="{.succFake2|{<s0>T|<s1>F}}"];
+	Node0x52ae7b0:s0 -> Node0x50d2020[label="W:2" callList="3:101" memoryops="" filename="../../../../src/initializer.cpp" execusionnum="1"];
+	Node0x52ae7b0:s1 -> Node0x50d2020[label="W:1" callList="9:103" memoryops="" filename="../../../../src/initializer.cpp" execusionnum="0"];
+	Node0x50d2020 [shape=record,filename="../../../../src/initializer.cpp",linenumber="105",label="{.predFake}"];
+	Node0x50d2020 -> Node0x52ae890[ callList="" memoryops="" filename="../../../../src/initializer.cpp" execusionnum="1"];
+	Node0x52ae890 [shape=record,filename="../../../../src/initializer.cpp",linenumber="105",label="{.succFake}"];
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="TODO.txt" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/TODO.txt"/>
+    <originFiles name="arith_dec.cpp" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/arith_dec.cpp"/>
+    <originFiles name="arith_dec.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/arith_dec.h"/>
+    <originFiles name="deBin.cpp" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/deBin.cpp"/>
+    <originFiles name="deBin.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/deBin.h"/>
+    <originFiles name="init_tables.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/init_tables.h"/>
+    <originFiles name="initializer.cpp" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/initializer.cpp"/>
+    <originFiles name="initializer.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/initializer.h"/>
+    <originFiles name="intra_se.cpp" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/intra_se.cpp"/>
+    <originFiles name="intra_se.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/intra_se.h"/>
+    <originFiles name="quad_tree.cpp" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/quad_tree.cpp"/>
+    <originFiles name="quad_tree.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/quad_tree.h"/>
+    <originFiles name="top.cpp" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/top.cpp"/>
+    <originFiles name="top.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/top.h"/>
+    <originFiles name="typedef.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/typedef.h"/>
+    <originFiles name="utils.cpp" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/utils.cpp"/>
+    <originFiles name="utils.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/src/utils.h"/>
+  </source>
+  <testbench>
+    <originFiles name="typedef.h" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/tb_src/typedef.h"/>
+    <originFiles name="test_1.cpp" path="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac/tb_src/test_1.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

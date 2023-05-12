@@ -1,0 +1,70 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../tb_src/test_1.cpp in debug mode
+   Compiling ../../../../src/arith_dec.cpp in debug mode
+   Compiling ../../../../src/initializer.cpp in debug mode
+   Compiling ../../../../src/top.cpp in debug mode
+   Compiling ../../../../src/utils.cpp in debug mode
+   Generating csim.exe
+Slice Type :2
+InitVal: 2
+Init Val :153
+Slope : 0
+Offset : 56
+CtxState : 14
+Init Val :200
+Slope : 15
+Offset : 48
+CtxState : 29
+Init Val :139
+Slope : -5
+Offset : 72
+CtxState : 2
+Init Val :141
+Slope : -5
+Offset : 88
+CtxState : 29
+Init Val :157
+Slope : 0
+Offset : 88
+CtxState : 49
+Initial Offset : 374
+
+Curr Val 394
+Offset 374
+bin val 1
+Updated Ctx : 31
+Curr Val 394
+Offset 355
+bin val 1
+Updated Ctx : 31
+Curr Val 394
+Offset 316
+bin val 1
+Updated Ctx : 31
+Curr Val 394
+Offset 238
+bin val 1
+Updated Ctx : 31
+Curr Val 394
+Offset 83
+bin val 1
+Updated Ctx : 31
+Curr Val 394
+Offset 166
+bin val 0
+Updated Ctx : 31
+Curr Val 394
+Offset 332
+bin val 0
+Updated Ctx : 31
+TEST BENCH RESULTS
+14
+31
+2
+29
+49
+Bit Stream bits
+124
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

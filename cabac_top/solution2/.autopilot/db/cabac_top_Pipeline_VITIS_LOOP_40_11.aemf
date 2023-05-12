@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1680153320101">
+  <ports id="1" name="bitStream" type="PortType" coreName="FIFO" coreId="0" bitwidth="8" iftype="IfTypeRom">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="tempBst_0" type="PortType" coreId="997420912" bitwidth="8" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="3" name="tempBst_1" type="PortType" coreId="1909658032" bitwidth="8" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="4" name="tempBst_3_025_out" type="PortType" coreId="1910048384" bitwidth="8" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="5" name="tempBst_2_024_out" type="PortType" coreId="1909947248" bitwidth="8" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="52" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="53" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="54" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="55" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="58" source_obj="//@blocks.1/@node_objs.2" sink_obj="//@ports.3"/>
+  <edges id="59" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="61" source_obj="//@blocks.1/@node_objs.3" sink_obj="//@ports.4"/>
+  <edges id="62" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.3"/>
+  <edges id="63" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="64" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="67" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="70" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="71" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="72" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="73" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.0"/>
+  <edges id="74" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.0"/>
+  <edges id="75" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.1"/>
+  <edges id="78" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="79" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="80" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="81" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="84" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="87" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="90" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="91" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
+  <edges id="92" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
+  <edges id="93" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.1"/>
+  <edges id="95" source_obj="//@regions.0/@basic_blocks.4/@node_objs.0" sink_obj="//@ports.1"/>
+  <edges id="96" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="97" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.1"/>
+  <edges id="99" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@ports.2"/>
+  <edges id="100" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="101" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="102" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="103" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="104" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="145" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="146" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="147" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="148" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.5"/>
+  <edges id="149" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.4"/>
+  <edges id="150" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.3"/>
+  <edges id="151" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.2"/>
+  <edges id="152" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.6"/>
+  <edges id="153" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.6"/>
+  <edges id="154" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.6"/>
+  <edges id="155" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.6"/>
+  <edges id="156" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="157" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="158" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.0"/>
+  <edges id="159" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.0"/>
+  <blocks id="12" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>_Z8load_ramPhRN3hls6streamIhLi0EEEj.exit</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="6" name="i" originalName="i" coreId="607309154" bitwidth="3" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="tempBst_3" originalName="tempBst[3]" coreId="0" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="tempBst_3_1" originalName="tempBst[3]" coreId="1909817040" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="i_write_ln0" coreId="1330007625" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="11" name="br_ln0" coreId="1909862496" opcode="br" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <controlInputObjs>_Z8load_ramPhRN3hls6streamIhLi0EEEj.exit</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="45" name=".lr.ph.i16.exitStub" type="BlockType">
+    <controlInputObjs>_Z8load_ramPhRN3hls6streamIhLi0EEEj.exit</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="tempBst_3_load" coreId="0" bitwidth="8" opcode="load" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="tempBst_3_1_load" coreId="1909950032" bitwidth="8" opcode="load" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="tempBst_3_025_out_write_ln0" coreId="1701013868" opcode="write" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>tempBst_3_025_out</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tempBst_2_024_out_write_ln0" coreId="1909716064" opcode="write" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>tempBst_2_024_out</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="_ln0" coreId="1910088560" opcode="ret" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="149" pipe_depth="2" RegionName="VITIS_LOOP_40_1">
+    <basic_blocks id="19" name="_Z8load_ramPhRN3hls6streamIhLi0EEEj.exit" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>.split4126</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.lr.ph.i16.exitStub</controlOutputObjs>
+      <controlOutputObjs>.split4</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="i_2" lineNumber="41" originalName="i" fileName="src/top.cpp" fileDirectory=".." coreId="1909864112" contextFuncName="cabac_top" bitwidth="3" opcode="load" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="icmp_ln40" lineNumber="40" fileName="src/top.cpp" fileDirectory=".." rtlName="icmp_ln40_fu_106_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="cabac_top" bitwidth="1" opcode="icmp" m_display="0" m_delay="1.13" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="40" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="add_ln40" lineNumber="40" fileName="src/top.cpp" fileDirectory=".." rtlName="add_ln40_fu_112_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="cabac_top" bitwidth="3" opcode="add" m_display="0" m_delay="1.65" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="40" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="br_ln40" lineNumber="40" fileName="src/top.cpp" fileDirectory=".." coreId="1953394531" contextFuncName="cabac_top" opcode="br" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="40" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.split4</controlInputObjs>
+        <controlInputObjs>.lr.ph.i16.exitStub</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="src/top.cpp">
+        <validLinenumbers>41</validLinenumbers>
+        <validLinenumbers>40</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="24" name=".split4" type="BlockType">
+      <controlInputObjs>_Z8load_ramPhRN3hls6streamIhLi0EEEj.exit</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split4..split4126_crit_edge1</controlOutputObjs>
+      <controlOutputObjs>branch0</controlOutputObjs>
+      <controlOutputObjs>branch1</controlOutputObjs>
+      <controlOutputObjs>.split4..split4126_crit_edge</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="tempBst_3_3" lineNumber="144" originalName="tempBst[3]" fileName="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." coreName="FIFO" implIndex="memory" control="no" opType="fifo" coreId="78" contextFuncName="read" bitwidth="8" opcode="read" nodeLabel="1.0" m_display="0" m_delay="3.47" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/hls_stream_39.h" linenumber="144" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="read"/>
+        <dataInputObjs>bitStream</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="trunc_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." rtlName="trunc_ln41_fu_118_p1" coreId="1909694816" contextFuncName="cabac_top" bitwidth="2" opcode="trunc" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>switch</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." coreId="1953394531" contextFuncName="cabac_top" opcode="switch" m_display="0" m_delay="1.3" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <controlInputObjs>.split4..split4126_crit_edge1</controlInputObjs>
+        <controlInputObjs>branch0</controlInputObjs>
+        <controlInputObjs>branch1</controlInputObjs>
+        <controlInputObjs>.split4..split4126_crit_edge</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <fileValidLineNumbers fileName="src/top.cpp">
+        <validLinenumbers>41</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="/home/akhilkushe/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/hls_stream_39.h">
+        <validLinenumbers>144</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="27" name=".split4..split4126_crit_edge" type="BlockType">
+      <controlInputObjs>.split4</controlInputObjs>
+      <controlOutputObjs>switch</controlOutputObjs>
+      <controlOutputObjs>.split4126</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="tempBst_3_write_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." coreId="2402272141" contextFuncName="cabac_top" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="br_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." coreId="1910038712" contextFuncName="cabac_top" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <controlInputObjs>.split4126</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="src/top.cpp">
+        <validLinenumbers>41</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="30" name="branch1" type="BlockType">
+      <controlInputObjs>.split4</controlInputObjs>
+      <controlOutputObjs>switch</controlOutputObjs>
+      <controlOutputObjs>.split4126</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="tempBst_1_write_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." coreId="1910091040" contextFuncName="cabac_top" opcode="write" nodeLabel="1.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>tempBst_1</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="br_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." coreId="119" contextFuncName="cabac_top" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <controlInputObjs>.split4126</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="src/top.cpp">
+        <validLinenumbers>41</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="33" name="branch0" type="BlockType">
+      <controlInputObjs>.split4</controlInputObjs>
+      <controlOutputObjs>switch</controlOutputObjs>
+      <controlOutputObjs>.split4126</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="tempBst_0_write_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." coreId="1910079840" contextFuncName="cabac_top" opcode="write" nodeLabel="1.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>tempBst_0</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="br_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." coreId="608" contextFuncName="cabac_top" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <controlInputObjs>.split4126</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="src/top.cpp">
+        <validLinenumbers>41</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="36" name=".split4..split4126_crit_edge1" type="BlockType">
+      <controlInputObjs>.split4</controlInputObjs>
+      <controlOutputObjs>switch</controlOutputObjs>
+      <controlOutputObjs>.split4126</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="tempBst_3_1_write_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." coreId="0" contextFuncName="cabac_top" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="br_ln41" lineNumber="41" fileName="src/top.cpp" fileDirectory=".." coreId="1909695968" contextFuncName="cabac_top" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="41" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <controlInputObjs>.split4126</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="src/top.cpp">
+        <validLinenumbers>41</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="39" name=".split4126" type="BlockType">
+      <controlInputObjs>.split4..split4126_crit_edge</controlInputObjs>
+      <controlInputObjs>branch1</controlInputObjs>
+      <controlInputObjs>branch0</controlInputObjs>
+      <controlInputObjs>.split4..split4126_crit_edge1</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>_Z8load_ramPhRN3hls6streamIhLi0EEEj.exit</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="i_write_ln40" lineNumber="40" fileName="src/top.cpp" fileDirectory=".." coreId="176" contextFuncName="cabac_top" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="src/top.cpp" linenumber="40" fileDirectory="/home/akhilkushe/Desktop/Projects/final_year_project/hls_cabac" functionName="cabac_top"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="br_ln0" coreId="1717924464" opcode="br" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <controlInputObjs>_Z8load_ramPhRN3hls6streamIhLi0EEEj.exit</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="src/top.cpp">
+        <validLinenumbers>40</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <regnodes realName="i_reg_145">
+    <nodeIds>6</nodeIds>
+  </regnodes>
+  <regnodes realName="tempBst_3_1_reg_158">
+    <nodeIds>8</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln41_reg_167">
+    <nodeIds>22</nodeIds>
+  </regnodes>
+  <regnodes realName="tempBst_3_reg_152">
+    <nodeIds>7</nodeIds>
+  </regnodes>
+  <expressionNodes realName="add_ln40_fu_112">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tempBst_3_fu_54">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln40_fu_106">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tempBst_3_1_fu_58">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_fu_50">
+    <nodeIds>6</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln41_fu_118">
+    <nodeIds>22</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="tempBst_3_1_load_load_fu_141">
+    <nodeIds>41</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tempBst_3_load_load_fu_137">
+    <nodeIds>40</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tempBst_3_3_read_fu_62">
+    <nodeIds>21</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln0_write_fu_84">
+    <nodeIds>42</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln41_write_fu_68">
+    <nodeIds>28</nodeIds>
+  </ioNodes>
+  <ioNodes realName="i_2_load_fu_103">
+    <nodeIds>13</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln41_store_fu_127">
+    <nodeIds>25</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln41_write_fu_76">
+    <nodeIds>31</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln0_write_fu_91">
+    <nodeIds>43</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_98">
+    <nodeIds>10</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln41_store_fu_132">
+    <nodeIds>34</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln40_store_fu_122">
+    <nodeIds>37</nodeIds>
+  </ioNodes>
+  <ioPorts name="bitStream">
+    <contents name="read">
+      <nodeIds>21</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="tempBst_0">
+    <contents name="write">
+      <nodeIds>31</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="tempBst_1">
+    <contents name="write">
+      <nodeIds>28</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="tempBst_2_024_out">
+    <contents name="write">
+      <nodeIds>43</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="tempBst_3_025_out">
+    <contents name="write">
+      <nodeIds>42</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="cabac_top_Pipeline_VITIS_LOOP_40_11" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="6" mMaxLatency="6">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>12</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_40_1" mII="1" mDepth="2" mMinTripCount="4" mMaxTripCount="4" mMinLatency="4" mMaxLatency="4" mType="1">
+      <basicBlocks>19</basicBlocks>
+      <basicBlocks>24</basicBlocks>
+      <basicBlocks>27</basicBlocks>
+      <basicBlocks>30</basicBlocks>
+      <basicBlocks>33</basicBlocks>
+      <basicBlocks>36</basicBlocks>
+      <basicBlocks>39</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>45</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

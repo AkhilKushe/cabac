@@ -1,0 +1,241 @@
+
+
+================================================================
+== Vitis HLS Report for 'sao_top_Pipeline_VITIS_LOOP_213_6'
+================================================================
+* Date:           Sun May  7 10:30:20 2023
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        cabac_top
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.792 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       11|       11|  0.110 us|  0.110 us|   11|   11|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_213_6  |        9|        9|         3|          3|          1|     3|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     83|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       0|    112|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    196|    -|
+|Register         |        -|    -|     158|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     158|    391|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------+---------------+---------+----+---+----+-----+
+    |      Instance      |     Module    | BRAM_18K| DSP| FF| LUT| URAM|
+    +--------------------+---------------+---------+----+---+----+-----+
+    |mux_32_16_1_1_U156  |mux_32_16_1_1  |        0|   0|  0|  14|    0|
+    |mux_32_16_1_1_U157  |mux_32_16_1_1  |        0|   0|  0|  14|    0|
+    |mux_32_16_1_1_U158  |mux_32_16_1_1  |        0|   0|  0|  14|    0|
+    |mux_32_16_1_1_U159  |mux_32_16_1_1  |        0|   0|  0|  14|    0|
+    |mux_32_16_1_1_U160  |mux_32_16_1_1  |        0|   0|  0|  14|    0|
+    |mux_32_8_1_1_U154   |mux_32_8_1_1   |        0|   0|  0|  14|    0|
+    |mux_32_8_1_1_U155   |mux_32_8_1_1   |        0|   0|  0|  14|    0|
+    |mux_32_8_1_1_U161   |mux_32_8_1_1   |        0|   0|  0|  14|    0|
+    +--------------------+---------------+---------+----+---+----+-----+
+    |Total               |               |        0|   0|  0| 112|    0|
+    +--------------------+---------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+----+---+----+------------+------------+
+    |add_ln213_fu_541_p2   |         +|   0|  0|  10|           2|           1|
+    |add_ln216_fu_559_p2   |         +|   0|  0|  13|           4|           4|
+    |add_ln217_fu_570_p2   |         +|   0|  0|  13|           4|           1|
+    |add_ln218_fu_679_p2   |         +|   0|  0|  13|           4|           2|
+    |add_ln219_fu_689_p2   |         +|   0|  0|  13|           4|           2|
+    |add_ln220_fu_699_p2   |         +|   0|  0|  13|           4|           3|
+    |icmp_ln213_fu_535_p2  |      icmp|   0|  0|   8|           2|           2|
+    +----------------------+----------+----+---+----+------------+------------+
+    |Total                 |          |   0|  0|  83|          24|          15|
+    +----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------+----+-----------+-----+-----------+
+    |               Name               | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                         |  20|          4|    1|          4|
+    |ap_done_int                       |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_1              |   9|          2|    2|          4|
+    |i_fu_132                          |   9|          2|    2|          4|
+    |out_SaoEOClass35_6_fu_156         |   9|          2|    8|         16|
+    |out_SaoEOClass36_6_fu_152         |   9|          2|    8|         16|
+    |out_SaoEOClass_6_fu_144           |   9|          2|    8|         16|
+    |out_SaoOffsetVal_address0         |  20|          4|    4|         16|
+    |out_SaoOffsetVal_address1         |  14|          3|    4|         12|
+    |out_SaoOffsetVal_d0               |  20|          4|   16|         64|
+    |out_SaoOffsetVal_d1               |  14|          3|   16|         48|
+    |out_SaoTypeIdx33_6_fu_164         |   9|          2|    8|         16|
+    |out_SaoTypeIdx34_6_fu_160         |   9|          2|    8|         16|
+    |out_SaoTypeIdx_6_fu_168           |   9|          2|    8|         16|
+    |out_sao_band_position37_6_fu_140  |   9|          2|    8|         16|
+    |out_sao_band_position38_6_fu_136  |   9|          2|    8|         16|
+    |out_sao_band_position_6_fu_148    |   9|          2|    8|         16|
+    +----------------------------------+----+-----------+-----+-----------+
+    |Total                             | 196|         42|  118|        298|
+    +----------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |add_ln213_reg_862                 |   2|   0|    2|          0|
+    |add_ln216_reg_867                 |   4|   0|    4|          0|
+    |ap_CS_fsm                         |   3|   0|    3|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |i_1_reg_855                       |   2|   0|    2|          0|
+    |i_fu_132                          |   2|   0|    2|          0|
+    |out_SaoEOClass35_6_fu_156         |   8|   0|    8|          0|
+    |out_SaoEOClass36_6_fu_152         |   8|   0|    8|          0|
+    |out_SaoEOClass_6_fu_144           |   8|   0|    8|          0|
+    |out_SaoTypeIdx33_6_fu_164         |   8|   0|    8|          0|
+    |out_SaoTypeIdx34_6_fu_160         |   8|   0|    8|          0|
+    |out_SaoTypeIdx_6_fu_168           |   8|   0|    8|          0|
+    |out_sao_band_position37_6_fu_140  |   8|   0|    8|          0|
+    |out_sao_band_position38_6_fu_136  |   8|   0|    8|          0|
+    |out_sao_band_position_6_fu_148    |   8|   0|    8|          0|
+    |tmp_3_reg_874                     |   8|   0|    8|          0|
+    |tmp_5_reg_888                     |  16|   0|   16|          0|
+    |tmp_6_reg_893                     |  16|   0|   16|          0|
+    |tmp_7_reg_898                     |  16|   0|   16|          0|
+    |tmp_8_reg_903                     |   8|   0|    8|          0|
+    |tmp_s_reg_881                     |   8|   0|    8|          0|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             | 158|   0|  158|          0|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------------+-----+-----+------------+-----------------------------------+--------------+
+|               RTL Ports              | Dir | Bits|  Protocol  |           Source Object           |    C Type    |
++--------------------------------------+-----+-----+------------+-----------------------------------+--------------+
+|ap_clk                                |   in|    1|  ap_ctrl_hs|  sao_top_Pipeline_VITIS_LOOP_213_6|  return value|
+|ap_rst                                |   in|    1|  ap_ctrl_hs|  sao_top_Pipeline_VITIS_LOOP_213_6|  return value|
+|ap_start                              |   in|    1|  ap_ctrl_hs|  sao_top_Pipeline_VITIS_LOOP_213_6|  return value|
+|ap_done                               |  out|    1|  ap_ctrl_hs|  sao_top_Pipeline_VITIS_LOOP_213_6|  return value|
+|ap_idle                               |  out|    1|  ap_ctrl_hs|  sao_top_Pipeline_VITIS_LOOP_213_6|  return value|
+|ap_ready                              |  out|    1|  ap_ctrl_hs|  sao_top_Pipeline_VITIS_LOOP_213_6|  return value|
+|out_SaoTypeIdx_5                      |   in|    8|     ap_none|                   out_SaoTypeIdx_5|        scalar|
+|out_SaoTypeIdx33_5                    |   in|    8|     ap_none|                 out_SaoTypeIdx33_5|        scalar|
+|out_SaoTypeIdx34_5                    |   in|    8|     ap_none|                 out_SaoTypeIdx34_5|        scalar|
+|out_SaoEOClass35_5                    |   in|    8|     ap_none|                 out_SaoEOClass35_5|        scalar|
+|out_SaoEOClass36_5                    |   in|    8|     ap_none|                 out_SaoEOClass36_5|        scalar|
+|out_sao_band_position_5               |   in|    8|     ap_none|            out_sao_band_position_5|        scalar|
+|out_SaoEOClass_5                      |   in|    8|     ap_none|                   out_SaoEOClass_5|        scalar|
+|out_sao_band_position37_5             |   in|    8|     ap_none|          out_sao_band_position37_5|        scalar|
+|out_sao_band_position38_5             |   in|    8|     ap_none|          out_sao_band_position38_5|        scalar|
+|p_read30                              |   in|   16|     ap_none|                           p_read30|        scalar|
+|p_read31                              |   in|   16|     ap_none|                           p_read31|        scalar|
+|p_read32                              |   in|   16|     ap_none|                           p_read32|        scalar|
+|p_read33                              |   in|   16|     ap_none|                           p_read33|        scalar|
+|p_read34                              |   in|   16|     ap_none|                           p_read34|        scalar|
+|p_read35                              |   in|   16|     ap_none|                           p_read35|        scalar|
+|p_read36                              |   in|   16|     ap_none|                           p_read36|        scalar|
+|p_read37                              |   in|   16|     ap_none|                           p_read37|        scalar|
+|p_read38                              |   in|   16|     ap_none|                           p_read38|        scalar|
+|p_read39                              |   in|   16|     ap_none|                           p_read39|        scalar|
+|p_read40                              |   in|   16|     ap_none|                           p_read40|        scalar|
+|p_read41                              |   in|   16|     ap_none|                           p_read41|        scalar|
+|p_read42                              |   in|   16|     ap_none|                           p_read42|        scalar|
+|p_read43                              |   in|   16|     ap_none|                           p_read43|        scalar|
+|p_read44                              |   in|   16|     ap_none|                           p_read44|        scalar|
+|p_read48                              |   in|    8|     ap_none|                           p_read48|        scalar|
+|p_read49                              |   in|    8|     ap_none|                           p_read49|        scalar|
+|p_read50                              |   in|    8|     ap_none|                           p_read50|        scalar|
+|p_read45                              |   in|    8|     ap_none|                           p_read45|        scalar|
+|p_read46                              |   in|    8|     ap_none|                           p_read46|        scalar|
+|p_read47                              |   in|    8|     ap_none|                           p_read47|        scalar|
+|out_SaoOffsetVal_address0             |  out|    4|   ap_memory|                   out_SaoOffsetVal|         array|
+|out_SaoOffsetVal_ce0                  |  out|    1|   ap_memory|                   out_SaoOffsetVal|         array|
+|out_SaoOffsetVal_we0                  |  out|    1|   ap_memory|                   out_SaoOffsetVal|         array|
+|out_SaoOffsetVal_d0                   |  out|   16|   ap_memory|                   out_SaoOffsetVal|         array|
+|out_SaoOffsetVal_address1             |  out|    4|   ap_memory|                   out_SaoOffsetVal|         array|
+|out_SaoOffsetVal_ce1                  |  out|    1|   ap_memory|                   out_SaoOffsetVal|         array|
+|out_SaoOffsetVal_we1                  |  out|    1|   ap_memory|                   out_SaoOffsetVal|         array|
+|out_SaoOffsetVal_d1                   |  out|   16|   ap_memory|                   out_SaoOffsetVal|         array|
+|p_read27                              |   in|    8|     ap_none|                           p_read27|        scalar|
+|p_read28                              |   in|    8|     ap_none|                           p_read28|        scalar|
+|p_read29                              |   in|    8|     ap_none|                           p_read29|        scalar|
+|out_SaoTypeIdx_6_out                  |  out|    8|      ap_vld|               out_SaoTypeIdx_6_out|       pointer|
+|out_SaoTypeIdx_6_out_ap_vld           |  out|    1|      ap_vld|               out_SaoTypeIdx_6_out|       pointer|
+|out_SaoTypeIdx33_6_out                |  out|    8|      ap_vld|             out_SaoTypeIdx33_6_out|       pointer|
+|out_SaoTypeIdx33_6_out_ap_vld         |  out|    1|      ap_vld|             out_SaoTypeIdx33_6_out|       pointer|
+|out_SaoTypeIdx34_6_out                |  out|    8|      ap_vld|             out_SaoTypeIdx34_6_out|       pointer|
+|out_SaoTypeIdx34_6_out_ap_vld         |  out|    1|      ap_vld|             out_SaoTypeIdx34_6_out|       pointer|
+|out_SaoEOClass35_6_out                |  out|    8|      ap_vld|             out_SaoEOClass35_6_out|       pointer|
+|out_SaoEOClass35_6_out_ap_vld         |  out|    1|      ap_vld|             out_SaoEOClass35_6_out|       pointer|
+|out_SaoEOClass36_6_out                |  out|    8|      ap_vld|             out_SaoEOClass36_6_out|       pointer|
+|out_SaoEOClass36_6_out_ap_vld         |  out|    1|      ap_vld|             out_SaoEOClass36_6_out|       pointer|
+|out_sao_band_position_6_out           |  out|    8|      ap_vld|        out_sao_band_position_6_out|       pointer|
+|out_sao_band_position_6_out_ap_vld    |  out|    1|      ap_vld|        out_sao_band_position_6_out|       pointer|
+|out_SaoEOClass_6_out                  |  out|    8|      ap_vld|               out_SaoEOClass_6_out|       pointer|
+|out_SaoEOClass_6_out_ap_vld           |  out|    1|      ap_vld|               out_SaoEOClass_6_out|       pointer|
+|out_sao_band_position37_6_out         |  out|    8|      ap_vld|      out_sao_band_position37_6_out|       pointer|
+|out_sao_band_position37_6_out_ap_vld  |  out|    1|      ap_vld|      out_sao_band_position37_6_out|       pointer|
+|out_sao_band_position38_6_out         |  out|    8|      ap_vld|      out_sao_band_position38_6_out|       pointer|
+|out_sao_band_position38_6_out_ap_vld  |  out|    1|      ap_vld|      out_sao_band_position38_6_out|       pointer|
++--------------------------------------+-----+-----+------------+-----------------------------------+--------------+
+
