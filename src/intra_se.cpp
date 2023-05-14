@@ -61,8 +61,23 @@ void parseRemIntraLumaPredMode(arith_t& state, UChar* bStream, UChar ctxTables[M
 void parseIntraChromaPredMode(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
 	symbolVal = 0;
 	bool binVal;
+	UChar binIdx =0;
+
 	decode_decision(REGULAR, state, binVal, bStream, INTRA_CHROMA_PRED_MODE_CTX_ADDR, ctxTables);
-	symbolVal = binVal;
+	symbolVal = (symbolVal << 1) + binVal;
+	binIdx+=1;
+
+	if (binVal==1) {
+		while ((binIdx < 3)) {
+			decode_decision(REGULAR, state, binVal, bStream, INTRA_CHROMA_PRED_MODE_CTX_ADDR, ctxTables);
+			symbolVal = (symbolVal << 1) + binVal;
+			binIdx+=1;
+		}
+		symbolVal = symbolVal-4;
+	} else {
+		symbolVal = 4;
+	}
+
 #ifndef __SYNTHESIS__
 	std::cout << "Decoding prev intra luma pred flag" << std::endl;
 	std::cout << "Symbol Val : " << symbolVal << std::endl << std::endl;

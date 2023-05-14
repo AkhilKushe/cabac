@@ -2,55 +2,43 @@
 #define __INIT_TABLES_H__
 #include "typedef.h"
 
-#define NUM_SAO_MERGE_FLAG_CTX        1       ///< number of context models for SAO merge flags
-#define NUM_SAO_TYPE_IDX_CTX          1       ///< number of context models for SAO type index
-
-#define NUM_SPLIT_FLAG_CTX            3       ///< number of context models for split flag
-
-static const UChar
-INIT_SAO_MERGE_FLAG[NUMBER_OF_SLICE_TYPES][NUM_SAO_MERGE_FLAG_CTX] =
-{
-  { 153,  },
-  { 153,  },
-  { 153,  },
-};
-
-static const UChar
-INIT_SAO_TYPE_IDX[NUMBER_OF_SLICE_TYPES][NUM_SAO_TYPE_IDX_CTX] =
-{
-  { 160, },
-  { 185, },
-  { 200, },
-};
-
-// initial probability for split flag
-static const UChar
-INIT_SPLIT_FLAG[NUMBER_OF_SLICE_TYPES][NUM_SPLIT_FLAG_CTX] =
-{
-  { 107,  139,  126, },
-  { 107,  139,  126, },
-  { 139,  141,  157, },
-};
-
-
-
 // ROM for each frame group
 static const UChar
-I_FRAME_INIT_VALS[8] = {
+I_FRAME_INIT_VALS[MAX_NUM_CTX_MOD] = {
 		//SAO Merge Flag
 		153,
 		//SAO type idx
 		200,
 		//Split flag
-		139,
-		141,
-		157,
+		139, 141, 157,
 		//part_mode
 		184,
 		// prev_intra_luma_pred_flag
 		184,
 		// Intra chroma pred mode
 		63,
+		//cbf_c
+		94, 138, 182, 154, 154,
+		//cbf_luma
+		111, 141,
+		// split_transform_flag
+		153, 138, 138,
+		// transform_skip_flag_0
+		139,
+		// transform_skip_flag_1
+		139,
+		//last_sig_coeff_x_prefix
+		110,110,124,125,140,153,125,127,140,109,111,143,127,111,79,108,123,63,
+		// last_sig_coeff_y_prefix
+		110,110,124,125,140,153,125,127,140,109,111,143,127,111,79,108,123,63,
+		//coded_sub_block_flag
+		91,171,134,141,
+		//sig_coeff_flag
+		111,111,125,110,110,94,124,108,124,107,125,141,179,153,125,107,125,141,179,153,125,107,125,141,179,153,125,140,139,182,182,152,136,152,136,153,136,139,111,136,139,111,141,111,
+		//coeff_abs_level_greater1_flag
+		140,92,137,138,140,152,138,139,153,74,149,92,139,107,122,152,140,179,166,182,140,227,122,197,
+		//coeff_abs_level_greater1_flag
+		138,153,136,167,152,152,107,167,91
 };
 
 static const UChar
@@ -173,6 +161,6 @@ static const UChar lpsTable[64][4] =
 
 
 static const UChar TS2RS[16]= {0, 1, 4, 5, 2, 3, 6, 7, 8, 9, 12, 13, 10, 11, 14, 15};
-
+static const UChar FL_CONVERT[10] = {0, 1, 2, 2, 3, 3, 3, 3, 4, 4};
 
 #endif

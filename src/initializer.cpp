@@ -19,7 +19,7 @@ UChar Initialize::calc_ctxState(int qp, UChar initVal) {
 	  std::cout << "Init Val :" << (int)initVal << std::endl;
 	  std::cout << "Slope : " << (int)slope << std::endl;
 	  std::cout << "Offset : " << (int)offset << std::endl;
-	  std::cout << "CtxState : " << (int)ctxState << std::endl;
+	  std::cout << "CtxState : " << (int)ctxState << std::endl <<std::endl;
 #endif
 
 	return ctxState;
@@ -84,13 +84,13 @@ void Initialize::load_local(SliceType sliceType, int qp, bool cabac_init_flag, h
 	case B_SLICE: ctxTablePtr = (UChar*)B_FRAME_INIT_VALS;
 			break;
 	}
-
+/*
 #ifndef __SYNTHESIS__
 	  std::cout << "Slice Type :" << (int)sliceType << std::endl;
 	  std::cout << "InitVal: " << (int)initType << std::endl;
 #endif
-
-	stream_init_buffer(ctxTablePtr, 8, qp, initType, ctxOut, count);
+*/
+	stream_init_buffer(ctxTablePtr, MAX_NUM_CTX_MOD, qp, initType, ctxOut, count);
 }
 
 void initialization_top(bool firstSlice, SliceType sliceType, int qp, bool cabac_init_flag, volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar> &ctxOut, UInt& count) {

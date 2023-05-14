@@ -4,7 +4,7 @@
 #include <ap_int.h>
 
 // Defines
-#define MAX_NUM_CTX_MOD             512       ///< maximum number of supported contexts
+#define MAX_NUM_CTX_MOD             137       ///< maximum number of supported contexts
 
 
 // Enumerations
@@ -138,6 +138,7 @@ typedef struct _internal_data {
 
 	//Transform Unit
 	UChar TransCoeffLevel[64][64][3];
+	bool split_transform_flag[64][64];
 
 	char cqtDepth[64][64];
 
@@ -160,6 +161,30 @@ typedef struct _cu {
 	bool part_mode;
 
 }CU_t;
+
+typedef struct _tu {
+	uint32_t x;
+	uint32_t y;
+	uint32_t xBase;
+	uint32_t yBase;
+
+	UChar log2TrafoSize;
+	UChar trafoDepth;
+
+	//feedback var
+	uint32_t cLastAbsLevel;
+	UChar cLastRiceParam;
+	uint32_t cAbsLevel;
+
+	UChar ctxSet;
+	UChar lastGreater1Ctx;
+	UChar lastGreater1Flag;
+	UChar greater1Ctx;
+	UChar G2ctxSet;
+
+	//SE
+	bool transform_skip_flag
+} TU_t;
 
 
 #endif

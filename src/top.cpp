@@ -161,6 +161,8 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bi
 	setIntraPredMode(2, 4, cu1, data_in, data_out, dint);
 	setIntraPredMode(3, 4, cu1, data_in, data_out, dint);
 
+
+
 	data_out_s.write(data_out);
 
 	store_global_ram(globalCtx, ctxTables, ctxWritten);
