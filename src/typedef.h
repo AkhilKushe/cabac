@@ -137,7 +137,10 @@ typedef struct _internal_data {
 	UChar IntraPredModeC[64][64];
 
 	//Transform Unit
-	UChar TransCoeffLevel[64][64][3];
+	int8_t TransCoeffLevel_0[64][64];
+	int8_t TransCoeffLevel_1[64][64];
+	int8_t TransCoeffLevel_2[64][64];
+
 	bool split_transform_flag[64][64];
 
 	char cqtDepth[64][64];

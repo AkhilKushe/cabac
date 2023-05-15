@@ -43,4 +43,9 @@ UInt bitStream_read_bits(volatile UChar* bStream, UChar numBits, bstream_t& stat
 
 void pattern_generator(uint16_t& cuIdx, UChar& depth, bool split_flag, bool& end_of_ctu);
 
+void get_scanIdx(TU_t& tu, internal_data_t& dint, UChar cIdx, UChar& scanIdx);
+void up_right_diagonal_scan(UChar blkSize, UChar diagScan[64][2]);
+void horizontal_scan(UChar blkSize, UChar horScan[64][2]);
+void vertical_scan(UChar blkSize, UChar verScan[64][2]);
+
 #endif
