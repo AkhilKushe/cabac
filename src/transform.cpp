@@ -370,7 +370,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 	int8_t transCoeffVal;
 
 	lastScanPos = 16;
-	lastSubBlock = (1<<(tu.log2TrafoSize-2))*(1<<(tu.log2TrafoSize-2))
+	lastSubBlock = (1<<(tu.log2TrafoSize-2))*(1<<(tu.log2TrafoSize-2));
 
 	for(int i=0; i<8; i++){
 		for(int j=0; j<8; j++){
@@ -572,8 +572,8 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		numSigCoeff = 0;
 		sumAbsLevel = 0;
 		for (int n = 15; n >= 0; n--) {
-			xC = (xS << 2) + coeffBlockScan[scanIdx][n][0];
-			yC = (yS << 2) + coeffBlockScan[scanIdx][n][1];
+			xC = (xS << 2) + coeffBlockScan[n][0];
+			yC = (yS << 2) + coeffBlockScan[n][1];
 			if (sig_coeff_flag[xC][yC]) {
 				baseLevel = 1 + coeff_abs_level_greater1_flag[n] + coeff_abs_level_greater2_flag[n];
 
@@ -617,14 +617,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 }
 
 
-/*
-cu :
-	cu_transquant_bypass_flag
 
-MACROS:
-	Log2MaxTransformSkipSize
-
-*/
 
 
 

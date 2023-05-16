@@ -131,6 +131,10 @@ typedef struct _data_out {
 // Internal buffer
 // TODO : currently added output and input buffer components to internal buffer to avoid inteface issue
 
+typedef struct _macros {
+	UChar Log2MaxTransformSkipSize;
+}MACROS_t;
+
 typedef struct _internal_data {
 	//Intra PU
 	UChar IntraPredModeY[64][64];
@@ -144,6 +148,9 @@ typedef struct _internal_data {
 	bool split_transform_flag[64][64];
 
 	char cqtDepth[64][64];
+
+	//Macros
+	MACROS_t macros;
 
 } internal_data_t;
 
@@ -162,6 +169,7 @@ typedef struct _cu {
 	UChar rem_intra_luma_pred_mode[4];
 	UChar intra_chroma_pred_mode;
 	bool part_mode;
+	bool cu_transquant_bypass_flag;
 
 }CU_t;
 
@@ -186,7 +194,7 @@ typedef struct _tu {
 	UChar G2ctxSet;
 
 	//SE
-	bool transform_skip_flag
+	bool transform_skip_flag;
 } TU_t;
 
 

@@ -162,5 +162,6 @@ static const UChar lpsTable[64][4] =
 
 static const UChar TS2RS[16]= {0, 1, 4, 5, 2, 3, 6, 7, 8, 9, 12, 13, 10, 11, 14, 15};
 static const UChar FL_CONVERT[10] = {0, 1, 2, 2, 3, 3, 3, 3, 4, 4};
+static const UChar CTX_IDX_MAP[15] = {0, 1, 4, 5, 2, 3, 4, 5, 6, 6, 8, 8, 7, 7, 8};
 
 #endif
