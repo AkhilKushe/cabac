@@ -383,7 +383,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		}
 	}
 
-	if (din.pps.transform_skip_enabled_flag && (! cu.cu_transquant_bypass_flag) && (tu.log2TrafoSize <= dint.macros.Log2MaxTransformSkipSize)){
+	if (din.pps.transform_skip_enabled_flag && (! cu.cu_transquant_bypass_flag) && (tu.log2TrafoSize <= din.Log2MaxTransformSkipSize)){
 		parseSkipTransformFlag(cIdx, state, bStream, ctxTables, symbolVal);
 		tu.transform_skip_flag = symbolVal;
 	} else {
@@ -616,6 +616,180 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 	}
 }
 
+void transform_unit(data_in_t din, data_out_t dout, internal_data_t dint, CU_t cu, TU_t tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+	UChar log2TrafoSizeC;
+	UChar cbfLuma, cbfChroma;
+	bool cbf_id;
+
+	if(tu.log2TrafoSize==2){
+		cbf_id=1;
+	} else {
+		cbf_id = 2;
+	}
+
+	log2TrafoSizeC = max<UChar>(2, tu.log2TrafoSize);
+	cbfLuma = cu.cbf_luma[0];
+	cbfChroma = cu.cbf_cb[cbf_id] || cu.cbf_cr[cbf_id];
+
+	if(cbfLuma || cbfChroma){
+		if(cbfLuma){
+			residual_coding(0, din, dout, dint, cu, tu, state, bStream, ctxTables);
+		}
+
+		if(tu.log2TrafoSize>2){
+			tu.log2TrafoSize = log2TrafoSizeC;
+			if(cu.cbf_cb[0]){
+				residual_coding(1, din, dout, dint, cu, tu, state, bStream, ctxTables);
+			}
+			if(cu.cbf_cr[0]){
+				residual_coding(2, din, dout, dint, cu, tu, state, bStream, ctxTables);
+			}
+
+		} else if(tu.blkIdx==3){
+			if(cu.cbf_cb[1]){
+				residual_coding(1, din, dout, dint, cu, tu, state, bStream, ctxTables);
+			}
+			if(cu.cbf_cr[1]){
+				residual_coding(2, din, dout, dint, cu, tu, state, bStream, ctxTables);
+			}
+		}
+	}
+
+
+}
+
+void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, bool& transform_split, data_in_t din, data_out_t dout, internal_data_t dint, CU_t cu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+	UChar x0, y0, blkIdx;
+	UChar tuAddr, cod_x, cod_y;
+
+	if(trafoDepth==0){
+		x0=cu.x;
+		y0 =cu.y;
+		blkIdx=0;
+	} else if (trafoDepth==1){
+
+	}
+	switch(trafoDepth){
+	case 0: x0 = cu.x;
+			y0 = cu.y;
+			blkIdx=0;
+			break;
+
+	case 1: tuAddr = tuIdx-1;
+			cod_y = tuAddr >> 1;
+			cod_x = tuAddr & 1;
+			x0 = cu.x + cod_x*(1<<log2TrafoSize);
+			y0 = cu.y + cod_y*(1<<log2TrafoSize);
+			blkIdx=tuAddr;
+			break;
+
+	case 2: tuAddr = tuIdx -5;
+			tuAddr = TS2RS[tuAddr];
+			cod_y = tuAddr >> 2;
+			cod_x = tuAddr & 3;
+			x0 = cu.x + cod_x*(1<<log2TrafoSize);
+			y0 = cu.y + cod_y*(1<<log2TrafoSize);
+			blkIdx = (tuIdx-5)>>4;
+			break;
+
+	case 3: tuAddr = tuIdx -21;
+			blkIdx = tuAddr >> 4;
+			tuAddr = tuAddr&15;
+			tuAddr = TS2RS[tuAddr];
+			cod_y = tuAddr >> 2;
+			cod_x = tuAddr & 3;
+			x0 = cu.x + cod_x*(1<<log2TrafoSize);
+			y0 = cu.y + cod_y*(1<<log2TrafoSize);
+			if(blkIdx>>1){
+				y0+=(1<<(log2TrafoSize+2));
+			}
+			if(blkIdx&1){
+				x0+=(1<<(log2TrafoSize+2));
+			}
+			break;
+	}
+	UChar xBase;
+	UChar yBase;
+	xBase = x0;
+	yBase = y0;
+	if(blkIdx>>1){
+		yBase -= (1<<log2TrafoSize);
+	}
+	if(blkIdx&1){
+		xBase -= (1<<log2TrafoSize);
+	}
+
+#ifndef __SYNTHESIS__
+	std::cout << "===================== Transform Tree Depth " << trafoDepth << " at " << x0 <<" " <<y0 << "==========" << std::endl;
+#endif
+
+	TU_t tu;
+	UInt symbolVal;
+	tu.x = x0;
+	tu.y = x0;
+	tu.xBase = xBase;
+	tu.yBase = yBase;
+	tu.log2TrafoSize = log2TrafoSize;
+	tu.blkIdx = 0;
+	tu.trafoDepth = trafoDepth;
+	tu.lastGreater1Flag = 0;
+	tu.lastGreater1Ctx=0;
+	tu.greater1Ctx=0;
+	tu.ctxSet=0;
+	tu.cLastRiceParam=0;
+	tu.cLastAbsLevel=0;
+	tu.cAbsLevel=0;
+	tu.G2ctxSet=0;
+
+	cu.cbf_cb[1] = cu.cbf_cb[0];
+	cu.cbf_cr[1] = cu.cbf_cr[0];
+	cu.cbf_luma[1] = cu.cbf_luma[0];
+	if(     (log2TrafoSize <= din.MaxTbLog2SizeY) &&
+			(log2TrafoSize > din.MinTbLog2SizeY) &&
+			(trafoDepth < cu.MaxTrafoDepth) &&
+			(!(cu.IntraSplitFlag && (trafoDepth==0))))
+	{
+		parseSplitTransformFlag(log2TrafoSize, state, bStream, ctxTables, symbolVal);
+		transform_split = symbolVal;
+	} else {
+		transform_split = 0;
+	}
+
+	if(log2TrafoSize>2){
+		if(trafoDepth==0 || cu.cbf_cb[1]){
+			parseCbfC(log2TrafoSize, state, bStream, ctxTables, symbolVal);
+			cu.cbf_cb[0] = symbolVal;
+		} else {
+			cu.cbf_cb[0] = 0;
+		}
+		if(trafoDepth==0 || cu.cbf_cr[1]){
+			parseCbfC(log2TrafoSize, state, bStream, ctxTables, symbolVal);
+			cu.cbf_cr[0] = symbolVal;
+		} else {
+			cu.cbf_cr[0] = 0;
+		}
+	}
+
+	if(!transform_split){
+		parseCbfLuma(log2TrafoSize, state, bStream, ctxTables, symbolVal);
+		cu.cbf_luma[0] = symbolVal;
+	}
+}
+
+void transform_tree(data_in_t din, data_out_t dout, internal_data_t dint, CU_t cu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+	UChar trafoDepth;
+	uint16_t tuIdx;
+	bool end_of_tt;
+	bool split_flag;
+	trafoDepth=0;
+	tuIdx=0;
+	end_of_tt=0;
+
+	while(!end_of_tt){
+		transform_tree_rec( tuIdx,  trafoDepth,  cu.log2CbSize-trafoDepth, split_flag, din, dout, dint, cu, state, bStream, ctxTables);
+		pattern_generator(tuIdx, trafoDepth, split_flag, end_of_tt);
+	}
+}
 
 
 

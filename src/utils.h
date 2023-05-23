@@ -47,5 +47,6 @@ void get_scanIdx(TU_t& tu, internal_data_t& dint, UChar cIdx, UChar& scanIdx);
 void up_right_diagonal_scan(UChar blkSize, UChar diagScan[64][2]);
 void horizontal_scan(UChar blkSize, UChar horScan[64][2]);
 void vertical_scan(UChar blkSize, UChar verScan[64][2]);
+void init_buffer_int(internal_data_t& dint);
 
 #endif
