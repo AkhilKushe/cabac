@@ -10,8 +10,8 @@ void parseCbfC(UChar trafoDepth, arith_t& state, UChar* bStream, UChar ctxTables
 
 #ifndef __SYNTHESIS__
 	std::cout << "Decoding Cbf_C" << std::endl;
-	std::cout << "ctxInc : " << trafoDepth << std::endl;
-	std::cout << "Symbol Val : " << symbolVal << std::endl << std::endl;
+	std::cout << "ctxInc : " << (int)trafoDepth << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
 #endif
 }
 
@@ -31,8 +31,8 @@ void parseCbfLuma(UChar trafoDepth, arith_t& state, UChar* bStream, UChar ctxTab
 
 #ifndef __SYNTHESIS__
 	std::cout << "Decoding Cbf_luma" << std::endl;
-	std::cout << "ctxInc : " << ctxInc << std::endl;
-	std::cout << "Symbol Val : " << symbolVal << std::endl << std::endl;
+	std::cout << "ctxInc : " << (int)ctxInc << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
 #endif
 }
 
@@ -46,8 +46,8 @@ void parseSplitTransformFlag(UChar log2TrafoSize, arith_t& state, UChar* bStream
 
 #ifndef __SYNTHESIS__
 	std::cout << "Decoding Split Transform Flag" << std::endl;
-	std::cout << "ctxInc : " << ctxInc << std::endl;
-	std::cout << "Symbol Val : " << symbolVal << std::endl << std::endl;
+	std::cout << "ctxInc : " << (int)ctxInc << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
 #endif
 
 }
@@ -64,7 +64,7 @@ void parseSkipTransformFlag(UChar cIdx, arith_t& state, UChar* bStream, UChar ct
 
 #ifndef __SYNTHESIS__
 	std::cout << "Decoding Skip transform flag" << std::endl;
-	std::cout << "Symbol Val : " << symbolVal << std::endl << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
 #endif
 }
 
@@ -90,14 +90,15 @@ void parseSigCoeffXPrefix(UChar log2TrafoSize, UChar cIdx, arith_t& state, UChar
 		ctxInc = (binIdx >> ctxShift)+ctxOffset;
 		decode_decision(REGULAR, state, binVal, bStream, SIG_COEFF_X_PREFIX_CTX_ADDR+ctxInc, ctxTables);
 		symbolVal += binVal;
+		binIdx+=1;
 	} while (binVal & (binIdx < cmax));
 
 //	symbolVal -= 1;
 #ifndef __SYNTHESIS__
 	std::cout << "Sig coeff X prefix" << std::endl;
-	std::cout << "ctxOffset : " << ctxOffset << std::endl;
-	std::cout << "ctxShift : " << ctxShift << std::endl;
-	std::cout << "Symbol Val : " << symbolVal << std::endl<< std::endl;
+	std::cout << "ctxOffset : " <<(int) ctxOffset << std::endl;
+	std::cout << "ctxShift : " << (int)ctxShift << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl<< std::endl;
 #endif
 }
 void parseSigCoeffYPrefix(UChar log2TrafoSize, UChar cIdx, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
@@ -122,14 +123,15 @@ void parseSigCoeffYPrefix(UChar log2TrafoSize, UChar cIdx, arith_t& state, UChar
 		ctxInc = (binIdx >> ctxShift)+ctxOffset;
 		decode_decision(REGULAR, state, binVal, bStream, SIG_COEFF_Y_PREFIX_CTX_ADDR+ctxInc, ctxTables);
 		symbolVal += binVal;
+		binIdx+=1;
 	} while (binVal & (binIdx < cmax));
 
 //	symbolVal -= 1;
 #ifndef __SYNTHESIS__
 	std::cout << "Sig coeff Y prefix" << std::endl;
-	std::cout << "ctxOffset : " << ctxOffset << std::endl;
-	std::cout << "ctxShift : " << ctxShift << std::endl;
-	std::cout << "Symbol Val : " << symbolVal << std::endl<< std::endl;
+	std::cout << "ctxOffset : " << (int)ctxOffset << std::endl;
+	std::cout << "ctxShift : " <<(int) ctxShift << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl<< std::endl;
 #endif
 }
 
@@ -150,7 +152,7 @@ void parseSigCoeffSuffix(UInt prefix, arith_t& state, UChar* bStream, UChar ctxT
 #ifndef __SYNTHESIS__
 	std::cout << "Suffix val" << std::endl;
 	std::cout << "cmax : " <<std::endl;
-	std::cout << "Symbol Val : " << symbolVal << std::endl<< std::endl;
+	std::cout << "Symbol Val : " <<(int) symbolVal << std::endl<< std::endl;
 #endif
 }
 
@@ -209,6 +211,11 @@ void parseSigCoeffFlag(UChar xC, UChar yC, UChar scanIdx, UChar coded_sub_block_
 	//Decode bin
 	decode_decision(REGULAR, state, binVal, bStream, SIG_COEFF_FLAG_CTX_ADDR+ctxInc, ctxTables);
 	symbolVal=binVal;
+#ifndef __SYNTHESIS__
+	std::cout << "////////////////// Decoding sigCoeffFlag at" << (int)xP << " " <<(int)yP <<  "////////////////" << std::endl;
+	std::cout << "ctxInc : " << (int)ctxInc << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
+#endif
 }
 
 void parseCoeffAbsLevelG1(UChar cIdx, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
@@ -223,6 +230,8 @@ void parseCoeffAbsLevelG1(UChar cIdx, TU_t& tu, arith_t& state, UChar* bStream, 
 		ctxInc+= 16;
 	}
 	// Decode bin
+	decode_decision(REGULAR, state, binVal, bStream, COEFF_ABS_G1_CTX_ADDR+ctxInc, ctxTables);
+	symbolVal=binVal;
 
 	tu.G2ctxSet = ctxSet;
 
@@ -249,9 +258,12 @@ void parseCoeffAbsLevelG1(UChar cIdx, TU_t& tu, arith_t& state, UChar* bStream, 
 	tu.ctxSet = ctxSet;
 	tu.greater1Ctx = greater1Ctx;
 
-	// Decode bin
-	decode_decision(REGULAR, state, binVal, bStream, COEFF_ABS_G1_CTX_ADDR+ctxInc, ctxTables);
-	symbolVal=binVal;
+#ifndef __SYNTHESIS__
+	std::cout << "////////////////// Decoding coeff_abs_grater_level1  ////////////////" << std::endl;
+	std::cout << "ctxSet : " << (int)ctxSet << std::endl;
+	std::cout << "ctxInc : " << (int)ctxInc << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
+#endif
 }
 void parseCoeffAbsLevelG2(UChar cIdx, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
 	UChar ctxInc;
@@ -266,6 +278,11 @@ void parseCoeffAbsLevelG2(UChar cIdx, TU_t& tu, arith_t& state, UChar* bStream, 
 	// Decode bin
 	decode_decision(REGULAR, state, binVal, bStream, COEFF_ABS_G2_CTX_ADDR+ctxInc, ctxTables);
 	symbolVal=binVal;
+#ifndef __SYNTHESIS__
+	std::cout << "////////////////// Decoding coeff_abs_grater_level2  ////////////////" << std::endl;
+	std::cout << "ctxInc : " << (int)ctxInc << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
+#endif
 }
 void parseCoeffAbsRem(UChar baseLevel, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
 	UInt cLastAbsLevel;
@@ -334,6 +351,10 @@ void parseCoeffSign(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_
 	symbolVal =0;
 	decode_decision(BYPASS, state, binVal, bStream, 0, 0);
 	symbolVal=binVal;
+#ifndef __SYNTHESIS__
+	std::cout << "////////////////// Decoding coeff_sign_flag  ////////////////" << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
+#endif
 }
 
 void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data_t& dint,CU_t& cu, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
@@ -370,7 +391,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 	int8_t transCoeffVal;
 
 	lastScanPos = 16;
-	lastSubBlock = (1<<(tu.log2TrafoSize-2))*(1<<(tu.log2TrafoSize-2));
+	lastSubBlock = (1<<(tu.log2TrafoSize-2))*(1<<(tu.log2TrafoSize-2)) -1;
 
 	for(int i=0; i<8; i++){
 		for(int j=0; j<8; j++){
@@ -443,8 +464,11 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		lastScanPos--;
 		xS = subBlockScan[lastSubBlock][0];
 		yS = subBlockScan[lastSubBlock][1];
-		xS = (xS<<2)+ coeffBlockScan[lastScanPos][0];
-		yS = (yS<<2)+ coeffBlockScan[lastScanPos][1];
+		xC = (xS<<2)+ coeffBlockScan[lastScanPos][0];
+		yC = (yS<<2)+ coeffBlockScan[lastScanPos][1];
+#ifndef __SYNTHESIS__
+		std::cout << "Checking pos : " << (int)xC << ", " << (int)yC << std::endl;
+#endif
 	} while ((xC != LastSignificantCoeffX) || (yC != LastSignificantCoeffY));
 
 	// Sub Block processing
@@ -463,11 +487,11 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 			tu.ctxSet +=1;
 		}
 
-		for(int j=0; i<16; i++){
-			coeff_abs_level_greater1_flag[i] = 0;
-			coeff_abs_level_greater2_flag[i] = 0;
-			coeff_sign_flag[i] = 0;
-			coeff_abs_level_remaining[i] = 0;
+		for(int j=0; j<16; j++){
+			coeff_abs_level_greater1_flag[j] = 0;
+			coeff_abs_level_greater2_flag[j] = 0;
+			coeff_sign_flag[j] = 0;
+			coeff_abs_level_remaining[j] = 0;
 		}
 
 		xS = subBlockScan[i][0];
@@ -492,6 +516,11 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		} else {
 			temp = 15;
 		}
+#ifndef __SYNTHESIS__
+		std::cout << "Temp Val : " << (int)temp << std::endl;
+		std::cout << "i val : " << (int)i << std::endl;
+		std::cout << "lastSubBLock Val : " << (int)lastSubBlock << std::endl << std::endl;
+#endif
 		for (int n = temp; n >= 0; n--) {
 			xC = (xS << 2) + coeffBlockScan[n][0];
 			yC = (yS << 2) + coeffBlockScan[n][1];
@@ -513,8 +542,8 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 
 		// SigCoeffFlag not present for these indices
 		for (int n = 15; n > temp; n--) {
-			int xC = (xS << 2) + coeffBlockScan[n][0];
-			int yC = (yS << 2) + coeffBlockScan[n][1];
+			xC = (xS << 2) + coeffBlockScan[n][0];
+			yC = (yS << 2) + coeffBlockScan[n][1];
 			if ((xC == LastSignificantCoeffX && yC == LastSignificantCoeffY) || (((xC & 3) == 0 && (yC & 3) == 0) && inferSbDcSigCoeffFlag && coded_sub_block[xS][yS])) {
 				sig_coeff_flag[xC][yC] = 1;
 			} else {
@@ -560,8 +589,8 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		}
 
 		for (int n = 15; n >= 0; --n) {
-			int xC = (xS << 2) + coeffBlockScan[n][0];
-			int yC = (yS << 2) + coeffBlockScan[n][1];
+			xC = (xS << 2) + coeffBlockScan[n][0];
+			yC = (yS << 2) + coeffBlockScan[n][1];
 
 			if (sig_coeff_flag[xC][yC] && ((!din.pps.sign_data_hiding_enabled_flag) || (!signHidden) || (n != firstSigScanPos))) {
 				parseCoeffSign(state, bStream, ctxTables, symbolVal);
@@ -616,7 +645,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 	}
 }
 
-void transform_unit(data_in_t din, data_out_t dout, internal_data_t dint, CU_t cu, TU_t tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+void transform_unit(data_in_t& din, data_out_t& dout, internal_data_t& dint, CU_t& cu, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
 	UChar log2TrafoSizeC;
 	UChar cbfLuma, cbfChroma;
 	bool cbf_id;
@@ -658,7 +687,7 @@ void transform_unit(data_in_t din, data_out_t dout, internal_data_t dint, CU_t c
 
 }
 
-void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, bool& transform_split, data_in_t din, data_out_t dout, internal_data_t dint, CU_t cu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, bool& transform_split, data_in_t& din, data_out_t& dout, internal_data_t& dint, CU_t& cu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
 	UChar x0, y0, blkIdx;
 	UChar tuAddr, cod_x, cod_y;
 
@@ -720,7 +749,7 @@ void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, b
 	}
 
 #ifndef __SYNTHESIS__
-	std::cout << "===================== Transform Tree Depth " << trafoDepth << " at " << x0 <<" " <<y0 << "==========" << std::endl;
+	std::cout << "===================== Transform Tree Depth " << (int)trafoDepth << " at " << (int)x0 <<" " << (int)y0 << "==========" << std::endl;
 #endif
 
 	TU_t tu;
@@ -752,18 +781,22 @@ void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, b
 		parseSplitTransformFlag(log2TrafoSize, state, bStream, ctxTables, symbolVal);
 		transform_split = symbolVal;
 	} else {
-		transform_split = 0;
+		if((log2TrafoSize>din.MaxTbLog2SizeY)||(trafoDepth==0 && cu.IntraSplitFlag)){
+			transform_split = 1;
+		} else {
+			transform_split = 0;
+		}
 	}
 
 	if(log2TrafoSize>2){
 		if(trafoDepth==0 || cu.cbf_cb[1]){
-			parseCbfC(log2TrafoSize, state, bStream, ctxTables, symbolVal);
+			parseCbfC(trafoDepth, state, bStream, ctxTables, symbolVal);
 			cu.cbf_cb[0] = symbolVal;
 		} else {
 			cu.cbf_cb[0] = 0;
 		}
 		if(trafoDepth==0 || cu.cbf_cr[1]){
-			parseCbfC(log2TrafoSize, state, bStream, ctxTables, symbolVal);
+			parseCbfC(trafoDepth, state, bStream, ctxTables, symbolVal);
 			cu.cbf_cr[0] = symbolVal;
 		} else {
 			cu.cbf_cr[0] = 0;
@@ -771,12 +804,13 @@ void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, b
 	}
 
 	if(!transform_split){
-		parseCbfLuma(log2TrafoSize, state, bStream, ctxTables, symbolVal);
+		parseCbfLuma(trafoDepth, state, bStream, ctxTables, symbolVal);
 		cu.cbf_luma[0] = symbolVal;
+		transform_unit(din, dout, dint,  cu,  tu,  state,  bStream,  ctxTables);
 	}
 }
 
-void transform_tree(data_in_t din, data_out_t dout, internal_data_t dint, CU_t cu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+void transform_tree(data_in_t& din, data_out_t& dout, internal_data_t& dint, CU_t& cu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
 	UChar trafoDepth;
 	uint16_t tuIdx;
 	bool end_of_tt;

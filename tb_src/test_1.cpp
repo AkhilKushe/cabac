@@ -66,6 +66,13 @@ int main() {
 	data_inp.left_ctu.is_available = false;
 	data_inp.up_ctu.is_available= false;
 
+	data_inp.PicWidthInCtbsY=20;
+	data_inp.CtbLog2SizeY=6;
+	data_inp.Log2MaxTransformSkipSize=3;
+	data_inp.MinCbLog2SizeY=3;
+	data_inp.MaxTbLog2SizeY=5;
+	data_inp.MinTbLog2SizeY=2;
+
 
 	hls::stream<data_in_t> data_inp_s;
 	hls::stream<data_out_t> data_oup_s;

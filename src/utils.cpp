@@ -115,6 +115,9 @@ void get_scanIdx(TU_t& tu, internal_data_t& dint, UChar cIdx, UChar& scanIdx){
 	} else {
 		scanIdx = 0;
 	}
+#ifndef __SYNTHESIS__
+	std::cout << "Scan Idx : " << (int)scanIdx << std::endl << std::endl;
+#endif
 }
 
 void up_right_diagonal_scan(UChar blkSize, UChar diagScan[64][2]) {
@@ -143,6 +146,10 @@ void up_right_diagonal_scan(UChar blkSize, UChar diagScan[64][2]) {
 		diagScan[i][0] = 0;
 		diagScan[i][1] = 0;
 	}
+#ifndef __SYNTHESIS__
+	std::cout << "Selected Up Right Scan order" << std::endl;
+	printArray<UChar, int>("Scan order : ", blkSize*blkSize, 2, (UChar*)diagScan);
+#endif
 }
 
 void horizontal_scan(UChar blkSize, UChar horScan[64][2]) {
@@ -158,6 +165,10 @@ void horizontal_scan(UChar blkSize, UChar horScan[64][2]) {
 		horScan[i][0] = 0;
 		horScan[i][1] = 0;
 	}
+#ifndef __SYNTHESIS__
+	std::cout << "Selected Horizontal Scan order" << std::endl;
+	printArray<UChar, int>("Scan order : ", blkSize*blkSize, 2, (UChar*)horScan);
+#endif
 }
 
 void vertical_scan(UChar blkSize, UChar verScan[64][2]) {
@@ -173,6 +184,10 @@ void vertical_scan(UChar blkSize, UChar verScan[64][2]) {
 		verScan[i][0] = 0;
 		verScan[i][1] = 0;
 	}
+#ifndef __SYNTHESIS__
+	std::cout << "Selected vertical Scan order" << std::endl;
+	printArray<UChar, int>("Scan order : ", blkSize*blkSize, 2, (UChar*)verScan);
+#endif
 }
 
 void init_buffer_int(internal_data_t& dint){
@@ -183,7 +198,6 @@ void init_buffer_int(internal_data_t& dint){
 			dint.TransCoeffLevel_0[i][j] = 0;
 			dint.TransCoeffLevel_1[i][j] = 0;
 			dint.TransCoeffLevel_2[i][j] = 0;
-			dint.split_transform_flag[i][j] = 0;
 			dint.cqtDepth[i][j] = 0;
 		}
 	}

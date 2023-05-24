@@ -4,7 +4,7 @@
 #include <ap_int.h>
 
 // Defines
-#define MAX_NUM_CTX_MOD             512       ///< maximum number of supported contexts
+#define MAX_NUM_CTX_MOD             137       ///< maximum number of supported contexts
 
 
 // Enumerations
@@ -113,6 +113,14 @@ typedef struct _data_in {
 	NbCTU_t up_ctu;
 	uint32_t ctuAddrsRs;
 	bool firstCTU;
+
+	//Taking as input
+	UChar PicWidthInCtbsY;
+	UChar CtbLog2SizeY;
+	UChar Log2MaxTransformSkipSize;
+	UChar MinCbLog2SizeY;
+	UChar MaxTbLog2SizeY;
+	UChar MinTbLog2SizeY;
 }data_in_t;
 
 typedef struct _data_out {
@@ -122,22 +130,22 @@ typedef struct _data_out {
 	UChar SaoEOClass[3];
 	UChar sao_band_position[3];
 
-
-	bool split_transform_flag;
-
 }data_out_t;
 
 
 // Internal buffer
 // TODO : currently added output and input buffer components to internal buffer to avoid inteface issue
-
 typedef struct _internal_data {
 	//Intra PU
 	UChar IntraPredModeY[64][64];
 	UChar IntraPredModeC[64][64];
 
 	//Transform Unit
-	UChar TransCoeffLevel[64][64][3];
+	int8_t TransCoeffLevel_0[64][64];
+	int8_t TransCoeffLevel_1[64][64];
+	int8_t TransCoeffLevel_2[64][64];
+
+	bool split_transform_flag;
 
 	char cqtDepth[64][64];
 
@@ -158,8 +166,45 @@ typedef struct _cu {
 	UChar rem_intra_luma_pred_mode[4];
 	UChar intra_chroma_pred_mode;
 	bool part_mode;
+	bool cu_transquant_bypass_flag;
+
+	//transform
+	bool split_tranform_flag;
+	bool transform_skip_flag;
+	bool cbf_cb[2];
+	bool cbf_cr[2];
+	bool cbf_luma[2];
+
+	//Others
+	bool IntraSplitFlag;
+	UChar MaxTrafoDepth;
 
 }CU_t;
+
+typedef struct _tu {
+	uint32_t x;
+	uint32_t y;
+	uint32_t xBase;
+	uint32_t yBase;
+
+	UChar log2TrafoSize;
+	UChar trafoDepth;
+	UChar blkIdx;
+
+	//SE
+	bool transform_skip_flag;
+
+	//feedback var
+	uint32_t cLastAbsLevel;
+	UChar cLastRiceParam;
+	uint32_t cAbsLevel;
+
+	UChar ctxSet;
+	UChar lastGreater1Ctx;
+	UChar lastGreater1Flag;
+	UChar greater1Ctx;
+	UChar G2ctxSet;
+} TU_t;
 
 
 #endif

@@ -5,6 +5,7 @@
 #include "deBin.h"
 #include "intra_se.h"
 #include "quad_tree.h"
+#include "transform.h"
 
 void load_ram(UChar ctxTable[MAX_NUM_CTX_MOD], hls::stream<UChar>& inpStream, UInt cnt){
 	for(int i=0; i < cnt; i++) {
@@ -97,6 +98,11 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bi
 	cu1.y = 0;
 
 	parsePartMode(baeState, tempBst, ctxTables, symbolVal);
+	if(symbolVal==1){
+		cu1.IntraSplitFlag = 1;
+	} else {
+		cu1.IntraSplitFlag=0;
+	}
 #ifndef __SYNTHESIS__
 	std::cout << "4 part mode symbol val :" << symbolVal << std::endl << std::endl;
 #endif
@@ -160,6 +166,9 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bi
 	setIntraPredMode(1, 4, cu1, data_in, data_out, dint);
 	setIntraPredMode(2, 4, cu1, data_in, data_out, dint);
 	setIntraPredMode(3, 4, cu1, data_in, data_out, dint);
+
+
+	transform_tree(data_in, data_out, dint, cu1, baeState, tempBst, ctxTables);
 
 
 

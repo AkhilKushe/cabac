@@ -191,6 +191,9 @@ typedef struct _tu {
 	UChar trafoDepth;
 	UChar blkIdx;
 
+	//SE
+	bool transform_skip_flag;
+
 	//feedback var
 	uint32_t cLastAbsLevel;
 	UChar cLastRiceParam;
