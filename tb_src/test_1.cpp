@@ -49,7 +49,23 @@ int main() {
 	testBitStream.write(151);
 	testBitStream.write(65);
 	testBitStream.write(45);
+
 	testBitStream.write(87);
+	testBitStream.write(67);
+	testBitStream.write(153);
+	testBitStream.write(199);
+	testBitStream.write(108);
+	testBitStream.write(117);
+	testBitStream.write(21);
+	testBitStream.write(213);
+	testBitStream.write(209);
+	testBitStream.write(24);
+	testBitStream.write(118);
+	testBitStream.write(164);
+	testBitStream.write(244);
+	testBitStream.write(180);
+	testBitStream.write(102);
+
 	hls::stream<UInt, 32> bOut;
 
 	// Setting input buffers
@@ -72,6 +88,14 @@ int main() {
 	data_inp.MinCbLog2SizeY=3;
 	data_inp.MaxTbLog2SizeY=5;
 	data_inp.MinTbLog2SizeY=2;
+
+	data_inp.pps.log2_max_transform_skip_block_size_minus2=1;
+	data_inp.pps.sign_data_hiding_enabled_flag=1;
+	data_inp.pps.transform_skip_enabled_flag=1;
+	data_inp.pps.transquant_bypass_enabled_flag=0;
+
+	data_inp.sps.pic_width_in_luma_samples=1280;
+	data_inp.sps.max_transform_hierarchy_depth_intra=2;
 
 
 	hls::stream<data_in_t> data_inp_s;

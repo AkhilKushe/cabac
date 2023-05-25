@@ -1,11 +1,11 @@
 <root versionMajor = "1" versionMinor = "5">
-  <kernel name="cabac_top" language="c" vlnv="xilinx.com:hls:cabac_top:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="none" hwControlProtocol="ap_ctrl_chain">
+  <kernel name="cabac_top" language="c" vlnv="xilinx.com:hls:cabac_top:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="" hwControlProtocol="ap_ctrl_chain">
     <ports>
       <port name="M_AXI_CTX" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="8"/>
       <port name="BITSTREAM" mode="read_only" dataWidth="8" portType="stream"/>
       <port name="BITOUT" mode="write_only" dataWidth="8" portType="stream"/>
-      <port name="DATA_IN_S" mode="read_only" dataWidth="4096" portType="stream"/>
-      <port name="DATA_OUT_S" mode="write_only" dataWidth="336" portType="stream"/>
+      <port name="DATA_IN_S" mode="read_only" dataWidth="4128" portType="stream"/>
+      <port name="DATA_OUT_S" mode="write_only" dataWidth="320" portType="stream"/>
       <port name="S_AXI_CONTROL" portType="addressable" mode="slave" base="0x0" range="0x1C" dataWidth="32"/>
     </ports>
     <args>

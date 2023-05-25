@@ -302,9 +302,15 @@ void parseCoeffAbsRem(UChar baseLevel, TU_t& tu, arith_t& state, UChar* bStream,
 		cRiceParam = min<UChar>(cLastRiceParam, 4);
 	}
 
+#ifndef __SYNTHESIS__
+	std::cout << "/////////////////////  Decoding coeff_abs_remaining_flag /////////////////////" << std::endl;
+	std::cout << "cRiceParam :" << (int)cRiceParam << std::endl;
+#endif
+
 	// Decode bin
 	UInt prefix;
 	bool codeWord;
+	prefix=0;
 	codeWord = 1;
 
 	while(codeWord){
@@ -318,10 +324,10 @@ void parseCoeffAbsRem(UChar baseLevel, TU_t& tu, arith_t& state, UChar* bStream,
 
 	UInt tempSymbolVal;
 	UChar cntr;
+	cntr=0;
 	tempSymbolVal=0;
 
 	if(prefix < 3){
-		cntr=0;
 		while(cntr < cRiceParam){
 			decode_decision(BYPASS, state, codeWord, bStream, 0, 0);
 			cntr+=1;
@@ -331,7 +337,6 @@ void parseCoeffAbsRem(UChar baseLevel, TU_t& tu, arith_t& state, UChar* bStream,
 		symbolVal = (prefix<<cRiceParam)+tempSymbolVal;
 
 	} else {
-		cntr=0;
 		while(cntr < (prefix-3+cRiceParam)){
 			decode_decision(BYPASS, state, codeWord, bStream, 0, 0);
 			cntr+=1;
@@ -344,6 +349,9 @@ void parseCoeffAbsRem(UChar baseLevel, TU_t& tu, arith_t& state, UChar* bStream,
 	cAbsLevel = baseLevel + symbolVal;
 	tu.cLastAbsLevel = cAbsLevel;
 	tu.cLastRiceParam = cRiceParam;
+#ifndef __SYNTHESIS__
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
+#endif
 }
 void parseCoeffSign(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
 	// Decode bin
@@ -502,7 +510,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		inferSbDcSigCoeffFlag = 0;
 		if(i<lastSubBlock && i>0){
 			// Skipping coded subblock for now
-			assert(1);
+			//assert(1);
 		} else {
 			if ((xS == 0 && yS == 0) || (xS == (LastSignificantCoeffX >> 2) && yS == (LastSignificantCoeffY >> 2))) {
 				coded_sub_block[xS][yS] = 1;
@@ -626,17 +634,20 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 						transCoeffVal = -transCoeffVal;
 					}
 				}
-
+#ifndef __SYNTHESIS__
+				std::cout << "Setting transform coefficient at " << std::dec << (int)xC << "," << (int)yC << std::endl;
+				std::cout << "transCoeffVal = " <<std::dec << (int)transCoeffVal << std::endl;
+#endif
 				switch (cIdx)
 				{
 				case 0:
-					dint.TransCoeffLevel_0[xC][yC] = transCoeffVal;
+					dint.TransCoeffLevel_0[tu.x+xC][tu.y+yC] = transCoeffVal;
 					break;
 				case 1:
-					dint.TransCoeffLevel_1[xC][yC] = transCoeffVal;
+					dint.TransCoeffLevel_1[tu.x+xC][tu.y+yC] = transCoeffVal;
 					break;
 				case 2:
-					dint.TransCoeffLevel_2[xC][yC] = transCoeffVal;
+					dint.TransCoeffLevel_2[tu.x+xC][tu.y+yC] = transCoeffVal;
 					break;
 				}
 				numSigCoeff++;
@@ -755,7 +766,7 @@ void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, b
 	TU_t tu;
 	UInt symbolVal;
 	tu.x = x0;
-	tu.y = x0;
+	tu.y = y0;
 	tu.xBase = xBase;
 	tu.yBase = yBase;
 	tu.log2TrafoSize = log2TrafoSize;

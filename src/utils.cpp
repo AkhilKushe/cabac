@@ -116,6 +116,10 @@ void get_scanIdx(TU_t& tu, internal_data_t& dint, UChar cIdx, UChar& scanIdx){
 		scanIdx = 0;
 	}
 #ifndef __SYNTHESIS__
+	std::cout << "TU @ " << (int)tu.x << "," <<(int)tu.y << std::endl;
+	std::cout << "IntraPredModeY = " << (int)dint.IntraPredModeY[tu.x][tu.y] << std::endl;
+	std::cout << "IntraPredModeC = " << (int)dint.IntraPredModeC[tu.x][tu.y] << std::endl;
+	std::cout << "Predmode Intra = " << (int)predModeIntra << std::endl;
 	std::cout << "Scan Idx : " << (int)scanIdx << std::endl << std::endl;
 #endif
 }

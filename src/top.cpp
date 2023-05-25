@@ -44,8 +44,8 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bi
 
 
 
-	UChar tempBst[15];
-	for(int i=0; i<15; i++){
+	UChar tempBst[30];
+	for(int i=0; i<30; i++){
 		tempBst[i] = bitStream.read();
 	}
 	// Initialize Arith decoder
@@ -58,6 +58,8 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bi
 	CU_t cu1;
 	internal_data_t dint;
 	UInt symbolVal;
+
+	init_buffer_int(dint);
 
 	cu1.depth = 0;
 	cu1.log2CbSize = 6;
@@ -170,7 +172,10 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bi
 
 	transform_tree(data_in, data_out, dint, cu1, baeState, tempBst, ctxTables);
 
-
+#ifndef __SYNTHESIS__
+	std::cout << std::dec << std::endl;
+	printArray<int8_t, int>("Transform Coefficient ", 64, 64, (int8_t*)(dint.TransCoeffLevel_0));
+#endif
 
 	data_out_s.write(data_out);
 
