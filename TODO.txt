@@ -34,3 +34,8 @@
 - Test neighbour CTU transfer
 
 Before 15/05/23
+
+
+Issues with interface:
+M axi inteface not supported for co simulation (or maybe but giving error)
+stream interface aggrigates the struct into single packet, thus cannot have wider packets

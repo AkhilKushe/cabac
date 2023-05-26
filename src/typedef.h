@@ -88,11 +88,13 @@ typedef struct _sps {
 	//coding_unit
 	UChar max_transform_hierarchy_depth_intra;
 	//Macros
+	/*
 	UChar log2_min_luma_coding_block_size_minus3;
 	UChar log2_diff_max_min_luma_coding_block_size;
 	UChar chroma_format_idc;
 	UChar log2_min_luma_transform_block_size_minus2;
 	UChar log2_diff_max_min_luma_transform_block_size;
+	*/
 } sps_t;
 
 typedef struct _s_header {
@@ -115,12 +117,14 @@ typedef struct _data_in {
 	bool firstCTU;
 
 	//Taking as input
+
 	UChar PicWidthInCtbsY;
 	UChar CtbLog2SizeY;
 	UChar Log2MaxTransformSkipSize;
 	UChar MinCbLog2SizeY;
 	UChar MaxTbLog2SizeY;
 	UChar MinTbLog2SizeY;
+
 }data_in_t;
 
 typedef struct _data_out {

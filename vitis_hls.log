@@ -1,314 +1,86 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running 'F:/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'HP' on host 'desktop-8u8c26t' (Windows NT_amd64 version 6.2) on Thu May 25 12:40:43 +0530 2023
+INFO: [HLS 200-10] For user 'HP' on host 'desktop-8u8c26t' (Windows NT_amd64 version 6.2) on Fri May 26 12:57:29 +0530 2023
 INFO: [HLS 200-10] In directory 'F:/petaProj/cabac_hls/cabac'
-Sourcing Tcl script 'F:/petaProj/cabac_hls/cabac/cabac_top/solution3/csim.tcl'
+Sourcing Tcl script 'F:/petaProj/cabac_hls/cabac/cabac_top/solution1/cosim.tcl'
 INFO: [HLS 200-1510] Running: open_project cabac_top 
 INFO: [HLS 200-10] Opening project 'F:/petaProj/cabac_hls/cabac/cabac_top'.
 INFO: [HLS 200-1510] Running: set_top cabac_top 
-INFO: [HLS 200-1510] Running: add_files TODO.txt 
-INFO: [HLS 200-10] Adding design file 'TODO.txt' to the project
-INFO: [HLS 200-1510] Running: add_files src/arith_dec.cpp 
-INFO: [HLS 200-10] Adding design file 'src/arith_dec.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/arith_dec.h 
-INFO: [HLS 200-10] Adding design file 'src/arith_dec.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/deBin.cpp 
-INFO: [HLS 200-10] Adding design file 'src/deBin.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/deBin.h 
-INFO: [HLS 200-10] Adding design file 'src/deBin.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/init_tables.h 
-INFO: [HLS 200-10] Adding design file 'src/init_tables.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/initializer.cpp 
-INFO: [HLS 200-10] Adding design file 'src/initializer.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/initializer.h 
-INFO: [HLS 200-10] Adding design file 'src/initializer.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/intra_se.cpp 
-INFO: [HLS 200-10] Adding design file 'src/intra_se.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/intra_se.h 
-INFO: [HLS 200-10] Adding design file 'src/intra_se.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/quad_tree.cpp 
-INFO: [HLS 200-10] Adding design file 'src/quad_tree.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/quad_tree.h 
-INFO: [HLS 200-10] Adding design file 'src/quad_tree.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/top.cpp 
-INFO: [HLS 200-10] Adding design file 'src/top.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/top.h 
-INFO: [HLS 200-10] Adding design file 'src/top.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/transform.cpp 
-INFO: [HLS 200-10] Adding design file 'src/transform.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/transform.h 
-INFO: [HLS 200-10] Adding design file 'src/transform.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/typedef.h 
-INFO: [HLS 200-10] Adding design file 'src/typedef.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/utils.cpp 
-INFO: [HLS 200-10] Adding design file 'src/utils.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files src/utils.h 
 INFO: [HLS 200-10] Adding design file 'src/utils.h' to the project
-INFO: [HLS 200-1510] Running: add_files -tb tb_src/typedef.h -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
-INFO: [HLS 200-10] Adding test bench file 'tb_src/typedef.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/utils.cpp 
+INFO: [HLS 200-10] Adding design file 'src/utils.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/typedef.h 
+INFO: [HLS 200-10] Adding design file 'src/typedef.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/transform.h 
+INFO: [HLS 200-10] Adding design file 'src/transform.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/transform.cpp 
+INFO: [HLS 200-10] Adding design file 'src/transform.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/top.h 
+INFO: [HLS 200-10] Adding design file 'src/top.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/top.cpp 
+INFO: [HLS 200-10] Adding design file 'src/top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/quad_tree.h 
+INFO: [HLS 200-10] Adding design file 'src/quad_tree.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/quad_tree.cpp 
+INFO: [HLS 200-10] Adding design file 'src/quad_tree.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/intra_se.h 
+INFO: [HLS 200-10] Adding design file 'src/intra_se.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/intra_se.cpp 
+INFO: [HLS 200-10] Adding design file 'src/intra_se.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/initializer.h 
+INFO: [HLS 200-10] Adding design file 'src/initializer.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/initializer.cpp 
+INFO: [HLS 200-10] Adding design file 'src/initializer.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/init_tables.h 
+INFO: [HLS 200-10] Adding design file 'src/init_tables.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/deBin.h 
+INFO: [HLS 200-10] Adding design file 'src/deBin.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/deBin.cpp 
+INFO: [HLS 200-10] Adding design file 'src/deBin.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/arith_dec.h 
+INFO: [HLS 200-10] Adding design file 'src/arith_dec.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/arith_dec.cpp 
+INFO: [HLS 200-10] Adding design file 'src/arith_dec.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files TODO.txt 
+INFO: [HLS 200-10] Adding design file 'TODO.txt' to the project
 INFO: [HLS 200-1510] Running: add_files -tb tb_src/test_1.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'tb_src/test_1.cpp' to the project
-INFO: [HLS 200-1510] Running: open_solution solution3 -flow_target vitis 
-INFO: [HLS 200-10] Opening solution 'F:/petaProj/cabac_hls/cabac/cabac_top/solution3'.
+INFO: [HLS 200-1510] Running: add_files -tb tb_src/typedef.h -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'tb_src/typedef.h' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vitis 
+INFO: [HLS 200-10] Opening solution 'F:/petaProj/cabac_hls/cabac/cabac_top/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
 INFO: [HLS 200-1505] Using flow_target 'vitis'
 Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-1505.html
-INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
 INFO: [HLS 200-1464] Running solution command: config_export -output=F:/petaProj/cabac_hls/cabac/ip_t1
-INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
 INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=10
-INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
-INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
-INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
-INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
-INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
-INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
 INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
-INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output F:/petaProj/cabac_hls/cabac/ip_t1 -rtl verilog -vivado_clock 10 
-INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
-INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
-INFO: [HLS 200-1510] Running: set_directive_top -name cabac_top cabac_top 
-INFO: [HLS 200-1510] Running: csim_design -clean -quiet 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../tb_src/test_1.cpp in debug mode
-   Compiling ../../../../src/utils.cpp in debug mode
-   Compiling ../../../../src/transform.cpp in debug mode
-   Compiling ../../../../src/top.cpp in debug mode
-   Compiling ../../../../src/quad_tree.cpp in debug mode
-   Compiling ../../../../src/intra_se.cpp in debug mode
-   Compiling ../../../../src/initializer.cpp in debug mode
-   Compiling ../../../../src/deBin.cpp in debug mode
-   Compiling ../../../../src/arith_dec.cpp in debug mode
-   Generating csim.exe
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../tb_src/typedef.h:4,
-                 from ../../../../tb_src/test_1.cpp:5:
-F:/Xilinx/Vitis_HLS/2021.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../tb_src/typedef.h:4,
-                 from ../../../../tb_src/test_1.cpp:5:
-F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/utils.h:4,
-                 from ../../../../src/utils.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/utils.h:4,
-                 from ../../../../src/utils.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/arith_dec.h:3,
-                 from ../../../../src/transform.h:3,
-                 from ../../../../src/transform.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/arith_dec.h:3,
-                 from ../../../../src/transform.h:3,
-                 from ../../../../src/transform.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/top.h:3,
-                 from ../../../../src/top.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/top.h:3,
-                 from ../../../../src/top.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/quad_tree.h:3,
-                 from ../../../../src/quad_tree.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/quad_tree.h:3,
-                 from ../../../../src/quad_tree.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/arith_dec.h:3,
-                 from ../../../../src/intra_se.h:3,
-                 from ../../../../src/intra_se.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/arith_dec.h:3,
-                 from ../../../../src/intra_se.h:3,
-                 from ../../../../src/intra_se.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/initializer.h:3,
-                 from ../../../../src/initializer.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/initializer.h:3,
-                 from ../../../../src/initializer.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/deBin.h:3,
-                 from ../../../../src/deBin.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/deBin.h:3,
-                 from ../../../../src/deBin.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/arith_dec.h:3,
-                 from ../../../../src/arith_dec.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
- #define __GMP_LIBGMP_DLL  0
- 
-In file included from F:/Xilinx/Vitis_HLS/2021.2/include/hls_fpo.h:189:0,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half_fpo.h:64,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/hls_half.h:71,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:98,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658,
-                 from F:/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:55,
-                 from ../../../../src/typedef.h:4,
-                 from ../../../../src/arith_dec.h:3,
-                 from ../../../../src/arith_dec.cpp:1:
-F:/Xilinx/Vitis_HLS/2021.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
- #define __GMP_LIBGMP_DLL 1
- 
+INFO: [HLS 200-1510] Running: config_export -output F:/petaProj/cabac_hls/cabac/ip_t1 -vivado_clock 10 
+INFO: [HLS 200-1510] Running: cosim_design -wave_debug -trace_level all 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "F:/Xilinx/Vitis_HLS/2021.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling quad_tree.cpp_pre.cpp.tb.cpp
+   Compiling intra_se.cpp_pre.cpp.tb.cpp
+   Compiling top.cpp_pre.cpp.tb.cpp
+   Compiling apatb_cabac_top.cpp
+   Compiling deBin.cpp_pre.cpp.tb.cpp
+   Compiling test_1.cpp_pre.cpp.tb.cpp
+   Compiling transform.cpp_pre.cpp.tb.cpp
+   Compiling apatb_cabac_top_util.cpp
+   Compiling arith_dec.cpp_pre.cpp.tb.cpp
+   Compiling utils.cpp_pre.cpp.tb.cpp
+   Compiling initializer.cpp_pre.cpp.tb.cpp
+   Compiling apatb_cabac_top_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
 Init Val :153
 Slope : 0
 Offset : 56
@@ -1265,11 +1037,8 @@ sao_offset_sign :
 
 sao_offset_abs :
 3 0 2 2 
-----------------
 0 1 1 0 
-----------------
 4 0 1 1 
-----------------
 
 Decoding Mode : Regular
 Currr Range : 0x100
@@ -1428,274 +1197,11 @@ CandIntraPredModeA : 1
 CandIntraPredModeB : 1
 Candidate mode list :
 0 
-----------------
 1 
-----------------
 26 
-----------------
 
 Pred Mode Luma : 0
 Pred Mode Chroma : 0
-Pred mode luma arr : :
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-
-Pred mode CHroma arr : :
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-
 
 
 Part Idx : 1
@@ -1706,274 +1212,11 @@ CandIntraPredModeA : 0
 CandIntraPredModeB : 1
 Candidate mode list :
 0 
-----------------
 1 
-----------------
 26 
-----------------
 
 Pred Mode Luma : 0
 Pred Mode Chroma : 0
-Pred mode luma arr : :
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-
-Pred mode CHroma arr : :
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-
 
 
 Part Idx : 2
@@ -1984,274 +1227,11 @@ CandIntraPredModeA : 1
 CandIntraPredModeB : 0
 Candidate mode list :
 0 
-----------------
 1 
-----------------
 26 
-----------------
 
 Pred Mode Luma : 30
 Pred Mode Chroma : 0
-Pred mode luma arr : :
-0 0 0 0 30 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 30 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 30 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 30 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-
-Pred mode CHroma arr : :
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-
 
 
 Part Idx : 3
@@ -2262,274 +1242,11 @@ CandIntraPredModeA : 30
 CandIntraPredModeB : 0
 Candidate mode list :
 30 
-----------------
 0 
-----------------
 1 
-----------------
 
 Pred Mode Luma : 0
 Pred Mode Chroma : 0
-Pred mode luma arr : :
-0 0 0 0 30 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 30 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 30 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 30 30 30 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-
-Pred mode CHroma arr : :
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-----------------
-
 
 
 ===================== Transform Tree Depth 0 at 0 0==========
@@ -2618,42 +1335,25 @@ Scan Idx : 0
 Selected Up Right Scan order
 Scan order :  :
 0 0 
-----------------
 
 Selected Up Right Scan order
 Scan order :  :
 0 0 
-----------------
 0 1 
-----------------
 1 0 
-----------------
 0 2 
-----------------
 1 1 
-----------------
 2 0 
-----------------
 0 3 
-----------------
 1 2 
-----------------
 2 1 
-----------------
 3 0 
-----------------
 1 3 
-----------------
 2 2 
-----------------
 3 1 
-----------------
 2 3 
-----------------
 3 2 
-----------------
 3 3 
-----------------
 
 Checking pos : 3, 3
 Temp Val : e
@@ -3138,42 +1838,25 @@ Scan Idx : 0
 Selected Up Right Scan order
 Scan order :  :
 0 0 
-----------------
 
 Selected Up Right Scan order
 Scan order :  :
 0 0 
-----------------
 0 1 
-----------------
 1 0 
-----------------
 0 2 
-----------------
 1 1 
-----------------
 2 0 
-----------------
 0 3 
-----------------
 1 2 
-----------------
 2 1 
-----------------
 3 0 
-----------------
 1 3 
-----------------
 2 2 
-----------------
 3 1 
-----------------
 2 3 
-----------------
 3 2 
-----------------
 3 3 
-----------------
 
 Checking pos : 3, 3
 Checking pos : 3, 2
@@ -3518,42 +2201,25 @@ Scan Idx : 1
 Selected Horizontal Scan order
 Scan order :  :
 0 0 
-----------------
 
 Selected Horizontal Scan order
 Scan order :  :
 0 0 
-----------------
 1 0 
-----------------
 2 0 
-----------------
 3 0 
-----------------
 0 1 
-----------------
 1 1 
-----------------
 2 1 
-----------------
 3 1 
-----------------
 0 2 
-----------------
 1 2 
-----------------
 2 2 
-----------------
 3 2 
-----------------
 0 3 
-----------------
 1 3 
-----------------
 2 3 
-----------------
 3 3 
-----------------
 
 Checking pos : 3, 3
 Checking pos : 2, 3
@@ -3821,72 +2487,6 @@ ctxInc : 0
 Symbol Val : 0
 
 
-Transform Coefficient  :
--11 -8 -2 0 -2 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
--7 0 0 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
--2 0 -2 1 -1 1 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 -1 1 -1 -3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 1 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 3 0 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-
 TEST BENCH RESULTS
 14
 33
@@ -3899,20 +2499,14 @@ TEST BENCH RESULTS
 ====================== Sao Buffer Output =========================
 SaoTypeIdx :
 2 
-----------------
 1 
-----------------
 1 
-----------------
 
 abc
 SaoEoClass :
 0 
-----------------
+2 
 0 
-----------------
-0 
-----------------
 
 abc
 SaoOffsetVal :
@@ -3926,13 +2520,449 @@ SaoOffsetVal :
 abc
 sao_band_position :
 0 
-----------------
 14 
-----------------
 13 
+
+====================== Transform Output =========================
+-11
+-8
+-2
+0
+-2
+-1
+0
+0
+0
+0
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+
+F:\petaProj\cabac_hls\cabac\cabac_top\solution1\sim\verilog>set PATH= 
+
+F:\petaProj\cabac_hls\cabac\cabac_top\solution1\sim\verilog>call F:/Xilinx/Vivado/2021.2/bin/xelab xil_defaultlib.apatb_cabac_top_top glbl -Oenable_linking_all_libraries  -prj cabac_top.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_0_19 -L floating_point_v7_1_13 --lib "ieee_proposed=./ieee_proposed" -s cabac_top -debug wave 
+Vivado Simulator v2021.2
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: F:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_cabac_top_top glbl -Oenable_linking_all_libraries -prj cabac_top.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_19 -L floating_point_v7_1_13 --lib ieee_proposed=./ieee_proposed -s cabac_top -debug wave 
+Multi-threading is on. Using 10 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_axi_master_ctx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_ctx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_axi_slave_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_axi_s_bitStream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_bitStream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_axi_s_data_in_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_data_in_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_axi_s_data_out_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_data_out_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_axi_s_tranCoeff.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_tranCoeff
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx0_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_kernel_monitor_top
+WARNING: [VRFC 10-3824] variable 'block_delay' must explicitly be declared as automatic or static [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v:33]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_cabac_top_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_12_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_12_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_182_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_182_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_18_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_18_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_198_1_VITIS_LOOP_199_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_198_1_VITIS_LOOP_199_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_29_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_29_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1_B_FRAME_INIT_VALS_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1_B_FRAME_INIT_VALS_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1_I_FRAME_INIT_VALS_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1_I_FRAME_INIT_VALS_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1_P_FRAME_INIT_VALS_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1_P_FRAME_INIT_VALS_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_49_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_49_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_50_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_50_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_ctxTables_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_ctxTables_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_ctx_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_ctx_m_axi
+INFO: [VRFC 10-311] analyzing module cabac_top_ctx_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module cabac_top_ctx_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module cabac_top_ctx_m_axi_buffer
+INFO: [VRFC 10-311] analyzing module cabac_top_ctx_m_axi_decoder
+INFO: [VRFC 10-311] analyzing module cabac_top_ctx_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module cabac_top_ctx_m_axi_read
+INFO: [VRFC 10-2458] undeclared symbol buf_data_nvalid, assumed default net type wire [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_ctx_m_axi.v:1652]
+INFO: [VRFC 10-311] analyzing module cabac_top_ctx_m_axi_write
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_data_out_1_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_data_out_1_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_decode_decision.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_decode_decision
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_decode_decision_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_decode_decision_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_decode_regular.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_decode_regular
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_decode_regular_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_decode_regular_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_decode_regular_1_lpsTable_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_decode_regular_1_lpsTable_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_decode_regular_1_Pipeline_VITIS_LOOP_53_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_decode_regular_1_Pipeline_VITIS_LOOP_53_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_decode_regular_1_transLPS_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_decode_regular_1_transLPS_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_decode_regular_1_transMPS_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_decode_regular_1_transMPS_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_decode_regular_Pipeline_VITIS_LOOP_53_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_decode_regular_Pipeline_VITIS_LOOP_53_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_dint_IntraPredModeC_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_dint_IntraPredModeC_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_dint_IntraPredModeY_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_dint_IntraPredModeY_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_dint_TransCoeffLevel_1_RAM_AUTO_0R0W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_dint_TransCoeffLevel_1_RAM_AUTO_0R0W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_fifo_w8_d512_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_fifo_w8_d512_A_ram
+INFO: [VRFC 10-311] analyzing module cabac_top_fifo_w8_d512_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mul_2s_8s_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mul_2s_8s_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mul_7s_6ns_13_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mul_7s_6ns_13_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mul_8ns_8ns_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mul_8ns_8ns_16_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mux_32_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mux_32_16_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mux_32_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mux_32_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mux_42_1_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mux_42_1_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mux_42_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mux_42_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseMpmIdx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_parseMpmIdx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseSAOEO.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_parseSAOEO
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseSAOMergeFlag.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_parseSAOMergeFlag
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseSigCoeffSuffix.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_parseSigCoeffSuffix
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseSigCoeffSuffix_FL_CONVERT_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_parseSigCoeffSuffix_FL_CONVERT_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseSigCoeffSuffix_Pipeline_VITIS_LOOP_147_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_parseSigCoeffSuffix_Pipeline_VITIS_LOOP_147_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_regslice_both.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_regslice_both
+INFO: [VRFC 10-311] analyzing module cabac_top_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_coded_sub_block_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_coded_sub_block_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_coeffBlockScan_1_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_coeffBlockScan_1_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_coeff_abs_level_greater1_flag_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_coeff_abs_level_greater1_flag_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_coeff_abs_level_remaining_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_coeff_abs_level_remaining_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_CTX_IDX_MAP_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_CTX_IDX_MAP_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_134_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_134_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_134_26.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_134_26
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_149_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_149_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_149_37.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_149_37
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_161_1_VITIS_LOOP_162_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_161_1_VITIS_LOOP_162_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_162_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_162_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_168_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_168_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_168_38.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_168_38
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_180_1_VITIS_LOOP_181_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_180_1_VITIS_LOOP_181_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_181_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_181_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_187_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_187_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_187_39.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_187_39
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_316_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_316_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_331_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_331_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_340_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_340_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_409_3_VITIS_LOOP_410_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_409_3_VITIS_LOOP_410_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_467_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_467_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_498_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_498_7
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_552_9.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_552_9
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_Pipeline_VITIS_LOOP_599_11.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_Pipeline_VITIS_LOOP_599_11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_sig_coeff_flag_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_sig_coeff_flag_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_residual_coding_subBlockScan_0_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_residual_coding_subBlockScan_0_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_Pipeline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_Pipeline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_Pipeline_VITIS_LOOP_149_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_Pipeline_VITIS_LOOP_149_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_Pipeline_VITIS_LOOP_176_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_Pipeline_VITIS_LOOP_176_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_Pipeline_VITIS_LOOP_188_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_Pipeline_VITIS_LOOP_188_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_Pipeline_VITIS_LOOP_200_6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_Pipeline_VITIS_LOOP_200_6
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_Pipeline_VITIS_LOOP_41_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_Pipeline_VITIS_LOOP_41_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_Pipeline_VITIS_LOOP_83_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_Pipeline_VITIS_LOOP_83_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_sao_offset_abs_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_sao_offset_abs_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_sao_top_sao_offset_sign_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_sao_offset_sign_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_setIntraPredMode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_setIntraPredMode
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_189_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_189_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_219_2_VITIS_LOOP_220_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_219_2_VITIS_LOOP_220_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_225_4_VITIS_LOOP_226_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_225_4_VITIS_LOOP_226_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_233_6_VITIS_LOOP_234_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_233_6_VITIS_LOOP_234_7
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_tempBst_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_tempBst_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_transform_tree_rec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_transform_tree_rec
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_transform_tree_rec_TS2RS_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_transform_tree_rec_TS2RS_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3645] port 'axis_block_info' remains unconnected for this instance [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v:23]
+WARNING: [VRFC 10-3705] select index -1 into 'axis_block_sigs' is out of bounds [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v:45]
+WARNING: [VRFC 10-3705] select index -1 into 'axis_block_sigs' is out of bounds [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v:53]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.cabac_top_ctxTables_RAM_AUTO_1R1...
+Compiling module xil_defaultlib.cabac_top_data_out_1_RAM_AUTO_1R...
+Compiling module xil_defaultlib.cabac_top_tempBst_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.cabac_top_dint_IntraPredModeY_RA...
+Compiling module xil_defaultlib.cabac_top_dint_IntraPredModeC_RA...
+Compiling module xil_defaultlib.cabac_top_dint_TransCoeffLevel_1...
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_mul_7s_6ns_13_1_1(NUM_...
+Compiling module xil_defaultlib.cabac_top_flow_control_loop_pipe...
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_sao_top_sao_offset_abs...
+Compiling module xil_defaultlib.cabac_top_sao_top_sao_offset_sig...
+Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_1
+Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_2
+Compiling module xil_defaultlib.cabac_top_parseSAOMergeFlag
+Compiling module xil_defaultlib.cabac_top_mux_32_8_1_1(ID=1,din0...
+Compiling module xil_defaultlib.cabac_top_mux_32_16_1_1(ID=1,din...
+Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_VITIS...
+Compiling module xil_defaultlib.cabac_top_decode_regular_1_lpsTa...
+Compiling module xil_defaultlib.cabac_top_decode_regular_1_trans...
+Compiling module xil_defaultlib.cabac_top_decode_regular_1_trans...
+Compiling module xil_defaultlib.cabac_top_decode_regular_1_Pipel...
+Compiling module xil_defaultlib.cabac_top_decode_regular_1
+Compiling module xil_defaultlib.cabac_top_decode_decision_1
+Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_VITIS...
+Compiling module xil_defaultlib.cabac_top_parseSAOEO
+Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_VITIS...
+Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_VITIS...
+Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_VITIS...
+Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_VITIS...
+Compiling module xil_defaultlib.cabac_top_sao_top
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_decode_regular_Pipelin...
+Compiling module xil_defaultlib.cabac_top_decode_regular
+Compiling module xil_defaultlib.cabac_top_parseMpmIdx
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_setIntraPredMode_Pipel...
+Compiling module xil_defaultlib.cabac_top_setIntraPredMode_Pipel...
+Compiling module xil_defaultlib.cabac_top_setIntraPredMode_Pipel...
+Compiling module xil_defaultlib.cabac_top_setIntraPredMode_Pipel...
+Compiling module xil_defaultlib.cabac_top_mux_42_1_1_1(ID=1,din0...
+Compiling module xil_defaultlib.cabac_top_mux_42_8_1_1(ID=1,din0...
+Compiling module xil_defaultlib.cabac_top_setIntraPredMode
+Compiling module xil_defaultlib.cabac_top_transform_tree_rec_TS2...
+Compiling module xil_defaultlib.cabac_top_residual_coding_CTX_ID...
+Compiling module xil_defaultlib.cabac_top_residual_coding_coded_...
+Compiling module xil_defaultlib.cabac_top_residual_coding_sig_co...
+Compiling module xil_defaultlib.cabac_top_residual_coding_coeff_...
+Compiling module xil_defaultlib.cabac_top_residual_coding_coeff_...
+Compiling module xil_defaultlib.cabac_top_residual_coding_subBlo...
+Compiling module xil_defaultlib.cabac_top_residual_coding_coeffB...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_parseSigCoeffSuffix_FL...
+Compiling module xil_defaultlib.cabac_top_parseSigCoeffSuffix_Pi...
+Compiling module xil_defaultlib.cabac_top_parseSigCoeffSuffix
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_decode_decision
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_residual_coding_Pipeli...
+Compiling module xil_defaultlib.cabac_top_mul_8ns_8ns_16_1_1(NUM...
+Compiling module xil_defaultlib.cabac_top_mul_2s_8s_8_1_1(NUM_ST...
+Compiling module xil_defaultlib.cabac_top_residual_coding
+Compiling module xil_defaultlib.cabac_top_transform_tree_rec
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
+Compiling module xil_defaultlib.cabac_top_control_s_axi
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_reg_slice(N=...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_fifo(DATA_BI...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_buffer(DATA_...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_fifo(DATA_BI...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_decoder(DIN_...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_fifo(DATA_BI...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_fifo(DATA_BI...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_write(NUM_WR...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_buffer(DATA_...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_reg_slice(N=...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_read(NUM_REA...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi_throttle(ADD...
+Compiling module xil_defaultlib.cabac_top_ctx_m_axi(NUM_READ_OUT...
+Compiling module xil_defaultlib.cabac_top_fifo_w8_d512_A_ram
+Compiling module xil_defaultlib.cabac_top_fifo_w8_d512_A
+Compiling module xil_defaultlib.cabac_top_regslice_both(DataWidt...
+Compiling module xil_defaultlib.cabac_top_regslice_both(DataWidt...
+Compiling module xil_defaultlib.cabac_top_regslice_both(DataWidt...
+Compiling module xil_defaultlib.cabac_top
+Compiling module xil_defaultlib.fifo(DEPTH=10)
+Compiling module xil_defaultlib.AESL_axi_s_tranCoeff
+Compiling module xil_defaultlib.fifo(DEPTH=30)
+Compiling module xil_defaultlib.AESL_axi_s_bitStream
+Compiling module xil_defaultlib.fifo(DEPTH=1,WIDTH=4096)
+Compiling module xil_defaultlib.AESL_axi_s_data_in_s
+Compiling module xil_defaultlib.fifo(DEPTH=1,WIDTH=320)
+Compiling module xil_defaultlib.AESL_axi_s_data_out_s
+Compiling module xil_defaultlib.AESL_axi_master_ctx
+Compiling module xil_defaultlib.AESL_axi_slave_control
+Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor
+Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.pp_loop_intf(FSM_WIDTH=72)
+Compiling module xil_defaultlib.pp_loop_intf(FSM_WIDTH=70)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=62)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=31)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=3)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=69)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.upc_loop_intf
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_cabac_top_top
+Compiling module work.glbl
+Built simulation snapshot cabac_top
+
+****** xsim v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+start_gui
+INFO: [Common 17-206] Exiting xsim at Fri May 26 13:05:08 2023...
+INFO: [COSIM 212-316] Starting C post checking ...
+WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port data_out_s, possible cause: There are uninitialized variables in the C design.
+TEST BENCH RESULTS
+14
+33
+3
+29
+49
+5
+11
+40
+====================== Sao Buffer Output =========================
+SaoTypeIdx :
+2 
+1 
+1 
+
+abc
+SaoEoClass :
+0 
+0 
+0 
+
+abc
+SaoOffsetVal :
+0 3 0 -2 -2 
+----------------
+0 0 1 1 0 
+----------------
+0 4 0 1 -1 
 ----------------
 
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 13.121 seconds; current allocated memory: 144.266 MB.
-INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 14.388 seconds; peak allocated memory: 1.087 GB.
+abc
+sao_band_position :
+0 
+14 
+13 
+
+====================== Transform Output =========================
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 458.242 seconds; current allocated memory: 216.547 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 459.395 seconds; peak allocated memory: 1.089 GB.

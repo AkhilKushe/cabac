@@ -2,18 +2,20 @@
   <kernel name="cabac_top" language="c" vlnv="xilinx.com:hls:cabac_top:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="" hwControlProtocol="ap_ctrl_chain">
     <ports>
       <port name="M_AXI_CTX" portType="addressable" mode="master" base="0x0" range="0xFFFFFFFF" dataWidth="8"/>
+      <port name="TRANCOEFF" mode="write_only" dataWidth="8" portType="stream"/>
       <port name="BITSTREAM" mode="read_only" dataWidth="8" portType="stream"/>
       <port name="BITOUT" mode="write_only" dataWidth="8" portType="stream"/>
-      <port name="DATA_IN_S" mode="read_only" dataWidth="4128" portType="stream"/>
+      <port name="DATA_IN_S" mode="read_only" dataWidth="4096" portType="stream"/>
       <port name="DATA_OUT_S" mode="write_only" dataWidth="320" portType="stream"/>
       <port name="S_AXI_CONTROL" portType="addressable" mode="slave" base="0x0" range="0x1C" dataWidth="32"/>
     </ports>
     <args>
     <arg id="0" name="globalCtx" addressQualifier="1" port="M_AXI_CTX" hostOffset="0x0" hostSize="0x8" offset="0x10" size="0x8" type="void*"/>
-      <arg id="1" name="bitStream" addressQualifier="4" port="BITSTREAM" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;unsigned char, 0&gt;&amp;" origName="bitStream" origUse="variable"/>
-      <arg id="2" name="bitOut" addressQualifier="4" port="BITOUT" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;unsigned int, 0&gt;&amp;" origName="bitOut" origUse="variable"/>
-      <arg id="3" name="data_in_s" addressQualifier="4" port="DATA_IN_S" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;_data_in, 0&gt;&amp;" origName="data_in_s" origUse="variable"/>
-      <arg id="4" name="data_out_s" addressQualifier="4" port="DATA_OUT_S" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;_data_out, 0&gt;&amp;" origName="data_out_s" origUse="variable"/>
+      <arg id="1" name="tranCoeff" addressQualifier="4" port="TRANCOEFF" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;signed char, 0&gt;&amp;" origName="tranCoeff" origUse="variable"/>
+      <arg id="2" name="bitStream" addressQualifier="4" port="BITSTREAM" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;unsigned char, 128&gt;&amp;" origName="bitStream" origUse="variable"/>
+      <arg id="3" name="bitOut" addressQualifier="4" port="BITOUT" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;unsigned int, 0&gt;&amp;" origName="bitOut" origUse="variable"/>
+      <arg id="4" name="data_in_s" addressQualifier="4" port="DATA_IN_S" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;_data_in, 0&gt;&amp;" origName="data_in_s" origUse="variable"/>
+      <arg id="5" name="data_out_s" addressQualifier="4" port="DATA_OUT_S" hostOffset="0x0" hostSize="0x8" offset="0x0" size="0x0" type="stream&lt;_data_out, 0&gt;&amp;" origName="data_out_s" origUse="variable"/>
     </args>
     <compileWorkGroupSize x="1" y="1" z="1"/>
     <maxWorkGroupSize x="1" y="1" z="1"/>

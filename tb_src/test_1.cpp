@@ -26,14 +26,13 @@ void printArray(const char* name, int xdim, int ydim, T* arr){
 
 }
 
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
-
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& tranCoeff, hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
 int main() {
 
 	UChar globalCtx[512];
 	// Test bitstream
 	// TODO : Convert stream to m_axi
-	hls::stream<UChar> testBitStream;
+	hls::stream<UChar, 128> testBitStream;
 	testBitStream.write(187);
 	testBitStream.write(73);
 	testBitStream.write(61);
@@ -104,7 +103,9 @@ int main() {
 	data_inp_s.write(data_inp);
 	data_out_t data_oup;
 
-	cabac_top(globalCtx, testBitStream, bOut, data_inp_s, data_oup_s);
+	hls::stream<int8_t> tranCoeff;
+
+	cabac_top(globalCtx, tranCoeff, testBitStream, bOut, data_inp_s, data_oup_s);
 	data_oup = data_oup_s.read();
 
 	//data_oup = data_oup_s.read();
@@ -120,6 +121,8 @@ int main() {
 		//}
 	}
 
+
+
 	std::cout << "====================== Sao Buffer Output =========================" << std::endl;
 	printArray<UChar, int>("SaoTypeIdx", 3, 1, data_oup.SaoTypeIdx);
 	std::cout << "abc" << std::endl;
@@ -129,7 +132,10 @@ int main() {
 	std::cout << "abc" << std::endl;
 	printArray<UChar, int>("sao_band_position", 3, 1, data_oup.sao_band_position);
 
+	std::cout << "====================== Transform Output =========================" << std::endl;
 
-
+	for(int i=0; i<10; i++){
+		std::cout << (int)tranCoeff.read() << std::endl;
+	}
 	return 0;
 }

@@ -249,8 +249,8 @@ void setIntraPredMode(UChar partIdx, UChar partSize, CU_t& cu ,data_in_t& din, d
 	std::cout << "Pred Mode Luma : " << (int) PredModeY << std::endl;
 	std::cout << "Pred Mode Chroma : " << (int) PredModeC << std::endl;
 
-	printArray<UChar, int>("Pred mode luma arr :", 64, 64, (UChar*)dinternal.IntraPredModeY);
-	printArray<UChar, int>("Pred mode CHroma arr :", 64, 64, (UChar*)dinternal.IntraPredModeC);
+	//printArray<UChar, int>("Pred mode luma arr :", 64, 64, (UChar*)dinternal.IntraPredModeY);
+	//printArray<UChar, int>("Pred mode CHroma arr :", 64, 64, (UChar*)dinternal.IntraPredModeC);
 
 	std::cout << std::endl <<std::endl;
 

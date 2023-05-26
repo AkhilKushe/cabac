@@ -6,6 +6,7 @@
 #include "intra_se.h"
 #include "quad_tree.h"
 #include "transform.h"
+#include <string.h>
 
 void load_ram(UChar ctxTable[MAX_NUM_CTX_MOD], hls::stream<UChar>& inpStream, UInt cnt){
 	for(int i=0; i < cnt; i++) {
@@ -22,7 +23,7 @@ void store_global_ram(volatile UChar globalCtx[MAX_NUM_CTX_MOD], UChar ctxTable[
 
 
 // TODO : fix top inteface with input/output declaration
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& tranCoeff, hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
 #pragma HLS INTERFACE mode=m_axi bundle=ctx name=gCtx port=globalCtx
 #pragma HLS INTERFACE mode=s_axilite port=globalCtx
 
@@ -174,9 +175,13 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<UChar>& bi
 
 #ifndef __SYNTHESIS__
 	std::cout << std::dec << std::endl;
-	printArray<int8_t, int>("Transform Coefficient ", 64, 64, (int8_t*)(dint.TransCoeffLevel_0));
+	//printArray<int8_t, int>("Transform Coefficient ", 64, 64, (int8_t*)(dint.TransCoeffLevel_0));
 #endif
 
+
+	for(int i=0; i<10; i++){
+		tranCoeff.write(dint.TransCoeffLevel_0[0][i]);
+	}
 	data_out_s.write(data_out);
 
 	store_global_ram(globalCtx, ctxTables, ctxWritten);

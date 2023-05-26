@@ -1,0 +1,9 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="solution3"/>
+    </name>
+    <project>
+        <value string="cabac_top"/>
+    </project>
+</AutoPilot:solution>
+
