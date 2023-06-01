@@ -25,7 +25,7 @@ void printArray(const char* name, int xdim, int ydim, T* arr){
 	std::cout << std::endl;
 
 }
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
 
 //void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& tranCoeff, hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
 int main() {
@@ -33,6 +33,8 @@ int main() {
 	UChar globalCtx[512];
 	// Test bitstream
 	// TODO : Convert stream to m_axi
+	UChar testBitStream_maxi[1024];
+
 	hls::stream<UChar, 128> testBitStream;
 	testBitStream.write(187);
 	testBitStream.write(73);
@@ -66,6 +68,12 @@ int main() {
 	testBitStream.write(180);
 	testBitStream.write(102);
 
+	for(int i=0; i<30; i++){
+		testBitStream_maxi[i] = testBitStream.read();
+	}
+	for(int i=30; i<1024; i++){
+		testBitStream_maxi[i] = 0;
+	}
 	hls::stream<UInt, 32> bOut;
 
 	// Setting input buffers
@@ -106,10 +114,9 @@ int main() {
 
 	//hls::stream<int8_t> tranCoeff;
 	int8_t tranCoeff[64][64];
-	cabac_top(globalCtx, tranCoeff, testBitStream, bOut, data_inp_s, data_oup_s);
+	cabac_top(globalCtx, tranCoeff, testBitStream_maxi, data_inp_s, data_oup_s);
 	data_oup = data_oup_s.read();
 
-	//data_oup = data_oup_s.read();
 	UChar expected[5] = {14, 33, 2, 29, 49};
 
 

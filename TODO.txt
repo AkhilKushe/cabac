@@ -1,5 +1,5 @@
 
-05/05/23
+05/05/23 DONE
 + Set input/output buffer
 + Complete SAO code
 - Test SAO matching
@@ -8,17 +8,17 @@
 - Internal buffer initializer
 - Test few SE
 
-06/05/23
+06/05/23 DONE
 - Fix and set all the internal buffers
 - Write coding unit
 - Write Intra Predition function, set buffers
 - Test SE
 
-07/05/23
+07/05/23 DONE
 - Write residual coding
 - Test simple SE decoding
 
-08/05/23
+08/05/23 DONE
 - Write pattern generator
 - Write transform_unit
 - Write transform_tree
@@ -29,7 +29,7 @@
 - write coding tree unit
 - Test single CTU
 
-10/05/23
+10/05/23 
 - write top wrapper to transfer neighbour information
 - Test neighbour CTU transfer
 
@@ -39,3 +39,9 @@ Before 15/05/23
 Issues with interface:
 M axi inteface not supported for co simulation (or maybe but giving error)
 stream interface aggrigates the struct into single packet, thus cannot have wider packets
+
+
+
+Maxi working
+
+**** Struct data currupted at top level interface, currently using stream interface

@@ -23,12 +23,18 @@ void store_global_ram(volatile UChar globalCtx[MAX_NUM_CTX_MOD], UChar ctxTable[
 
 
 // TODO : fix top inteface with input/output declaration
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
 #pragma HLS INTERFACE mode=m_axi bundle=ctx name=gCtx port=globalCtx
 #pragma HLS INTERFACE mode=s_axilite port=globalCtx
 
 #pragma HLS INTERFACE mode=m_axi bundle=tran name=tranC port=tranCoeff
 #pragma HLS INTERFACE mode=s_axilite port=tranCoeff
+
+#pragma HLS INTERFACE mode=m_axi bundle=bstream name=bst port=bitStream
+#pragma HLS INTERFACE mode=s_axilite port=bitStream
+
+#pragma HLS INTERFACE mode=s_axilite port=data_in_s
+#pragma HLS INTERFACE mode=s_axilite port=data_out_s
 
 	hls::stream<UChar> streamCtxRAM;
 #pragma HLS STREAM depth=512 type=fifo variable=streamCtxRAM
@@ -40,7 +46,7 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 	data_in_t data_in;
 	data_out_t data_out;
 	data_in = data_in_s.read();
-
+	//memcpy(&data_in, &data_in_s, sizeof(data_in_t));
 
 	initialization_top(data_in.firstCTU, data_in.s_header.slice_type, data_in.s_header.qp, data_in.s_header.cabac_init_flag, globalCtx, streamCtxRAM, ctxWritten);
 
@@ -48,10 +54,13 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 
 
 
-	UChar tempBst[30];
+	UChar tempBst[1024];
+	/*
 	for(int i=0; i<30; i++){
 		tempBst[i] = bitStream.read();
 	}
+	*/
+	memcpy(tempBst, (UChar*)bitStream, 1024*sizeof(UChar));
 	// Initialize Arith decoder
 	// TODO : Export BAE state, Arith initialization only for first CTU, currently only 1 CTU
 	arith_t baeState;
@@ -211,6 +220,8 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 */
 	memcpy((int8_t*)tranCoeff, dint.TransCoeffLevel_0, 64*64*sizeof(int8_t));
 	data_out_s.write(data_out);
+	//data_out_s = data_out;
+	//memcpy(&data_out_s, &data_out, sizeof(data_out_t));
 
 	store_global_ram(globalCtx, ctxTables, ctxWritten);
 }
