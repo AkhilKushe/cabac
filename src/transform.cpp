@@ -69,6 +69,7 @@ void parseSkipTransformFlag(UChar cIdx, arith_t& state, UChar* bStream, UChar ct
 }
 
 void parseSigCoeffXPrefix(UChar log2TrafoSize, UChar cIdx, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
+#pragma HLS INLINE off
 	bool binVal;
 	symbolVal = 0;
 	UChar binIdx = 0;
@@ -102,6 +103,7 @@ void parseSigCoeffXPrefix(UChar log2TrafoSize, UChar cIdx, arith_t& state, UChar
 #endif
 }
 void parseSigCoeffYPrefix(UChar log2TrafoSize, UChar cIdx, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
+#pragma HLS INLINE off
 	bool binVal;
 	symbolVal = 0;
 	UChar binIdx = 0;
@@ -366,6 +368,7 @@ void parseCoeffSign(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_
 }
 
 void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data_t& dint,CU_t& cu, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+#pragma HLS PIPELINE off
 	UChar last_sig_coeff_x_prefix, last_sig_coeff_y_prefix, last_sig_coeff_x_suffix, last_sig_coeff_y_suffix;
 	UChar lastScanPos;
 	UChar lastSubBlock;
@@ -397,6 +400,8 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 	UChar baseLevel;
 	UChar cmp;
 	int8_t transCoeffVal;
+	UInt bitPad;
+	bitPad = 0xFFFF;
 
 	lastScanPos = 16;
 	lastSubBlock = (1<<(tu.log2TrafoSize-2))*(1<<(tu.log2TrafoSize-2)) -1;
@@ -419,11 +424,16 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		tu.transform_skip_flag = 0;
 	}
 
+	//bitOut.write(symbolVal);
+	//bitOut.write(bitPad);
+
 	parseSigCoeffXPrefix(tu.log2TrafoSize, cIdx, state, bStream, ctxTables, symbolVal);
 	last_sig_coeff_x_prefix = symbolVal;
+	//bitOut.write(symbolVal);
 
 	parseSigCoeffYPrefix(tu.log2TrafoSize, cIdx, state, bStream, ctxTables, symbolVal);
 	last_sig_coeff_y_prefix = symbolVal;
+	//bitOut.write(symbolVal);
 
 	LastSignificantCoeffX = last_sig_coeff_x_prefix;
 	LastSignificantCoeffY = last_sig_coeff_y_prefix;
@@ -524,17 +534,20 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		} else {
 			temp = 15;
 		}
+
 #ifndef __SYNTHESIS__
 		std::cout << "Temp Val : " << (int)temp << std::endl;
 		std::cout << "i val : " << (int)i << std::endl;
 		std::cout << "lastSubBLock Val : " << (int)lastSubBlock << std::endl << std::endl;
 #endif
+		//bitOut.write(bitPad);
 		for (int n = temp; n >= 0; n--) {
 			xC = (xS << 2) + coeffBlockScan[n][0];
 			yC = (yS << 2) + coeffBlockScan[n][1];
 			if (coded_sub_block[xS][yS] && (n > 0 || !inferSbDcSigCoeffFlag)) {
 				parseSigCoeffFlag(xC, yC, scanIdx, coded_sub_block[xS+1][yS], coded_sub_block[xS][yS+1], tu.log2TrafoSize, cIdx, state, bStream, ctxTables, symbolVal);
 				sig_coeff_flag[xC][yC] = symbolVal;
+				//bitOut.write(symbolVal);
 			} else {
 				if ((xC == LastSignificantCoeffX) && (yC == LastSignificantCoeffY) || ((xC & 3) == 0 && (yC & 3) == 0 && inferSbDcSigCoeffFlag && coded_sub_block[xS][yS])) {
 					sig_coeff_flag[xC][yC] = 1;
@@ -563,7 +576,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
         lastSigScanPos = -1;
         numGreater1Flag = 0;
         lastGreater1ScanPos = -1;
-
+        //bitOut.write(bitPad);
 		for (int n = 15; n >= 0; n--) {
 			xC = (xS << 2) + coeffBlockScan[n][0];
 			yC = (yS << 2) + coeffBlockScan[n][1];
@@ -571,6 +584,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 			if (sig_coeff_flag[xC][yC]) {
 				if (numGreater1Flag < 8) {
 					parseCoeffAbsLevelG1(cIdx, tu, state, bStream, ctxTables, symbolVal);
+					//bitOut.write(symbolVal);
 					coeff_abs_level_greater1_flag[n] = symbolVal;
 					++numGreater1Flag;
 					if (coeff_abs_level_greater1_flag[n] && (lastGreater1ScanPos == -1)) {
@@ -590,24 +604,27 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		}
 
 		bool signHidden = (lastSigScanPos - firstSigScanPos) > 3;
-
+		//bitOut.write(bitPad);
 		if (lastGreater1ScanPos != -1) {
 			parseCoeffAbsLevelG2(cIdx, tu, state, bStream, ctxTables, symbolVal);
+			//bitOut.write(symbolVal);
 			coeff_abs_level_greater2_flag[lastGreater1ScanPos] = symbolVal;
 		}
-
+		//bitOut.write(bitPad);
 		for (int n = 15; n >= 0; --n) {
 			xC = (xS << 2) + coeffBlockScan[n][0];
 			yC = (yS << 2) + coeffBlockScan[n][1];
 
 			if (sig_coeff_flag[xC][yC] && ((!din.pps.sign_data_hiding_enabled_flag) || (!signHidden) || (n != firstSigScanPos))) {
 				parseCoeffSign(state, bStream, ctxTables, symbolVal);
+				//bitOut.write(symbolVal);
 				coeff_sign_flag[n] = symbolVal;
 			}
 		}
 
 		numSigCoeff = 0;
 		sumAbsLevel = 0;
+		//bitOut.write(bitPad);
 		for (int n = 15; n >= 0; n--) {
 			xC = (xS << 2) + coeffBlockScan[n][0];
 			yC = (yS << 2) + coeffBlockScan[n][1];
@@ -623,6 +640,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 
 				if (baseLevel == cmp) {
 					parseCoeffAbsRem(baseLevel, tu, state, bStream, ctxTables, symbolVal);
+					//bitOut.write(symbolVal);
 					coeff_abs_level_remaining[n] = symbolVal;
 				}
 
@@ -694,21 +712,12 @@ void transform_unit(data_in_t& din, data_out_t& dout, internal_data_t& dint, CU_
 			}
 		}
 	}
-
-
 }
 
 void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, bool& transform_split, data_in_t& din, data_out_t& dout, internal_data_t& dint, CU_t& cu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
 	UChar x0, y0, blkIdx;
 	UChar tuAddr, cod_x, cod_y;
 
-	if(trafoDepth==0){
-		x0=cu.x;
-		y0 =cu.y;
-		blkIdx=0;
-	} else if (trafoDepth==1){
-
-	}
 	switch(trafoDepth){
 	case 0: x0 = cu.x;
 			y0 = cu.y;
@@ -813,7 +822,6 @@ void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, b
 			cu.cbf_cr[0] = 0;
 		}
 	}
-
 	if(!transform_split){
 		parseCbfLuma(trafoDepth, state, bStream, ctxTables, symbolVal);
 		cu.cbf_luma[0] = symbolVal;

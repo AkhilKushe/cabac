@@ -23,9 +23,12 @@ void store_global_ram(volatile UChar globalCtx[MAX_NUM_CTX_MOD], UChar ctxTable[
 
 
 // TODO : fix top inteface with input/output declaration
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& tranCoeff, hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
 #pragma HLS INTERFACE mode=m_axi bundle=ctx name=gCtx port=globalCtx
 #pragma HLS INTERFACE mode=s_axilite port=globalCtx
+
+#pragma HLS INTERFACE mode=m_axi bundle=tran name=tranC port=tranCoeff
+#pragma HLS INTERFACE mode=s_axilite port=tranCoeff
 
 	hls::stream<UChar> streamCtxRAM;
 #pragma HLS STREAM depth=512 type=fifo variable=streamCtxRAM
@@ -164,24 +167,49 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& t
 	std::cout << "13 Intra Chroma Pred Mode :" << symbolVal << std::endl << std::endl;
 #endif
 	cu1.intra_chroma_pred_mode=symbolVal;
-
+	cu1.cu_transquant_bypass_flag=0;
 	setIntraPredMode(0, 4, cu1, data_in, data_out, dint);
 	setIntraPredMode(1, 4, cu1, data_in, data_out, dint);
 	setIntraPredMode(2, 4, cu1, data_in, data_out, dint);
 	setIntraPredMode(3, 4, cu1, data_in, data_out, dint);
-
-
+/*
+	parseCbfC(0, baeState, tempBst, ctxTables, symbolVal);
+	cu1.cbf_cb[1]= symbolVal;
+	parseCbfC(0, baeState, tempBst, ctxTables, symbolVal);
+	cu1.cbf_cr[1]=symbolVal;
+	parseCbfLuma(1, baeState, tempBst, ctxTables, symbolVal);
+	cu1.cbf_luma[0]=symbolVal;
+	TU_t tu1;
+		tu1.x = 0;
+		tu1.y = 0;
+		tu1.xBase = 0;
+		tu1.yBase = 0;
+		tu1.log2TrafoSize = 2;
+		tu1.blkIdx = 0;
+		tu1.trafoDepth = 1;
+		tu1.lastGreater1Flag = 0;
+		tu1.lastGreater1Ctx=0;
+		tu1.greater1Ctx=0;
+		tu1.ctxSet=0;
+		tu1.cLastRiceParam=0;
+		tu1.cLastAbsLevel=0;
+		tu1.cAbsLevel=0;
+		tu1.G2ctxSet=0;
+*/
+	//residual_coding(0, data_in, data_out, dint, cu1, tu1, baeState, tempBst, ctxTables, bitOut);
+	//transform_unit(data_in, data_out,dint, cu1, tu1, baeState, tempBst, ctxTables, bitOut);
 	transform_tree(data_in, data_out, dint, cu1, baeState, tempBst, ctxTables);
 
 #ifndef __SYNTHESIS__
 	std::cout << std::dec << std::endl;
 	//printArray<int8_t, int>("Transform Coefficient ", 64, 64, (int8_t*)(dint.TransCoeffLevel_0));
 #endif
-
-
+/*
 	for(int i=0; i<10; i++){
 		tranCoeff.write(dint.TransCoeffLevel_0[0][i]);
 	}
+*/
+	memcpy((int8_t*)tranCoeff, dint.TransCoeffLevel_0, 64*64*sizeof(int8_t));
 	data_out_s.write(data_out);
 
 	store_global_ram(globalCtx, ctxTables, ctxWritten);

@@ -25,8 +25,9 @@ void printArray(const char* name, int xdim, int ydim, T* arr){
 	std::cout << std::endl;
 
 }
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
 
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& tranCoeff, hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
+//void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& tranCoeff, hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
 int main() {
 
 	UChar globalCtx[512];
@@ -103,8 +104,8 @@ int main() {
 	data_inp_s.write(data_inp);
 	data_out_t data_oup;
 
-	hls::stream<int8_t> tranCoeff;
-
+	//hls::stream<int8_t> tranCoeff;
+	int8_t tranCoeff[64][64];
 	cabac_top(globalCtx, tranCoeff, testBitStream, bOut, data_inp_s, data_oup_s);
 	data_oup = data_oup_s.read();
 
@@ -133,9 +134,17 @@ int main() {
 	printArray<UChar, int>("sao_band_position", 3, 1, data_oup.sao_band_position);
 
 	std::cout << "====================== Transform Output =========================" << std::endl;
+	printArray<int8_t, int>("Transform Coefficients", 64, 64, (int8_t*)tranCoeff);
 
+/*
 	for(int i=0; i<10; i++){
 		std::cout << (int)tranCoeff.read() << std::endl;
 	}
+
+	std::cout << "Transform debug" << std::endl;
+	while(!bOut.empty()){
+		std::cout << "Val : " << (int) bOut.read() << std::endl;
+	}
+*/
 	return 0;
 }

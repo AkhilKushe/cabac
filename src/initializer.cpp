@@ -36,12 +36,12 @@ void Initialize::load_global(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::str
 void Initialize::stream_init_buffer(UChar* ctxTable, UInt size, int qp, SliceType initType, hls::stream<UChar> &ctxOut, UInt& count){
 	//int start = initType*size;
 	//int end = (initType*size) + size;
-
-	for(int i=0; i<size; i++){
-		UChar ctxState = calc_ctxState(qp, ctxTable[i]);
+	UChar ctxState;
+	for(int i=0; i<MAX_NUM_CTX_MOD; i++){
+		ctxState = calc_ctxState(qp, ctxTable[i]);
 		ctxOut.write(ctxState);
 	}
-	count += size;
+	count += MAX_NUM_CTX_MOD;
 }
 
 /*
