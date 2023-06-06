@@ -45,3 +45,28 @@ stream interface aggrigates the struct into single packet, thus cannot have wide
 Maxi working
 
 **** Struct data currupted at top level interface, currently using stream interface
+	- try struct padding
+
+
+
+
+6 JUNE TODO :
+1. Get bitstream from dat file (1 CTU), DONE
+2. Complete CTU Tree code, 
+	- done coding unit
+	- initializer for all units
+	- cu recursive wrapper
+	- top ctu call
+	
+3. Interface
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running 'F:/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'HP' on host 'desktop-8u8c26t' (Windows NT_amd64 version 6.2) on Thu Jun 01 15:36:30 +0530 2023
+INFO: [HLS 200-10] For user 'HP' on host 'desktop-8u8c26t' (Windows NT_amd64 version 6.2) on Tue Jun 06 16:48:04 +0530 2023
 INFO: [HLS 200-10] In directory 'F:/petaProj/cabac_hls/cabac'
 Sourcing Tcl script 'F:/petaProj/cabac_hls/cabac/cabac_top/solution1/cosim.tcl'
 INFO: [HLS 200-1510] Running: open_project cabac_top 
@@ -67,7 +67,7 @@ INFO: [HLS 200-1510] Running: config_export -output F:/petaProj/cabac_hls/cabac/
 INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
 INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
 INFO: [HLS 200-1510] Running: set_directive_top -name cabac_top cabac_top 
-INFO: [HLS 200-1510] Running: cosim_design -trace_level all 
+INFO: [HLS 200-1510] Running: cosim_design -wave_debug -trace_level all 
 INFO: [COSIM 212-47] Using XSIM for RTL simulation.
 INFO: [COSIM 212-14] Instrumenting C test bench ...
    Build using "F:/Xilinx/Vitis_HLS/2021.2/tps/win64/msys64/mingw64/bin/g++"
@@ -85,6 +85,7 @@ INFO: [COSIM 212-14] Instrumenting C test bench ...
    Compiling apatb_cabac_top_ir.ll
    Generating cosim.tv.exe
 INFO: [COSIM 212-302] Starting C TB testing ... 
+File Size : 530
 Init Val :153
 Slope : 0
 Offset : 56
@@ -1085,8 +1086,6 @@ input  context : 9
 Decoding part mode
 Symbol Val : 1
 
-4 part mode symbol val :1
-
 Decoding Mode : Regular
 Currr Range : 0x10d
 Offset : 0x70
@@ -1094,8 +1093,6 @@ Bin Val : 1
 input  context : 9
 Decoding prev intra luma pred flag
 Symbol Val : 1
-
-5 prev intra luma pred flag :1
 
 Decoding Mode : Regular
 Currr Range : 0x13c
@@ -1105,8 +1102,6 @@ input  context : b
 Decoding prev intra luma pred flag
 Symbol Val : 1
 
-6 prev intra luma pred flag :1
-
 Decoding Mode : Regular
 Currr Range : 0x1a4
 Offset : 0x35
@@ -1114,8 +1109,6 @@ Bin Val : 0
 input  context : d
 Decoding prev intra luma pred flag
 Symbol Val : 0
-
-7 prev intra luma pred flag :0
 
 Decoding Mode : Regular
 Currr Range : 0x1f6
@@ -1125,8 +1118,6 @@ input  context : 9
 Decoding prev intra luma pred flag
 Symbol Val : 1
 
-8 prev intra luma pred flag :1
-
 Decode Mode : Bypass
 Currr Range : 0x1f6
 Offset : 0x0d7
@@ -1134,16 +1125,12 @@ Bin Val : 0
 Decoding mpm idx
 Symbol Val : 0
 
-9 mpm idx :0
-
 Decode Mode : Bypass
 Currr Range : 0x1f6
 Offset : 0x1af
 Bin Val : 0
 Decoding mpm idx
 Symbol Val : 0
-
-10 mpm idx :0
 
 Decode Mode : Bypass
 Currr Range : 0x1f6
@@ -1168,8 +1155,6 @@ Bin Val : 1
 Decoding rem intra luma pred mode
 Symbol Val : 1b
 
-11 rem intra luma pred :1b
-
 Decode Mode : Bypass
 Currr Range : 0x1f6
 Offset : 0x5
@@ -1181,8 +1166,6 @@ Bin Val : 0
 Decoding mpm idx
 Symbol Val : 1
 
-12 mpm idx :1
-
 Decoding Mode : Regular
 Currr Range : 0x19d
 Offset : 0x0b
@@ -1190,8 +1173,6 @@ Bin Val : 0
 input  context : 26
 Decoding prev intra luma pred flag
 Symbol Val : 4
-
-13 Intra Chroma Pred Mode :4
 
 Part Idx : 0
 Part size : 4
@@ -1253,6 +1234,27 @@ Pred Mode Luma : 0
 Pred Mode Chroma : 0
 
 
+====================================== Done decoding pred direction ========================================
+Part Mode : 1
+Prev intra luma pred flag :
+1 
+1 
+0 
+1 
+
+mpm idx :
+0 
+0 
+0 
+1 
+
+rem_intra_luma_pred_mode :
+139 
+2 
+27 
+0 
+
+Intra chroma pred mode : 4
 ===================== Transform Tree Depth 0 at 0 0==========
 Decoding Mode : Regular
 Currr Range : 0x10d
@@ -2708,8 +2710,8 @@ INFO: [VRFC 10-2458] undeclared symbol buf_data_nvalid, assumed default net type
 INFO: [VRFC 10-311] analyzing module cabac_top_bstream_m_axi_write
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_4.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_4
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_9.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_9
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_7
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_12_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_12_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_18_1.v" into library xil_defaultlib
@@ -2726,12 +2728,14 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/c
 INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1_I_FRAME_INIT_VALS_ROM_AUTO_1R
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1_P_FRAME_INIT_VALS_ROM_AUTO_1R.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_40_1_P_FRAME_INIT_VALS_ROM_AUTO_1R
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_50_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_50_1
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_71_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_71_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_cabac_top_Pipeline_VITIS_LOOP_841_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_cabac_top_Pipeline_VITIS_LOOP_841_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_coding_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_coding_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_coding_unit_Pipeline_VITIS_LOOP_115_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_coding_unit_Pipeline_VITIS_LOOP_115_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_coding_unit_Pipeline_VITIS_LOOP_71_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_coding_unit_Pipeline_VITIS_LOOP_71_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_control_s_axi.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_control_s_axi
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_ctxTables_RAM_AUTO_1R1W.v" into library xil_defaultlib
@@ -2771,6 +2775,12 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/c
 INFO: [VRFC 10-311] analyzing module cabac_top_flow_control_loop_pipe_sequential_init
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mul_2s_8s_8_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_mul_2s_8s_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mul_32ns_32ns_64_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mul_32ns_32ns_64_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mul_4ns_4ns_8_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mul_4ns_4ns_8_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mul_5ns_5ns_10_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_mul_5ns_5ns_10_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mul_7s_6ns_13_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_mul_7s_6ns_13_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_mul_8ns_8ns_16_1_1.v" into library xil_defaultlib
@@ -2785,6 +2795,8 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/c
 INFO: [VRFC 10-311] analyzing module cabac_top_mux_42_8_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseMpmIdx.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_parseMpmIdx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseRemIntraLumaPredMode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cabac_top_parseRemIntraLumaPredMode
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseSAOEO.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_parseSAOEO
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_parseSAOMergeFlag.v" into library xil_defaultlib
@@ -2840,8 +2852,6 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/c
 INFO: [VRFC 10-311] analyzing module cabac_top_sao_top_sao_offset_sign_RAM_AUTO_1R1W
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_setIntraPredMode.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_setIntraPredMode
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_189_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_189_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_219_2_VITIS_LOOP_220_3.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_219_2_VITIS_LOOP_220_3
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top_setIntraPredMode_Pipeline_VITIS_LOOP_225_4_VITIS_LOOP_226_5.v" into library xil_defaultlib
@@ -2909,16 +2919,20 @@ Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_VITIS...
 Compiling module xil_defaultlib.cabac_top_sao_top_Pipeline_VITIS...
 Compiling module xil_defaultlib.cabac_top_sao_top
 Compiling module xil_defaultlib.cabac_top_decode_regular
+Compiling module xil_defaultlib.cabac_top_coding_unit_Pipeline_V...
+Compiling module xil_defaultlib.cabac_top_parseRemIntraLumaPredM...
 Compiling module xil_defaultlib.cabac_top_parseMpmIdx
-Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
-Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
-Compiling module xil_defaultlib.cabac_top_setIntraPredMode_Pipel...
+Compiling module xil_defaultlib.cabac_top_coding_unit_Pipeline_V...
 Compiling module xil_defaultlib.cabac_top_setIntraPredMode_Pipel...
 Compiling module xil_defaultlib.cabac_top_setIntraPredMode_Pipel...
 Compiling module xil_defaultlib.cabac_top_setIntraPredMode_Pipel...
 Compiling module xil_defaultlib.cabac_top_mux_42_1_1_1(ID=1,din0...
 Compiling module xil_defaultlib.cabac_top_mux_42_8_1_1(ID=1,din0...
+Compiling module xil_defaultlib.cabac_top_mul_4ns_4ns_8_1_1(NUM_...
+Compiling module xil_defaultlib.cabac_top_mul_5ns_5ns_10_1_1(NUM...
+Compiling module xil_defaultlib.cabac_top_mul_32ns_32ns_64_1_1(N...
 Compiling module xil_defaultlib.cabac_top_setIntraPredMode
+Compiling module xil_defaultlib.cabac_top_coding_unit
 Compiling module xil_defaultlib.cabac_top_transform_tree_rec_TS2...
 Compiling module xil_defaultlib.cabac_top_residual_coding_CTX_ID...
 Compiling module xil_defaultlib.cabac_top_residual_coding_coded_...
@@ -2937,7 +2951,7 @@ Compiling module xil_defaultlib.cabac_top_mul_2s_8s_8_1_1(NUM_ST...
 Compiling module xil_defaultlib.cabac_top_residual_coding
 Compiling module xil_defaultlib.cabac_top_transform_tree_rec
 Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
-Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_9
+Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_7
 Compiling module xil_defaultlib.cabac_top_cabac_top_Pipeline_VIT...
 Compiling module xil_defaultlib.cabac_top_control_s_axi
 Compiling module xil_defaultlib.cabac_top_ctx_m_axi_reg_slice(N=...
@@ -2999,6 +3013,8 @@ Compiling module xil_defaultlib.pp_loop_intf(FSM_WIDTH=70)
 Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=31)
 Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=5)
 Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=3)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=26)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=7)
 Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=926)
 Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=4)
 Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
@@ -3012,454 +3028,11 @@ Built simulation snapshot cabac_top
   **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
-source xsim.dir/cabac_top/xsim_script.tcl
-# xsim {cabac_top} -view {{cabac_top_dataflow_ana.wcfg}} -tclbatch {cabac_top.tcl} -protoinst {cabac_top.protoinst}
-INFO: [Wavedata 42-565] Reading protoinst file cabac_top.protoinst
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top//AESL_inst_cabac_top_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_4_fu_804/grp_cabac_top_Pipeline_4_fu_804_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_9_fu_1033/grp_cabac_top_Pipeline_9_fu_1033_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_12_1_fu_798/grp_cabac_top_Pipeline_VITIS_LOOP_12_1_fu_798_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_18_1_fu_1041/grp_cabac_top_Pipeline_VITIS_LOOP_18_1_fu_1041_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_198_1_VITIS_LOOP_199_2_fu_812/grp_cabac_top_Pipeline_VITIS_LOOP_198_1_VITIS_LOOP_199_2_fu_812_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_29_1_fu_790/grp_cabac_top_Pipeline_VITIS_LOOP_29_1_fu_790_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_40_1_fu_776/grp_cabac_top_Pipeline_VITIS_LOOP_40_1_fu_776_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_50_1_fu_915/grp_cabac_top_Pipeline_VITIS_LOOP_50_1_fu_915_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_71_1_fu_952/grp_cabac_top_Pipeline_VITIS_LOOP_71_1_fu_952_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_71_1_fu_952/grp_decode_decision_1_fu_172/grp_decode_decision_1_fu_172_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_71_1_fu_952/grp_decode_decision_1_fu_172/grp_decode_regular_1_fu_218/grp_decode_regular_1_fu_218_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_decode_regular_fu_734/grp_decode_regular_fu_734_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_decode_decision_1_fu_28395/grp_decode_decision_1_fu_28395_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_decode_decision_1_fu_28395/grp_decode_regular_1_fu_218/grp_decode_regular_1_fu_218_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_decode_decision_fu_28612/grp_decode_decision_fu_28612_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_decode_regular_fu_28489/grp_decode_regular_fu_28489_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_parseSigCoeffSuffix_fu_28471/grp_parseSigCoeffSuffix_fu_28471_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_parseSigCoeffXPrefix_fu_28424/grp_decode_regular_fu_138/grp_decode_regular_fu_138_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_parseSigCoeffXPrefix_fu_28424/grp_parseSigCoeffXPrefix_fu_28424_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_parseSigCoeffYPrefix_fu_28450/grp_decode_regular_fu_138/grp_decode_regular_fu_138_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_parseSigCoeffYPrefix_fu_28450/grp_parseSigCoeffYPrefix_fu_28450_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_residual_coding_fu_773/grp_residual_coding_fu_773_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_cabac_top_Pipeline_VITIS_LOOP_841_1_fu_999/grp_transform_tree_rec_fu_206/grp_transform_tree_rec_fu_206_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_decode_decision_1_fu_931/grp_decode_decision_1_fu_931_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_decode_decision_1_fu_931/grp_decode_regular_1_fu_218/grp_decode_regular_1_fu_218_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_decode_regular_fu_884/grp_decode_regular_fu_884_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_parseMpmIdx_fu_905/grp_parseMpmIdx_fu_905_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_decode_decision_1_fu_1370/grp_decode_decision_1_fu_1370_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_decode_decision_1_fu_1370/grp_decode_regular_1_fu_218/grp_decode_regular_1_fu_218_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_parseSAOEO_fu_1414/grp_parseSAOEO_fu_1414_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_parseSAOMergeFlag_fu_1316/grp_parseSAOMergeFlag_fu_1316_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_sao_top_Pipeline_1_fu_1304/grp_sao_top_Pipeline_1_fu_1304_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_sao_top_Pipeline_2_fu_1310/grp_sao_top_Pipeline_2_fu_1310_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_sao_top_Pipeline_VITIS_LOOP_149_3_fu_1429/grp_sao_top_Pipeline_VITIS_LOOP_149_3_fu_1429_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_sao_top_Pipeline_VITIS_LOOP_176_4_fu_1473/grp_sao_top_Pipeline_VITIS_LOOP_176_4_fu_1473_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_sao_top_Pipeline_VITIS_LOOP_188_5_fu_1331/grp_sao_top_Pipeline_VITIS_LOOP_188_5_fu_1331_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_sao_top_Pipeline_VITIS_LOOP_200_6_fu_1483/grp_sao_top_Pipeline_VITIS_LOOP_200_6_fu_1483_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_sao_top_Pipeline_VITIS_LOOP_41_1_fu_1394/grp_sao_top_Pipeline_VITIS_LOOP_41_1_fu_1394_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_sao_top_Pipeline_VITIS_LOOP_83_1_fu_1454/grp_sao_top_Pipeline_VITIS_LOOP_83_1_fu_1454_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_sao_top_fu_817/grp_sao_top_fu_817_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_setIntraPredMode_fu_975/grp_setIntraPredMode_Pipeline_VITIS_LOOP_189_1_fu_225/grp_setIntraPredMode_Pipeline_VITIS_LOOP_189_1_fu_225_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_setIntraPredMode_fu_975/grp_setIntraPredMode_Pipeline_VITIS_LOOP_219_2_VITIS_LOOP_220_3_fu_234/grp_setIntraPredMode_Pipeline_VITIS_LOOP_219_2_VITIS_LOOP_220_3_fu_234_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_setIntraPredMode_fu_975/grp_setIntraPredMode_Pipeline_VITIS_LOOP_225_4_VITIS_LOOP_226_5_fu_241/grp_setIntraPredMode_Pipeline_VITIS_LOOP_225_4_VITIS_LOOP_226_5_fu_241_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_setIntraPredMode_fu_975/grp_setIntraPredMode_Pipeline_VITIS_LOOP_233_6_VITIS_LOOP_234_7_fu_250/grp_setIntraPredMode_Pipeline_VITIS_LOOP_233_6_VITIS_LOOP_234_7_fu_250_activity
-INFO: [Wavedata 42-564]   Found protocol instance at /apatb_cabac_top_top/AESL_inst_cabac_top/grp_setIntraPredMode_fu_975/grp_setIntraPredMode_fu_975_activity
-Time resolution is 1 ps
-open_wave_config cabac_top_dataflow_ana.wcfg
-source cabac_top.tcl
-## log_wave -r /
-WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of object type or size limitations.  To see details please rerun the command with -verbose (-v).
-## set designtopgroup [add_wave_group "Design Top Signals"]
-## set cinoutgroup [add_wave_group "C InOuts" -into $designtopgroup]
-## set globalCtx_group [add_wave_group globalCtx(axi_master) -into $cinoutgroup]
-## set rdata_group [add_wave_group "Read Channel" -into $globalCtx_group]
-## set wdata_group [add_wave_group "Write Channel" -into $globalCtx_group]
-## set ctrl_group [add_wave_group "Handshakes" -into $globalCtx_group]
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_BUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_BID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_BRESP -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_BREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_BVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_RRESP -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_RUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_RID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_RLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_RDATA -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_RREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_RVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARREGION -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARQOS -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARPROT -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARCACHE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARLOCK -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARBURST -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARSIZE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARLEN -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARADDR -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_ARVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_WUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_WID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_WLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_WSTRB -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_WDATA -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_WREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_WVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWREGION -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWQOS -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWPROT -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWCACHE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWLOCK -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWBURST -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWSIZE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWLEN -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWADDR -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_ctx_AWVALID -into $ctrl_group -color #ffff00 -radix hex
-## set globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group [add_wave_group globalCtx__tranCoeff__bitStream__ap_local_deadlock__return(axi_slave) -into $cinoutgroup]
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/interrupt -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_BRESP -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_BREADY -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_BVALID -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_RRESP -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_RDATA -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_RREADY -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_RVALID -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_ARREADY -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_ARVALID -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_ARADDR -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_WSTRB -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_WDATA -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_WREADY -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_WVALID -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_AWREADY -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_AWVALID -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/s_axi_control_AWADDR -into $globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
-## set tranCoeff_group [add_wave_group tranCoeff(axi_master) -into $coutputgroup]
-## set rdata_group [add_wave_group "Read Channel" -into $tranCoeff_group]
-## set wdata_group [add_wave_group "Write Channel" -into $tranCoeff_group]
-## set ctrl_group [add_wave_group "Handshakes" -into $tranCoeff_group]
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_BUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_BID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_BRESP -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_BREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_BVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_RRESP -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_RUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_RID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_RLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_RDATA -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_RREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_RVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARREGION -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARQOS -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARPROT -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARCACHE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARLOCK -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARBURST -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARSIZE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARLEN -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARADDR -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_ARVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_WUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_WID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_WLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_WSTRB -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_WDATA -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_WREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_WVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWREGION -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWQOS -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWPROT -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWCACHE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWLOCK -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWBURST -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWSIZE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWLEN -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWADDR -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_tran_r_AWVALID -into $ctrl_group -color #ffff00 -radix hex
-## set return_group [add_wave_group return(axi_slave) -into $coutputgroup]
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/data_out_s_TREADY -into $return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/data_out_s_TVALID -into $return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/data_out_s_TDATA -into $return_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/ap_local_block -into $return_group -radix hex
-## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
-## set return_group [add_wave_group return(axis) -into $cinputgroup]
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/data_in_s_TREADY -into $return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/data_in_s_TVALID -into $return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/data_in_s_TDATA -into $return_group -radix hex
-## set bitStream_group [add_wave_group bitStream(axi_master) -into $cinputgroup]
-## set rdata_group [add_wave_group "Read Channel" -into $bitStream_group]
-## set wdata_group [add_wave_group "Write Channel" -into $bitStream_group]
-## set ctrl_group [add_wave_group "Handshakes" -into $bitStream_group]
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_BUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_BID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_BRESP -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_BREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_BVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_RRESP -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_RUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_RID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_RLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_RDATA -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_RREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_RVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARREGION -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARQOS -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARPROT -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARCACHE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARLOCK -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARBURST -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARSIZE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARLEN -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARADDR -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_ARVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_WUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_WID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_WLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_WSTRB -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_WDATA -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_WREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_WVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWREGION -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWQOS -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWPROT -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWCACHE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWLOCK -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWBURST -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWSIZE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWLEN -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWADDR -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/m_axi_bstream_AWVALID -into $ctrl_group -color #ffff00 -radix hex
-## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/ap_rst_n -into $resetgroup
-## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
-## add_wave /apatb_cabac_top_top/AESL_inst_cabac_top/ap_clk -into $clockgroup
-## set testbenchgroup [add_wave_group "Test Bench Signals"]
-## set tbinternalsiggroup [add_wave_group "Internal Signals" -into $testbenchgroup]
-## set tb_simstatus_group [add_wave_group "Simulation Status" -into $tbinternalsiggroup]
-## set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
-## add_wave /apatb_cabac_top_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
-## add_wave /apatb_cabac_top_top/ready_cnt -into $tb_simstatus_group -radix hex
-## add_wave /apatb_cabac_top_top/done_cnt -into $tb_simstatus_group -radix hex
-## add_wave /apatb_cabac_top_top/LENGTH_ctx -into $tb_portdepth_group -radix hex
-## add_wave /apatb_cabac_top_top/LENGTH_tran_r -into $tb_portdepth_group -radix hex
-## add_wave /apatb_cabac_top_top/LENGTH_bstream -into $tb_portdepth_group -radix hex
-## add_wave /apatb_cabac_top_top/LENGTH_globalCtx -into $tb_portdepth_group -radix hex
-## add_wave /apatb_cabac_top_top/LENGTH_tranCoeff -into $tb_portdepth_group -radix hex
-## add_wave /apatb_cabac_top_top/LENGTH_bitStream -into $tb_portdepth_group -radix hex
-## add_wave /apatb_cabac_top_top/LENGTH_data_in_s -into $tb_portdepth_group -radix hex
-## add_wave /apatb_cabac_top_top/LENGTH_data_out_s -into $tb_portdepth_group -radix hex
-## set tbcinoutgroup [add_wave_group "C InOuts" -into $testbenchgroup]
-## set tb_globalCtx_group [add_wave_group globalCtx(axi_master) -into $tbcinoutgroup]
-## set rdata_group [add_wave_group "Read Channel" -into $tb_globalCtx_group]
-## set wdata_group [add_wave_group "Write Channel" -into $tb_globalCtx_group]
-## set ctrl_group [add_wave_group "Handshakes" -into $tb_globalCtx_group]
-## add_wave /apatb_cabac_top_top/ctx_BUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_BID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_BRESP -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_BREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_BVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_RRESP -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_RUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_RID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_RLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_RDATA -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_RREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_RVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARREGION -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARQOS -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARPROT -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARCACHE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARLOCK -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARBURST -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARSIZE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARLEN -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARADDR -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_ARVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_WUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_WID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_WLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_WSTRB -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_WDATA -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_WREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_WVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWREGION -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWQOS -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWPROT -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWCACHE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWLOCK -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWBURST -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWSIZE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWLEN -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWADDR -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/ctx_AWVALID -into $ctrl_group -color #ffff00 -radix hex
-## set tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group [add_wave_group globalCtx__tranCoeff__bitStream__ap_local_deadlock__return(axi_slave) -into $tbcinoutgroup]
-## add_wave /apatb_cabac_top_top/control_INTERRUPT -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_BRESP -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/control_BREADY -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_BVALID -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_RRESP -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/control_RDATA -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/control_RREADY -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_RVALID -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_ARREADY -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_ARVALID -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_ARADDR -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/control_WSTRB -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/control_WDATA -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## add_wave /apatb_cabac_top_top/control_WREADY -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_WVALID -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_AWREADY -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_AWVALID -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/control_AWADDR -into $tb_globalCtx__tranCoeff__bitStream__ap_local_deadlock__return_group -radix hex
-## set tbcoutputgroup [add_wave_group "C Outputs" -into $testbenchgroup]
-## set tb_tranCoeff_group [add_wave_group tranCoeff(axi_master) -into $tbcoutputgroup]
-## set rdata_group [add_wave_group "Read Channel" -into $tb_tranCoeff_group]
-## set wdata_group [add_wave_group "Write Channel" -into $tb_tranCoeff_group]
-## set ctrl_group [add_wave_group "Handshakes" -into $tb_tranCoeff_group]
-## add_wave /apatb_cabac_top_top/tran_r_BUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_BID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_BRESP -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_BREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_BVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_RRESP -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_RUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_RID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_RLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_RDATA -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_RREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_RVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARREGION -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARQOS -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARPROT -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARCACHE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARLOCK -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARBURST -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARSIZE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARLEN -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARADDR -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_ARVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_WUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_WID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_WLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_WSTRB -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_WDATA -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_WREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_WVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWREGION -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWQOS -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWPROT -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWCACHE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWLOCK -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWBURST -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWSIZE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWLEN -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWADDR -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/tran_r_AWVALID -into $ctrl_group -color #ffff00 -radix hex
-## set tb_return_group [add_wave_group return(axi_slave) -into $tbcoutputgroup]
-## add_wave /apatb_cabac_top_top/data_out_s_TREADY -into $tb_return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/data_out_s_TVALID -into $tb_return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/data_out_s_TDATA -into $tb_return_group -radix hex
-## add_wave /apatb_cabac_top_top/ap_local_block -into $tb_return_group -radix hex
-## set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
-## set tb_return_group [add_wave_group return(axis) -into $tbcinputgroup]
-## add_wave /apatb_cabac_top_top/data_in_s_TREADY -into $tb_return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/data_in_s_TVALID -into $tb_return_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/data_in_s_TDATA -into $tb_return_group -radix hex
-## set tb_bitStream_group [add_wave_group bitStream(axi_master) -into $tbcinputgroup]
-## set rdata_group [add_wave_group "Read Channel" -into $tb_bitStream_group]
-## set wdata_group [add_wave_group "Write Channel" -into $tb_bitStream_group]
-## set ctrl_group [add_wave_group "Handshakes" -into $tb_bitStream_group]
-## add_wave /apatb_cabac_top_top/bstream_BUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_BID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_BRESP -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_BREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_BVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_RRESP -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_RUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_RID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_RLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_RDATA -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_RREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_RVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARUSER -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARREGION -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARQOS -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARPROT -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARCACHE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARLOCK -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARBURST -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARSIZE -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARLEN -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARID -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARADDR -into $rdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_ARVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_WUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_WID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_WLAST -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_WSTRB -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_WDATA -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_WREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_WVALID -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWUSER -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWREGION -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWQOS -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWPROT -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWCACHE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWLOCK -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWBURST -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWSIZE -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWLEN -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWID -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWADDR -into $wdata_group -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWREADY -into $ctrl_group -color #ffff00 -radix hex
-## add_wave /apatb_cabac_top_top/bstream_AWVALID -into $ctrl_group -color #ffff00 -radix hex
-## save_wave_config cabac_top.wcfg
-## run all
-////////////////////////////////////////////////////////////////////////////////////
-// Inter-Transaction Progress: Completed Transaction / Total Transaction
-// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
-//
-// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
-////////////////////////////////////////////////////////////////////////////////////
-// RTL Simulation : 0 / 1 [n/a] @ "155000"
-// RTL Simulation : 1 / 1 [n/a] @ "465085000"
-////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 465145 ns : File "F:/petaProj/cabac_hls/cabac/cabac_top/solution1/sim/verilog/cabac_top.autotb.v" Line 823
-run: Time (s): cpu = 00:00:24 ; elapsed = 00:00:42 . Memory (MB): peak = 1198.344 ; gain = 0.000
-## quit
-INFO: [Common 17-206] Exiting xsim at Thu Jun  1 15:38:05 2023...
+start_gui
+INFO: [Common 17-206] Exiting xsim at Tue Jun  6 16:50:50 2023...
 INFO: [COSIM 212-316] Starting C post checking ...
 WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port data_out_s, possible cause: There are uninitialized variables in the C design.
+File Size : 530
 TEST BENCH RESULTS
 14
 33
@@ -3629,5 +3202,5 @@ Transform Coefficients :
 
 INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
 INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
-INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 94.47 seconds; current allocated memory: 171.902 MB.
-INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 95.67 seconds; peak allocated memory: 1.089 GB.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 4 seconds. CPU system time: 1 seconds. Elapsed time: 165.812 seconds; current allocated memory: 191.223 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 166.989 seconds; peak allocated memory: 1.089 GB.

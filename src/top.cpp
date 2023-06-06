@@ -111,7 +111,7 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 	cu1.log2CbSize = 3;
 	cu1.x = 0;
 	cu1.y = 0;
-
+/*
 	parsePartMode(baeState, tempBst, ctxTables, symbolVal);
 	if(symbolVal==1){
 		cu1.IntraSplitFlag = 1;
@@ -204,9 +204,11 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 		tu1.cLastAbsLevel=0;
 		tu1.cAbsLevel=0;
 		tu1.G2ctxSet=0;
-*/
+
 	//residual_coding(0, data_in, data_out, dint, cu1, tu1, baeState, tempBst, ctxTables, bitOut);
 	//transform_unit(data_in, data_out,dint, cu1, tu1, baeState, tempBst, ctxTables, bitOut);
+*/
+	coding_unit(cu1, data_in, data_out, dint, baeState, tempBst, ctxTables);
 	transform_tree(data_in, data_out, dint, cu1, baeState, tempBst, ctxTables);
 
 #ifndef __SYNTHESIS__

@@ -29,51 +29,22 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 
 //void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& tranCoeff, hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
 int main() {
+	UChar testBitStream_maxi[1024];
+	std::ifstream file("F:\\petaProj\\cabac_hls\\cabac\\tb_src\\ctu_bitstream.dat", std::ios::binary);
+	if(!file){
+		std::cerr << "Could not openfile" << std::endl;
+		return 1;
+	}
+	file.seekg(0, std::ios::end);
+	int fileSize = file.tellg();
+	file.seekg(0, std::ios::beg);
+
+	memset(testBitStream_maxi, 0, sizeof(testBitStream_maxi));
+	file.read((char*)testBitStream_maxi, fileSize);
+	std::cout  << "File Size : " << fileSize << std::endl;
 
 	UChar globalCtx[512];
-	// Test bitstream
-	// TODO : Convert stream to m_axi
-	UChar testBitStream_maxi[1024];
 
-	hls::stream<UChar, 128> testBitStream;
-	testBitStream.write(187);
-	testBitStream.write(73);
-	testBitStream.write(61);
-	testBitStream.write(251);
-	testBitStream.write(170);
-	testBitStream.write(71);
-	testBitStream.write(30);
-	testBitStream.write(3);
-	testBitStream.write(223);
-	testBitStream.write(239);
-	testBitStream.write(110);
-	testBitStream.write(40);
-	testBitStream.write(151);
-	testBitStream.write(65);
-	testBitStream.write(45);
-
-	testBitStream.write(87);
-	testBitStream.write(67);
-	testBitStream.write(153);
-	testBitStream.write(199);
-	testBitStream.write(108);
-	testBitStream.write(117);
-	testBitStream.write(21);
-	testBitStream.write(213);
-	testBitStream.write(209);
-	testBitStream.write(24);
-	testBitStream.write(118);
-	testBitStream.write(164);
-	testBitStream.write(244);
-	testBitStream.write(180);
-	testBitStream.write(102);
-
-	for(int i=0; i<30; i++){
-		testBitStream_maxi[i] = testBitStream.read();
-	}
-	for(int i=30; i<1024; i++){
-		testBitStream_maxi[i] = 0;
-	}
 	hls::stream<UInt, 32> bOut;
 
 	// Setting input buffers
@@ -128,7 +99,6 @@ int main() {
 		//	return 1;
 		//}
 	}
-
 
 
 	std::cout << "====================== Sao Buffer Output =========================" << std::endl;

@@ -1,5 +1,6 @@
 #include "quad_tree.h"
 #include "arith_dec.h"
+#include "intra_se.h"
 #include "init_tables.h"
 #include "utils.h"
 #include <assert.h>
@@ -90,7 +91,70 @@ void coding_unit_rec(uint16_t cu_idx, data_in_t& din, data_out_t& dout, internal
 
 }
 
+// Partmode_NxX = 1;
+// PartMode_2Nx2N = 0;
 
+void coding_unit(CU_t& cu, data_in_t& din, data_out_t& dout, internal_data_t& dinternal, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+
+	UInt symbolVal;
+	UChar nCbs;
+	UChar pbOffset;
+
+	nCbs = 1<<cu.log2CbSize;
+	cu.cu_transquant_bypass_flag = 0; // Skipped transquant decoding
+	if(cu.log2CbSize==din.MinCbLog2SizeY){
+		parsePartMode(state, bStream, ctxTables, symbolVal);
+	} else {
+		symbolVal=0;
+	}
+
+	cu.IntraSplitFlag = symbolVal;
+	cu.part_mode = symbolVal;
+
+	if(cu.part_mode==1){
+		for(int i=0; i<4; i++){
+			parsePrevIntraLumaPredFlag(state, bStream, ctxTables, symbolVal);
+			cu.prev_intra_luma_pred_flag[i] = symbolVal;
+		}
+		for(int i=0; i<4; i++){
+			if(cu.prev_intra_luma_pred_flag[i]){
+				parseMpmIdx(state, bStream, ctxTables, symbolVal);
+				cu.mpm_idx[i] = symbolVal;
+			} else {
+				parseRemIntraLumaPredMode(state, bStream, ctxTables, symbolVal);
+				cu.rem_intra_luma_pred_mode[i] = symbolVal;
+			}
+		}
+	} else {
+		parsePrevIntraLumaPredFlag(state, bStream, ctxTables, symbolVal);
+		cu.prev_intra_luma_pred_flag[0] = symbolVal;
+		if(cu.prev_intra_luma_pred_flag[0]){
+			parseMpmIdx(state, bStream, ctxTables, symbolVal);
+			cu.mpm_idx[0] = symbolVal;
+		} else {
+			parseRemIntraLumaPredMode(state, bStream, ctxTables, symbolVal);
+			cu.rem_intra_luma_pred_mode[0] = symbolVal;
+		}
+	}
+	parseIntraChromaPredMode(state, bStream, ctxTables, symbolVal);
+	cu.intra_chroma_pred_mode = symbolVal;
+	if(cu.part_mode==0){
+		setIntraPredMode(0, nCbs, cu, din, dout, dinternal);
+	} else {
+		for(int i=0; i<4; i++){
+			setIntraPredMode(i, nCbs/2, cu, din, dout, dinternal);
+		}
+	}
+	cu.MaxTrafoDepth = din.sps.max_transform_hierarchy_depth_intra + cu.IntraSplitFlag;
+#ifndef __SYNTHESIS__
+	std::cout << "====================================== Done decoding pred direction ========================================" << std::endl;
+	std::cout << "Part Mode : " << (int)cu.part_mode << std::endl;
+	printArray<bool, int>("Prev intra luma pred flag", 4, 1, cu.prev_intra_luma_pred_flag);
+	printArray<UChar, int>("mpm idx", 4, 1, cu.mpm_idx);
+	printArray<UChar, int>("rem_intra_luma_pred_mode", 4, 1, cu.rem_intra_luma_pred_mode);
+	std::cout << "Intra chroma pred mode : " << (int) cu.intra_chroma_pred_mode << std::endl;
+#endif
+}
 
 
 
