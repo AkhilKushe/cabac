@@ -69,7 +69,7 @@ void parseIntraChromaPredMode(arith_t& state, UChar* bStream, UChar ctxTables[MA
 
 	if (binVal==1) {
 		while ((binIdx < 3)) {
-			decode_decision(REGULAR, state, binVal, bStream, INTRA_CHROMA_PRED_MODE_CTX_ADDR, ctxTables);
+			decode_decision(BYPASS, state, binVal, bStream, INTRA_CHROMA_PRED_MODE_CTX_ADDR, ctxTables);
 			symbolVal = (symbolVal << 1) + binVal;
 			binIdx+=1;
 		}
@@ -79,7 +79,7 @@ void parseIntraChromaPredMode(arith_t& state, UChar* bStream, UChar ctxTables[MA
 	}
 
 #ifndef __SYNTHESIS__
-	std::cout << "Decoding prev intra luma pred flag" << std::endl;
+	std::cout << "Decoding intra chroma pred mode" << std::endl;
 	std::cout << "Symbol Val : " << symbolVal << std::endl << std::endl;
 #endif
 }

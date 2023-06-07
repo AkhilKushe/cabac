@@ -61,7 +61,9 @@ Maxi working
 3. Interface
 
 
-
+Future scope:
+adding error control -> hardware prone to hangs
+						-> very control sensitive algorithm
 
 
 

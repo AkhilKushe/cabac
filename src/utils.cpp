@@ -47,15 +47,15 @@ UInt bitStream_read_bits(volatile UChar* bStream, UChar numBits, bstream_t& stat
 }
 
 void pattern_generator(uint16_t& cuIdx, UChar& depth, bool split_flag, bool& end_of_ctu){
-    int cuIdxm1 = cuIdx - 1;
-    int cuIdxm5 = cuIdx - 5;
-    int cuIdxm21 = cuIdx - 21;
+    uint16_t cuIdxm1 = cuIdx - 1;
+    uint16_t cuIdxm5 = cuIdx - 5;
+    uint16_t cuIdxm21 = cuIdx - 21;
     bool end_of_rec = 0;
 
     if (split_flag) {
         // Go up
         depth += 1;
-        cuIdx = (cuIdx * 4) + 1;
+        cuIdx = (cuIdx << 2) + 1;
     } else {
         // Go down
         if (depth == 0) {

@@ -72,8 +72,10 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 	internal_data_t dint;
 	UInt symbolVal;
 
+	// Initializing variables
 	init_buffer_int(dint);
 
+/*
 	cu1.depth = 0;
 	cu1.log2CbSize = 6;
 	cu1.x = 0;
@@ -207,24 +209,24 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 
 	//residual_coding(0, data_in, data_out, dint, cu1, tu1, baeState, tempBst, ctxTables, bitOut);
 	//transform_unit(data_in, data_out,dint, cu1, tu1, baeState, tempBst, ctxTables, bitOut);
-*/
+
 	coding_unit(cu1, data_in, data_out, dint, baeState, tempBst, ctxTables);
 	transform_tree(data_in, data_out, dint, cu1, baeState, tempBst, ctxTables);
+*/
+#ifndef __SYNTHESIS__
+	std::cout << std::dec << std::endl;
+	//printArray<int8_t, int>("Transform Coefficient ", 64, 64, (int8_t*)(dint.TransCoeffLevel_0));
+#endif
+
+	coding_quadtree(data_in,data_out,dint, baeState, tempBst,ctxTables);
 
 #ifndef __SYNTHESIS__
 	std::cout << std::dec << std::endl;
 	//printArray<int8_t, int>("Transform Coefficient ", 64, 64, (int8_t*)(dint.TransCoeffLevel_0));
 #endif
-/*
-	for(int i=0; i<10; i++){
-		tranCoeff.write(dint.TransCoeffLevel_0[0][i]);
-	}
-*/
+
 	memcpy((int8_t*)tranCoeff, dint.TransCoeffLevel_0, 64*64*sizeof(int8_t));
 	data_out_s.write(data_out);
-	//data_out_s = data_out;
-	//memcpy(&data_out_s, &data_out, sizeof(data_out_t));
-
 	store_global_ram(globalCtx, ctxTables, ctxWritten);
 }
 

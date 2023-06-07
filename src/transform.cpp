@@ -368,7 +368,10 @@ void parseCoeffSign(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_
 }
 
 void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data_t& dint,CU_t& cu, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
-#pragma HLS PIPELINE off
+#ifndef __SYNTHESIS__
+	std::cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Residual coding clIdx =  " << (int)cIdx << std::endl;
+	std::cout << "trafoSize = " << (int)tu.log2TrafoSize << std::endl;
+#endif
 	UChar last_sig_coeff_x_prefix, last_sig_coeff_y_prefix, last_sig_coeff_x_suffix, last_sig_coeff_y_suffix;
 	UChar lastScanPos;
 	UChar lastSubBlock;
@@ -529,19 +532,20 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 			}
 		}
 
+		int8_t tmpCnt;
 		if (i == lastSubBlock) {
-			temp = lastScanPos - 1;
+			tmpCnt = lastScanPos - 1;
 		} else {
-			temp = 15;
+			tmpCnt = 15;
 		}
 
 #ifndef __SYNTHESIS__
-		std::cout << "Temp Val : " << (int)temp << std::endl;
+		std::cout << "Temp Val : " << (int)tmpCnt << std::endl;
 		std::cout << "i val : " << (int)i << std::endl;
 		std::cout << "lastSubBLock Val : " << (int)lastSubBlock << std::endl << std::endl;
 #endif
 		//bitOut.write(bitPad);
-		for (int n = temp; n >= 0; n--) {
+		for (int n = tmpCnt; n >= 0; n--) {
 			xC = (xS << 2) + coeffBlockScan[n][0];
 			yC = (yS << 2) + coeffBlockScan[n][1];
 			if (coded_sub_block[xS][yS] && (n > 0 || !inferSbDcSigCoeffFlag)) {
@@ -562,7 +566,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		}
 
 		// SigCoeffFlag not present for these indices
-		for (int n = 15; n > temp; n--) {
+		for (int n = 15; n > tmpCnt; n--) {
 			xC = (xS << 2) + coeffBlockScan[n][0];
 			yC = (yS << 2) + coeffBlockScan[n][1];
 			if ((xC == LastSignificantCoeffX && yC == LastSignificantCoeffY) || (((xC & 3) == 0 && (yC & 3) == 0) && inferSbDcSigCoeffFlag && coded_sub_block[xS][yS])) {
@@ -685,7 +689,7 @@ void transform_unit(data_in_t& din, data_out_t& dout, internal_data_t& dint, CU_
 		cbf_id = 2;
 	}
 
-	log2TrafoSizeC = max<UChar>(2, tu.log2TrafoSize);
+	log2TrafoSizeC = max<UChar>(2, tu.log2TrafoSize-1);
 	cbfLuma = cu.cbf_luma[0];
 	cbfChroma = cu.cbf_cb[cbf_id] || cu.cbf_cr[cbf_id];
 

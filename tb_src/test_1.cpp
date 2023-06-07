@@ -63,7 +63,7 @@ int main() {
 
 	data_inp.PicWidthInCtbsY=20;
 	data_inp.CtbLog2SizeY=6;
-	data_inp.Log2MaxTransformSkipSize=3;
+	data_inp.Log2MaxTransformSkipSize=2;
 	data_inp.MinCbLog2SizeY=3;
 	data_inp.MaxTbLog2SizeY=5;
 	data_inp.MinTbLog2SizeY=2;

@@ -2,6 +2,7 @@
 #include "arith_dec.h"
 #include "intra_se.h"
 #include "init_tables.h"
+#include "transform.h"
 #include "utils.h"
 #include <assert.h>
 
@@ -39,7 +40,7 @@ void parseSplitCuFlag(CU_t& cu, data_in_t& din, data_out_t& dout, internal_data_
 
 }
 
-void setCqtDepth(CU_t& cu, data_out_t& dout, internal_data_t& dinternal, UChar cqtDepth) {
+void setCqtDepth(CU_t& cu, internal_data_t& dinternal, UChar cqtDepth) {
 		for (int i=0;i < (1<<cu.log2CbSize); i++){
 			for(int j=0; j < (1<<cu.log2CbSize); j++){
 				dinternal.cqtDepth[i][j] = cqtDepth;
@@ -47,49 +48,6 @@ void setCqtDepth(CU_t& cu, data_out_t& dout, internal_data_t& dinternal, UChar c
 		}
 }
 
-void coding_unit_rec(uint16_t cu_idx, data_in_t& din, data_out_t& dout, internal_data_t& dinternal, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
-	CU_t cu;
-	cu.x = 0;
-	cu.y = 0;
-
-	if (cu_idx==0) {
-		cu.depth = 0;
-	} else if (1<=cu_idx <=4) {
-		cu.depth = 1;
-	} else if (5<=cu_idx<=20){
-		cu.depth =2;
-	} else {
-		cu.depth = 3;
-	}
-
-	assert(cu.depth < 4);
-	switch (cu.depth) {
-	case 0: cu.x = 0;
-			cu.y = 0;
-			cu.log2CbSize = 6;
-			break;
-	case 1: cu.x = ((cu_idx-1) & 1)*32;
-			cu.y = ((cu_idx-1) >> 1)*32;
-			cu.log2CbSize= 5;
-			break;
-	case 2: cu.x = (TS2RS[(cu_idx-5)] & 3)*16;
-			cu.y = (TS2RS[(cu_idx-5)] >> 2)*16;
-			cu.log2CbSize = 4;
-			break;
-	case 3: cu.x = (TS2RS[(cu_idx-21)&15] & 3)*8;
-			cu.y = (TS2RS[(cu_idx-12)&15] >> 2)*8;
-			cu.log2CbSize = 3;
-			if (((cu_idx-21)>>4)>>1) {
-				cu.y += 32;
-			}
-			if (((cu_idx-21)>>4)&1) {
-				cu.x += 32;
-			}
-			break;
-	}
-
-
-}
 
 // Partmode_NxX = 1;
 // PartMode_2Nx2N = 0;
@@ -146,6 +104,7 @@ void coding_unit(CU_t& cu, data_in_t& din, data_out_t& dout, internal_data_t& di
 		}
 	}
 	cu.MaxTrafoDepth = din.sps.max_transform_hierarchy_depth_intra + cu.IntraSplitFlag;
+
 #ifndef __SYNTHESIS__
 	std::cout << "====================================== Done decoding pred direction ========================================" << std::endl;
 	std::cout << "Part Mode : " << (int)cu.part_mode << std::endl;
@@ -154,7 +113,126 @@ void coding_unit(CU_t& cu, data_in_t& din, data_out_t& dout, internal_data_t& di
 	printArray<UChar, int>("rem_intra_luma_pred_mode", 4, 1, cu.rem_intra_luma_pred_mode);
 	std::cout << "Intra chroma pred mode : " << (int) cu.intra_chroma_pred_mode << std::endl;
 #endif
+
+	transform_tree(din, dout, dinternal, cu, state, bStream, ctxTables);
+
 }
+
+void coding_unit_rec(uint16_t cu_idx, bool& split, UChar& depth, data_in_t& din, data_out_t& dout, internal_data_t& dinternal, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+	CU_t cu;
+	UInt symbolVal;
+	cu.x = 0;
+	cu.y = 0;
+	cu.depth = depth;
+/*
+	if (cu_idx==0) {
+		cu.depth = 0;
+	} else if (1<=cu_idx <=4) {
+		cu.depth = 1;
+	} else if (5<=cu_idx<=20){
+		cu.depth =2;
+	} else {
+		cu.depth = 3;
+	}
+*/
+
+
+	//assert(cu.depth < 4);
+	switch (cu.depth) {
+	case 0: cu.x = 0;
+			cu.y = 0;
+			cu.log2CbSize = 6;
+			break;
+	case 1: cu.x = ((cu_idx-1) & 1)*32;
+			cu.y = ((cu_idx-1) >> 1)*32;
+			cu.log2CbSize= 5;
+			break;
+	case 2: cu.x = (TS2RS[(cu_idx-5)] & 3)*16;
+			cu.y = (TS2RS[(cu_idx-5)] >> 2)*16;
+			cu.log2CbSize = 4;
+			break;
+	case 3: cu.x = (TS2RS[(cu_idx-21)&15] & 3)*8;
+			cu.y = (TS2RS[(cu_idx-21)&15] >> 2)*8;
+			cu.log2CbSize = 3;
+			if (((cu_idx-21)>>4)>>1) {
+				cu.y += 32;
+			}
+			if (((cu_idx-21)>>4)&1) {
+				cu.x += 32;
+			}
+			break;
+	}
+
+	if(cu.log2CbSize > din.MinCbLog2SizeY){
+		parseSplitCuFlag(cu, din, dout, dinternal, state, bStream, ctxTables, symbolVal);
+		split = symbolVal;
+	} else {
+		split = 0;
+	}
+
+	if(!split){
+#ifndef __SYNTHESIS__
+		std::cout << "####################################### Processing CU ##################################" << std::endl;
+		std::cout << " x0 : " << cu.x << std::endl;
+		std::cout << " y0 : " << cu.y << std::endl;
+		std::cout << " depth : " << (int)cu.depth << std::endl;
+		std::cout << " log2CbSize : " << (int)cu.log2CbSize << std::endl;
+		std::cout << "########################################################################################" << std::endl << std::endl;
+#endif
+		setCqtDepth(cu, dinternal, cu.depth);
+		coding_unit(cu, din, dout, dinternal, state,bStream, ctxTables);
+	}
+
+}
+
+void coding_quadtree(data_in_t& din, data_out_t& dout, internal_data_t& dinternal, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+	bool end_of_ctu;
+	bool split;
+	UChar depth;
+	uint16_t cu_idx;
+
+	end_of_ctu = 0;
+	cu_idx=0;
+	depth = 0;
+	split = 0;
+
+	while(!end_of_ctu){
+#ifndef __SYNTHESIS__
+		std::cout << "Current cuIdx : "<< std::dec << (int)cu_idx << std::endl;
+		std::cout << "Current depth : "<< std::dec << (int)depth << std::endl;
+#endif
+		coding_unit_rec(cu_idx, split, depth, din, dout, dinternal, state, bStream, ctxTables);
+		pattern_generator(cu_idx, depth, split, end_of_ctu);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
