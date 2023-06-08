@@ -55,20 +55,21 @@ typedef struct _arith_t {
 } arith_t;
 
 typedef struct _NbCTU_t {
+	char cqtDepth[64];				//Need only edge information, no bulk information required
+
 	//SAO
 	UChar SaoTypeIdx[3];
-	uint16_t SaoOffsetVal[3][5];
+
 	UChar SaoEOClass[3];
 	UChar sao_band_position[3];
-
-	//quad_tree
-	bool is_available;
-	char cqtDepth[64];				//Need only edge information, no bulk information required
+	uint16_t SaoOffsetVal[3][5];
 
 	//Intra PU
 	UChar IntraPredModeY[64];
 	UChar IntraPredModeC[64];
 
+	//quad_tree
+	bool is_available;
 }NbCTU_t;
 
 typedef struct _pps {
@@ -99,12 +100,13 @@ typedef struct _sps {
 
 typedef struct _s_header {
 	//SAO
+	int qp;
 	bool slice_sao_luma_flag;
 	bool slice_sao_chroma_flag;
 	//CABAC
 	SliceType slice_type;
 	bool cabac_init_flag;
-	int qp;
+
 } s_header_t;
 
 typedef struct _data_in {
@@ -113,7 +115,7 @@ typedef struct _data_in {
 	s_header_t s_header;
 	NbCTU_t left_ctu;
 	NbCTU_t up_ctu;
-	uint32_t ctuAddrsRs;
+	//uint32_t ctuAddrsRs;
 	bool firstCTU;
 
 	//Taking as input
@@ -130,9 +132,9 @@ typedef struct _data_in {
 typedef struct _data_out {
 	//SAO
 	UChar SaoTypeIdx[3];
-	int16_t SaoOffsetVal[3][5];
 	UChar SaoEOClass[3];
 	UChar sao_band_position[3];
+	int16_t SaoOffsetVal[3][5];
 
 }data_out_t;
 
@@ -149,9 +151,8 @@ typedef struct _internal_data {
 	int8_t TransCoeffLevel_1[64][64];
 	int8_t TransCoeffLevel_2[64][64];
 
-	bool split_transform_flag;
-
 	char cqtDepth[64][64];
+	bool split_transform_flag;
 
 } internal_data_t;
 
@@ -165,10 +166,13 @@ typedef struct _cu {
 	UChar depth;
 
 	//SE
-	bool prev_intra_luma_pred_flag[4];
 	UChar mpm_idx[4];
 	UChar rem_intra_luma_pred_mode[4];
 	UChar intra_chroma_pred_mode;
+
+	UChar MaxTrafoDepth; //(reshuffle for padding)
+
+	bool prev_intra_luma_pred_flag[4];
 	bool part_mode;
 	bool cu_transquant_bypass_flag;
 
@@ -181,7 +185,7 @@ typedef struct _cu {
 
 	//Others
 	bool IntraSplitFlag;
-	UChar MaxTrafoDepth;
+
 
 }CU_t;
 
@@ -195,12 +199,11 @@ typedef struct _tu {
 	UChar trafoDepth;
 	UChar blkIdx;
 
-	//SE
-	bool transform_skip_flag;
+
 
 	//feedback var
-	uint32_t cLastAbsLevel;
 	UChar cLastRiceParam;
+	uint32_t cLastAbsLevel;
 	uint32_t cAbsLevel;
 
 	UChar ctxSet;
@@ -208,6 +211,9 @@ typedef struct _tu {
 	UChar lastGreater1Flag;
 	UChar greater1Ctx;
 	UChar G2ctxSet;
+
+	//SE
+	bool transform_skip_flag;
 } TU_t;
 
 

@@ -16,9 +16,14 @@ void parseSplitCuFlag(CU_t& cu, data_in_t& din, data_out_t& dout, internal_data_
 		}
 	} else {
 		ctxInc += (dinternal.cqtDepth[cu.x-1][cu.y] > cu.depth);
+#ifndef __SYNTHESIS__
+	std::cout << "left cu depth : " << (int)dinternal.cqtDepth[cu.x-1][cu.y] << std::endl;
+	//std::cout << "up cu depth : " << (int)dinternal.cqtDepth[cu.x][cu.y-1] << std::endl;
+	std::cout << "cu depth : " << (int)cu.depth << std::endl;
+#endif
 	}
 
-	// Right availability check
+	// UP availability check
 	if (cu.y==0){
 		if (din.up_ctu.is_available) {
 			ctxInc += (din.up_ctu.cqtDepth[cu.x] > cu.depth);
@@ -40,9 +45,20 @@ void parseSplitCuFlag(CU_t& cu, data_in_t& din, data_out_t& dout, internal_data_
 
 }
 
+void parseEOSSF(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
+	symbolVal = 0;
+	bool bitVal;
+	decode_decision(TERMINATE, state, bitVal, bStream, 0, ctxTables);
+	symbolVal = bitVal;
+#ifndef __SYNTHESIS__
+	std::cout << "End of slice segment flag" << std::endl;
+	std::cout << "symbolVal : " << (int)symbolVal << std::endl << std::endl;
+#endif
+}
+
 void setCqtDepth(CU_t& cu, internal_data_t& dinternal, UChar cqtDepth) {
-		for (int i=0;i < (1<<cu.log2CbSize); i++){
-			for(int j=0; j < (1<<cu.log2CbSize); j++){
+		for (int i=cu.x;i < (cu.x+(1<<cu.log2CbSize)); i++){
+			for(int j=cu.y; j < (cu.y+(1<<cu.log2CbSize)); j++){
 				dinternal.cqtDepth[i][j] = cqtDepth;
 			}
 		}

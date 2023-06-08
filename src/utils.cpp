@@ -95,10 +95,10 @@ void pattern_generator(uint16_t& cuIdx, UChar& depth, bool split_flag, bool& end
     end_of_ctu = end_of_rec;
 }
 
-void get_scanIdx(TU_t& tu, internal_data_t& dint, UChar cIdx, UChar& scanIdx){
+void get_scanIdx(TU_t& tu, UChar log2TrafoSize, internal_data_t& dint, UChar cIdx, UChar& scanIdx){
 	scanIdx = 0;
 	UChar predModeIntra;
-	if(tu.log2TrafoSize==2 || (tu.log2TrafoSize==3 && cIdx==0)){
+	if(log2TrafoSize==2 || (log2TrafoSize==3 && cIdx==0)){
 		if(cIdx==0){
 			predModeIntra = dint.IntraPredModeY[tu.x][tu.y];
 		} else {

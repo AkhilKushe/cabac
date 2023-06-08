@@ -25,7 +25,7 @@ void printArray(const char* name, int xdim, int ydim, T* arr){
 	std::cout << std::endl;
 
 }
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], volatile data_in_t data_in_s[1], volatile data_out_t data_out_s[1]);
 
 //void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& tranCoeff, hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
 int main() {
@@ -50,7 +50,7 @@ int main() {
 	// Setting input buffers
 	// TODO : set all the input buffers
 	data_in_t data_inp;
-	data_inp.ctuAddrsRs = 0;
+	//data_inp.ctuAddrsRs = 0;
 	data_inp.firstCTU = 1;
 	data_inp.s_header.cabac_init_flag = 0;
 	data_inp.s_header.slice_type = I_SLICE;
@@ -77,22 +77,25 @@ int main() {
 	data_inp.sps.max_transform_hierarchy_depth_intra=2;
 
 
-	hls::stream<data_in_t> data_inp_s;
-	hls::stream<data_out_t> data_oup_s;
+	//hls::stream<data_in_t> data_inp_s;
+	//hls::stream<data_out_t> data_oup_s;
+	data_in_t data_inp_s[1];
+	data_out_t data_oup_s[1];
 
-	data_inp_s.write(data_inp);
+	data_inp_s[0] = data_inp;
 	data_out_t data_oup;
 
 	//hls::stream<int8_t> tranCoeff;
 	int8_t tranCoeff[64][64];
 	cabac_top(globalCtx, tranCoeff, testBitStream_maxi, data_inp_s, data_oup_s);
-	data_oup = data_oup_s.read();
+	//data_oup = data_oup_s.read();
+	data_oup = data_oup_s[0];
 
 	UChar expected[5] = {14, 33, 2, 29, 49};
 
 
 	std::cout << "TEST BENCH RESULTS" << std::endl;
-	for(int i=0; i < 8; i++) {
+	for(int i=0; i < MAX_NUM_CTX_MOD; i++) {
 		std::cout << (int)globalCtx[i] << std::endl;
 
 		//if(expected[i] != globalCtx[i]){

@@ -31,7 +31,7 @@ void parseCoeffAbsLevelG2(UChar cIdx, TU_t& tu, arith_t& state, UChar* bStream, 
 void parseCoeffAbsRem(UChar baseLevel, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal);
 void parseCoeffSign(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal);
 
-void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data_t& dint,CU_t& cu, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]);
+void residual_coding(UChar cIdx,UChar trafoSize, data_in_t& din, data_out_t& dout, internal_data_t& dint,CU_t& cu, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]);
 
 void transform_unit(data_in_t& din, data_out_t& dout, internal_data_t& dint, CU_t& cu, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]);
 void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, bool& transform_split, data_in_t& din, data_out_t& dout, internal_data_t& dint, CU_t& cu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]);

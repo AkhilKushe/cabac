@@ -214,7 +214,7 @@ void parseSigCoeffFlag(UChar xC, UChar yC, UChar scanIdx, UChar coded_sub_block_
 	decode_decision(REGULAR, state, binVal, bStream, SIG_COEFF_FLAG_CTX_ADDR+ctxInc, ctxTables);
 	symbolVal=binVal;
 #ifndef __SYNTHESIS__
-	std::cout << "////////////////// Decoding sigCoeffFlag at" << (int)xP << " " <<(int)yP <<  "////////////////" << std::endl;
+	std::cout << "////////////////// Decoding sigCoeffFlag at" << (int)xC << " " <<(int)yC <<  "////////////////" << std::endl;
 	std::cout << "ctxInc : " << (int)ctxInc << std::endl;
 	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
 #endif
@@ -367,10 +367,10 @@ void parseCoeffSign(arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_
 #endif
 }
 
-void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data_t& dint,CU_t& cu, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
+void residual_coding(UChar cIdx,UChar trafoSize, data_in_t& din, data_out_t& dout, internal_data_t& dint,CU_t& cu, TU_t& tu, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD]){
 #ifndef __SYNTHESIS__
 	std::cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Residual coding clIdx =  " << (int)cIdx << std::endl;
-	std::cout << "trafoSize = " << (int)tu.log2TrafoSize << std::endl;
+	std::cout << "trafoSize = " << (int)trafoSize << std::endl;
 #endif
 	UChar last_sig_coeff_x_prefix, last_sig_coeff_y_prefix, last_sig_coeff_x_suffix, last_sig_coeff_y_suffix;
 	UChar lastScanPos;
@@ -405,9 +405,8 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 	int8_t transCoeffVal;
 	UInt bitPad;
 	bitPad = 0xFFFF;
-
 	lastScanPos = 16;
-	lastSubBlock = (1<<(tu.log2TrafoSize-2))*(1<<(tu.log2TrafoSize-2)) -1;
+	lastSubBlock = (1<<(trafoSize-2))*(1<<(trafoSize-2)) -1;
 
 	for(int i=0; i<8; i++){
 		for(int j=0; j<8; j++){
@@ -420,7 +419,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 		}
 	}
 
-	if (din.pps.transform_skip_enabled_flag && (! cu.cu_transquant_bypass_flag) && (tu.log2TrafoSize <= din.Log2MaxTransformSkipSize)){
+	if (din.pps.transform_skip_enabled_flag && (! cu.cu_transquant_bypass_flag) && (trafoSize <= din.Log2MaxTransformSkipSize)){
 		parseSkipTransformFlag(cIdx, state, bStream, ctxTables, symbolVal);
 		tu.transform_skip_flag = symbolVal;
 	} else {
@@ -430,11 +429,11 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 	//bitOut.write(symbolVal);
 	//bitOut.write(bitPad);
 
-	parseSigCoeffXPrefix(tu.log2TrafoSize, cIdx, state, bStream, ctxTables, symbolVal);
+	parseSigCoeffXPrefix(trafoSize, cIdx, state, bStream, ctxTables, symbolVal);
 	last_sig_coeff_x_prefix = symbolVal;
 	//bitOut.write(symbolVal);
 
-	parseSigCoeffYPrefix(tu.log2TrafoSize, cIdx, state, bStream, ctxTables, symbolVal);
+	parseSigCoeffYPrefix(trafoSize, cIdx, state, bStream, ctxTables, symbolVal);
 	last_sig_coeff_y_prefix = symbolVal;
 	//bitOut.write(symbolVal);
 
@@ -444,16 +443,22 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 	if (last_sig_coeff_x_prefix > 3){
 		parseSigCoeffSuffix(last_sig_coeff_x_prefix, state, bStream, ctxTables, symbolVal);
 		last_sig_coeff_x_suffix = symbolVal;
+		LastSignificantCoeffX =  ( 1 << ( (last_sig_coeff_x_prefix >> 1 ) - 1 ) ) *( 2 + (last_sig_coeff_x_prefix & 1 ) ) + last_sig_coeff_x_suffix;
 	}
 
 	if(last_sig_coeff_y_prefix > 3) {
 		parseSigCoeffSuffix(last_sig_coeff_y_prefix, state, bStream, ctxTables, symbolVal);
 		last_sig_coeff_y_suffix = symbolVal;
+		LastSignificantCoeffY =  ( 1 << ( (last_sig_coeff_y_prefix >> 1 ) - 1 ) ) *( 2 + (last_sig_coeff_y_prefix & 1 ) ) + last_sig_coeff_y_suffix;
 	}
 
+#ifndef __SYNTHESIS__
+	std::cout << "LastSigCoeffX : " << (int)LastSignificantCoeffX << std::endl;
+	std::cout << "LastSigCoeffY : " << (int)LastSignificantCoeffY << std::endl;
+#endif
 
 	UChar scanIdx;
-	get_scanIdx(tu, dint, cIdx, scanIdx);
+	get_scanIdx(tu, trafoSize, dint, cIdx, scanIdx);
 	UChar temp;
 	if(scanIdx==2){
 		temp = LastSignificantCoeffX;
@@ -464,15 +469,15 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 	switch (scanIdx)
 	{
 	case 0:
-		up_right_diagonal_scan((1<<(tu.log2TrafoSize-2)), subBlockScan);
+		up_right_diagonal_scan((1<<(trafoSize-2)), subBlockScan);
 		up_right_diagonal_scan(4, coeffBlockScan);
 		break;
 	case 1:
-		horizontal_scan((1<<(tu.log2TrafoSize-2)), subBlockScan);
+		horizontal_scan((1<<(trafoSize-2)), subBlockScan);
 		horizontal_scan(4, coeffBlockScan);
 		break;
 	case 2:
-		vertical_scan((1<<(tu.log2TrafoSize-2)), subBlockScan);
+		vertical_scan((1<<(trafoSize-2)), subBlockScan);
 		vertical_scan(4, coeffBlockScan);
 		break;
 	}
@@ -549,7 +554,7 @@ void residual_coding(UChar cIdx, data_in_t& din, data_out_t& dout, internal_data
 			xC = (xS << 2) + coeffBlockScan[n][0];
 			yC = (yS << 2) + coeffBlockScan[n][1];
 			if (coded_sub_block[xS][yS] && (n > 0 || !inferSbDcSigCoeffFlag)) {
-				parseSigCoeffFlag(xC, yC, scanIdx, coded_sub_block[xS+1][yS], coded_sub_block[xS][yS+1], tu.log2TrafoSize, cIdx, state, bStream, ctxTables, symbolVal);
+				parseSigCoeffFlag(xC, yC, scanIdx, coded_sub_block[xS+1][yS], coded_sub_block[xS][yS+1], trafoSize, cIdx, state, bStream, ctxTables, symbolVal);
 				sig_coeff_flag[xC][yC] = symbolVal;
 				//bitOut.write(symbolVal);
 			} else {
@@ -692,27 +697,33 @@ void transform_unit(data_in_t& din, data_out_t& dout, internal_data_t& dint, CU_
 	log2TrafoSizeC = max<UChar>(2, tu.log2TrafoSize-1);
 	cbfLuma = cu.cbf_luma[0];
 	cbfChroma = cu.cbf_cb[cbf_id] || cu.cbf_cr[cbf_id];
-
+#ifndef __SYNTHESIS__
+	std::cout << "Residual coding specs" << std::endl;
+	std::cout << "cbf_cb" << (int)cu.cbf_cb[0] << " " << (int)cu.cbf_cb[1] << std::endl;
+	std::cout << "cbf_cr" << (int)cu.cbf_cr[0] << " " << (int)cu.cbf_cr[1] << std::endl;
+	std::cout << "cbf_luma" << (int)cu.cbf_luma[0] << " " << (int)cu.cbf_luma[1] << std::endl;
+	std::cout << "cbf_cb" << (int)tu.blkIdx  << std::endl;
+#endif
 	if(cbfLuma || cbfChroma){
 		if(cbfLuma){
-			residual_coding(0, din, dout, dint, cu, tu, state, bStream, ctxTables);
+			residual_coding( 0, tu.log2TrafoSize, din, dout, dint, cu, tu, state, bStream, ctxTables);
 		}
 
 		if(tu.log2TrafoSize>2){
-			tu.log2TrafoSize = log2TrafoSizeC;
+			//tu.log2TrafoSize = log2TrafoSizeC;
 			if(cu.cbf_cb[0]){
-				residual_coding(1, din, dout, dint, cu, tu, state, bStream, ctxTables);
+				residual_coding(1,log2TrafoSizeC, din, dout, dint, cu, tu, state, bStream, ctxTables);
 			}
 			if(cu.cbf_cr[0]){
-				residual_coding(2, din, dout, dint, cu, tu, state, bStream, ctxTables);
+				residual_coding(2,log2TrafoSizeC, din, dout, dint, cu, tu, state, bStream, ctxTables);
 			}
 
 		} else if(tu.blkIdx==3){
 			if(cu.cbf_cb[1]){
-				residual_coding(1, din, dout, dint, cu, tu, state, bStream, ctxTables);
+				residual_coding(1,tu.log2TrafoSize, din, dout, dint, cu, tu, state, bStream, ctxTables);
 			}
 			if(cu.cbf_cr[1]){
-				residual_coding(2, din, dout, dint, cu, tu, state, bStream, ctxTables);
+				residual_coding(2,tu.log2TrafoSize, din, dout, dint, cu, tu, state, bStream, ctxTables);
 			}
 		}
 	}
@@ -783,7 +794,7 @@ void transform_tree_rec(uint16_t tuIdx, UChar trafoDepth, UChar log2TrafoSize, b
 	tu.xBase = xBase;
 	tu.yBase = yBase;
 	tu.log2TrafoSize = log2TrafoSize;
-	tu.blkIdx = 0;
+	tu.blkIdx = blkIdx;
 	tu.trafoDepth = trafoDepth;
 	tu.lastGreater1Flag = 0;
 	tu.lastGreater1Ctx=0;

@@ -23,7 +23,8 @@ void store_global_ram(volatile UChar globalCtx[MAX_NUM_CTX_MOD], UChar ctxTable[
 
 
 // TODO : fix top inteface with input/output declaration
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
+//void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], volatile data_in_t data_in_s[1], volatile data_out_t data_out_s[1]){
 #pragma HLS INTERFACE mode=m_axi bundle=ctx name=gCtx port=globalCtx
 #pragma HLS INTERFACE mode=s_axilite port=globalCtx
 
@@ -33,7 +34,10 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 #pragma HLS INTERFACE mode=m_axi bundle=bstream name=bst port=bitStream
 #pragma HLS INTERFACE mode=s_axilite port=bitStream
 
+#pragma HLS INTERFACE mode=m_axi bundle=inp name=inpt port=data_in_s
 #pragma HLS INTERFACE mode=s_axilite port=data_in_s
+
+#pragma HLS INTERFACE mode=m_axi bundle=out name=outp port=data_out_s
 #pragma HLS INTERFACE mode=s_axilite port=data_out_s
 
 	hls::stream<UChar> streamCtxRAM;
@@ -45,8 +49,8 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 
 	data_in_t data_in;
 	data_out_t data_out;
-	data_in = data_in_s.read();
-	//memcpy(&data_in, &data_in_s, sizeof(data_in_t));
+	//data_in = data_in_s.read();
+	memcpy(&data_in, (data_in_t*)data_in_s, sizeof(data_in_t));
 
 	initialization_top(data_in.firstCTU, data_in.s_header.slice_type, data_in.s_header.qp, data_in.s_header.cabac_init_flag, globalCtx, streamCtxRAM, ctxWritten);
 
@@ -219,6 +223,7 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 #endif
 
 	coding_quadtree(data_in,data_out,dint, baeState, tempBst,ctxTables);
+	parseEOSSF(baeState, tempBst,  ctxTables, symbolVal);
 
 #ifndef __SYNTHESIS__
 	std::cout << std::dec << std::endl;
@@ -226,7 +231,8 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 #endif
 
 	memcpy((int8_t*)tranCoeff, dint.TransCoeffLevel_0, 64*64*sizeof(int8_t));
-	data_out_s.write(data_out);
+	//data_out_s.write(data_out);
+	memcpy((data_out_t*)data_out_s, &data_out,sizeof(data_out_t));
 	store_global_ram(globalCtx, ctxTables, ctxWritten);
 }
 

@@ -53,20 +53,23 @@ Maxi working
 6 JUNE TODO :
 1. Get bitstream from dat file (1 CTU), DONE
 2. Complete CTU Tree code, 
-	- done coding unit
+	+ done coding unit
 	- initializer for all units
-	- cu recursive wrapper
-	- top ctu call
-	
-3. Interface
+	+ done cu recursive wrapper
+	+ done top ctu call
 
+3. Interface
+4. Fix all initialization of arith state for first ctu, pass and recieve state info
+5. Clean code
 
 Future scope:
 adding error control -> hardware prone to hangs
 						-> very control sensitive algorithm
+Splitting functional unit into seperate tpo reduce synthesis complexity and time
 
 
-
+Notes : 
+Simulation time 1 CTU  : 3115735 ns
 
 
 

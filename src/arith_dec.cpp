@@ -48,7 +48,7 @@ void decode_regular(arith_t& state, bool& binVal, UChar* bStream, UInt ctxAddr, 
 
 	ctxUpdate(ctxTables, ctxAddr, isMps);
 
-		// Renormalization
+	// Renormalization
 	UInt val;
 	while (state.ivlCurrRange < 256) {
 		state.ivlCurrRange <<= 1;
@@ -88,7 +88,27 @@ void decode_bypass(arith_t& state, bool& binVal, UChar* bStream){
 #endif
 }
 void decode_terminate(arith_t& state, bool& binVal, UChar* bStream){
+	state.ivlCurrRange = state.ivlCurrRange - 2;
+	if(state.ivlOffset >= state.ivlCurrRange){
+		binVal = 1;
+	} else {
+		binVal = 0;
+	}
+	// Renormalization
+	UInt val;
+	while (state.ivlCurrRange < 256) {
+		state.ivlCurrRange <<= 1;
+		state.ivlOffset <<= 1;
+		val = bitStream_read_bits(bStream, 1, state.bstate);
+		state.ivlOffset = state.ivlOffset | val;
+	}
 
+#ifndef __SYNTHESIS__
+	std::cout << "Decode Mode : Bypass" << std::endl;
+	std::cout << "Currr Range : "<< std::hex << state.ivlCurrRange << std::endl;
+	std::cout << "Offset : "<< std::hex << state.ivlOffset << std::endl;
+	std::cout << "Bin Val : "<< std::hex << binVal << std::endl;
+#endif
 
 }
 
