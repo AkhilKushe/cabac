@@ -23,11 +23,10 @@ void printArray(const char* name, int xdim, int ydim, T* arr){
 		std::cout <<std::endl <<"----------------"<< std::endl;
 	}
 	std::cout << std::endl;
-
 }
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], volatile data_in_t data_in_s[1], volatile data_out_t data_out_s[1]);
+//void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], volatile data_in_t data_in_s[1], volatile data_out_t data_out_s[1]);
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD],volatile arith_t initArithState[1], volatile int8_t tranCoeff_0[64][64], volatile int8_t tranCoeff_1[64][64], volatile int8_t tranCoeff_2[64][64], volatile char cqtDepth[64][64], volatile UChar IntraPredModeY[64][64], volatile UChar IntraPredModeC[64][64], volatile UChar bitStream[1024], volatile data_in_t data_in_s[1], volatile data_out_t data_out_s[1]);
 
-//void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], hls::stream<int8_t>& tranCoeff, hls::stream<UChar, 128>& bitStream, hls::stream<UInt>& bitOut, hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s);
 int main() {
 	UChar testBitStream_maxi[1024];
 	std::ifstream file("F:\\petaProj\\cabac_hls\\cabac\\tb_src\\ctu_bitstream.dat", std::ios::binary);
@@ -48,7 +47,6 @@ int main() {
 	hls::stream<UInt, 32> bOut;
 
 	// Setting input buffers
-	// TODO : set all the input buffers
 	data_in_t data_inp;
 	//data_inp.ctuAddrsRs = 0;
 	data_inp.firstCTU = 1;
@@ -86,13 +84,21 @@ int main() {
 	data_out_t data_oup;
 
 	//hls::stream<int8_t> tranCoeff;
-	int8_t tranCoeff[64][64];
-	cabac_top(globalCtx, tranCoeff, testBitStream_maxi, data_inp_s, data_oup_s);
+	int8_t tranCoeff_0[64][64];
+	int8_t tranCoeff_1[64][64];
+	int8_t tranCoeff_2[64][64];
+	UChar IntraPredModeY[64][64];
+	UChar IntraPredModeC[64][64];
+	char cqtDepth[64][64];
+	arith_t arith_s[1];
+	arith_t initArithState;
+	arith_s[0] = initArithState;
+
+	cabac_top(globalCtx, arith_s, tranCoeff_0, tranCoeff_1, tranCoeff_2, cqtDepth, IntraPredModeY, IntraPredModeC, testBitStream_maxi, data_inp_s, data_oup_s);
 	//data_oup = data_oup_s.read();
 	data_oup = data_oup_s[0];
 
 	UChar expected[5] = {14, 33, 2, 29, 49};
-
 
 	std::cout << "TEST BENCH RESULTS" << std::endl;
 	for(int i=0; i < MAX_NUM_CTX_MOD; i++) {
@@ -102,7 +108,6 @@ int main() {
 		//	return 1;
 		//}
 	}
-
 
 	std::cout << "====================== Sao Buffer Output =========================" << std::endl;
 	printArray<UChar, int>("SaoTypeIdx", 3, 1, data_oup.SaoTypeIdx);
@@ -114,17 +119,18 @@ int main() {
 	printArray<UChar, int>("sao_band_position", 3, 1, data_oup.sao_band_position);
 
 	std::cout << "====================== Transform Output =========================" << std::endl;
-	printArray<int8_t, int>("Transform Coefficients", 64, 64, (int8_t*)tranCoeff);
+	printArray<int8_t, int>("Transform Coefficients luma ", 64, 64, (int8_t*)tranCoeff_0);
+	printArray<int8_t, int>("Transform Coefficients cr", 64, 64, (int8_t*)tranCoeff_1);
+	printArray<int8_t, int>("Transform Coefficients cb", 64, 64, (int8_t*)tranCoeff_2);
 
-/*
-	for(int i=0; i<10; i++){
-		std::cout << (int)tranCoeff.read() << std::endl;
-	}
+	printArray<UChar, int>("Intra prediction luma ", 64, 64, (UChar*)IntraPredModeY);
+	printArray<UChar, int>("Intra Prediction Chroma ", 64, 64, (UChar*)IntraPredModeC);
 
-	std::cout << "Transform debug" << std::endl;
-	while(!bOut.empty()){
-		std::cout << "Val : " << (int) bOut.read() << std::endl;
-	}
-*/
+	printArray<char, int>("Coding quad Tree depth", 64, 64, (char*)cqtDepth);
+
+	std::cout << "====================== BAE decoder state =========================" << std::endl;
+	std::cout << "Current range : " << std::hex<< (int)arith_s[0].ivlCurrRange << std::endl;
+	std::cout << "Current Offset : " << (int)arith_s[0].ivlOffset << std::endl;
+
 	return 0;
 }

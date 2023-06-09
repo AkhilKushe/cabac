@@ -8,14 +8,14 @@
 #include "transform.h"
 #include <string.h>
 
-void load_ram(UChar ctxTable[MAX_NUM_CTX_MOD], hls::stream<UChar>& inpStream, UInt cnt){
-	for(int i=0; i < cnt; i++) {
+void load_ram(UChar ctxTable[MAX_NUM_CTX_MOD], hls::stream<UChar>& inpStream){
+	for(int i=0; i < MAX_NUM_CTX_MOD; i++) {
 		ctxTable[i] = inpStream.read();
 	}
 }
 
-void store_global_ram(volatile UChar globalCtx[MAX_NUM_CTX_MOD], UChar ctxTable[MAX_NUM_CTX_MOD], UInt cnt){
-	for(int i=0; i < cnt; i++) {
+void store_global_ram(volatile UChar globalCtx[MAX_NUM_CTX_MOD], UChar ctxTable[MAX_NUM_CTX_MOD]){
+	for(int i=0; i < MAX_NUM_CTX_MOD; i++) {
 		globalCtx[i] = ctxTable[i];
 	}
 }
@@ -24,12 +24,24 @@ void store_global_ram(volatile UChar globalCtx[MAX_NUM_CTX_MOD], UChar ctxTable[
 
 // TODO : fix top inteface with input/output declaration
 //void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
-void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], volatile data_in_t data_in_s[1], volatile data_out_t data_out_s[1]){
+void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD],volatile arith_t initArithState[1], volatile int8_t tranCoeff_0[64][64], volatile int8_t tranCoeff_1[64][64], volatile int8_t tranCoeff_2[64][64], volatile char cqtDepth[64][64], volatile UChar IntraPredModeY[64][64], volatile UChar IntraPredModeC[64][64], volatile UChar bitStream[1024], volatile data_in_t data_in_s[1], volatile data_out_t data_out_s[1]){
 #pragma HLS INTERFACE mode=m_axi bundle=ctx name=gCtx port=globalCtx
 #pragma HLS INTERFACE mode=s_axilite port=globalCtx
 
-#pragma HLS INTERFACE mode=m_axi bundle=tran name=tranC port=tranCoeff
-#pragma HLS INTERFACE mode=s_axilite port=tranCoeff
+#pragma HLS INTERFACE mode=m_axi bundle=tran name=tranC port=tranCoeff_0
+#pragma HLS INTERFACE mode=s_axilite port=tranCoeff_0
+#pragma HLS INTERFACE mode=m_axi bundle=tran name=tranC port=tranCoeff_1
+#pragma HLS INTERFACE mode=s_axilite port=tranCoeff_1
+#pragma HLS INTERFACE mode=m_axi bundle=tran name=tranC port=tranCoeff_2
+#pragma HLS INTERFACE mode=s_axilite port=tranCoeff_2
+
+#pragma HLS INTERFACE mode=m_axi bundle=cqt name=cqtD port=cqtDepth
+#pragma HLS INTERFACE mode=s_axilite port=cqtDepth
+
+#pragma HLS INTERFACE mode=m_axi bundle=pred name=predDir port=IntraPredModeY
+#pragma HLS INTERFACE mode=s_axilite port=IntraPredModeY
+#pragma HLS INTERFACE mode=m_axi bundle=pred name=predDir port=IntraPredModeC
+#pragma HLS INTERFACE mode=s_axilite port=IntraPredModeC
 
 #pragma HLS INTERFACE mode=m_axi bundle=bstream name=bst port=bitStream
 #pragma HLS INTERFACE mode=s_axilite port=bitStream
@@ -41,199 +53,59 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCo
 #pragma HLS INTERFACE mode=s_axilite port=data_out_s
 
 	hls::stream<UChar> streamCtxRAM;
-#pragma HLS STREAM depth=512 type=fifo variable=streamCtxRAM
+#pragma HLS STREAM depth=256 type=fifo variable=streamCtxRAM
 
 	UChar ctxTables[MAX_NUM_CTX_MOD];
-	UInt ctxWritten;
-	ctxWritten = 0;
-
 	data_in_t data_in;
 	data_out_t data_out;
-	//data_in = data_in_s.read();
-	memcpy(&data_in, (data_in_t*)data_in_s, sizeof(data_in_t));
-
-	initialization_top(data_in.firstCTU, data_in.s_header.slice_type, data_in.s_header.qp, data_in.s_header.cabac_init_flag, globalCtx, streamCtxRAM, ctxWritten);
-
-	load_ram(ctxTables, streamCtxRAM, ctxWritten);
-
-
-
 	UChar tempBst[1024];
-	/*
-	for(int i=0; i<30; i++){
-		tempBst[i] = bitStream.read();
-	}
-	*/
-	memcpy(tempBst, (UChar*)bitStream, 1024*sizeof(UChar));
-	// Initialize Arith decoder
-	// TODO : Export BAE state, Arith initialization only for first CTU, currently only 1 CTU
 	arith_t baeState;
-	arith_init(tempBst, baeState);
-
-	sao_top(data_in, data_out, baeState, tempBst, ctxTables);
-
-	CU_t cu1;
 	internal_data_t dint;
 	UInt symbolVal;
 
-	// Initializing variables
-	init_buffer_int(dint);
+	memcpy(&data_in, (data_in_t*)data_in_s, sizeof(data_in_t));
 
-/*
-	cu1.depth = 0;
-	cu1.log2CbSize = 6;
-	cu1.x = 0;
-	cu1.y = 0;
+	initialization_top(data_in.firstCTU, data_in.s_header.slice_type, data_in.s_header.qp, data_in.s_header.cabac_init_flag, globalCtx, streamCtxRAM);
+	load_ram(ctxTables, streamCtxRAM);
 
-	// Manual decode
-	parseSplitCuFlag(cu1, data_in, data_out, dint, baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "1 Split flag symbol val :" << symbolVal << std::endl << std::endl;
-#endif
+	memcpy(tempBst, (UChar*)bitStream, 1024*sizeof(UChar));
 
-	cu1.depth = 1;
-	cu1.log2CbSize = 5;
-	cu1.x = 0;
-	cu1.y = 0;
+	// Initialize Arith decoder
+	// Export BAE state, Arith initialization only for first CTU, currently only 1 CTU
 
-	// Manual decode
-	parseSplitCuFlag(cu1, data_in, data_out, dint, baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "2 Split flag symbol val :" << symbolVal << std::endl << std::endl;
-#endif
-
-	cu1.depth = 2;
-	cu1.log2CbSize = 4;
-	cu1.x = 0;
-	cu1.y = 0;
-
-	// Manual decode
-	parseSplitCuFlag(cu1, data_in, data_out, dint, baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "3 Split flag symbol val :" << symbolVal << std::endl << std::endl;
-#endif
-
-	cu1.depth = 3;
-	cu1.log2CbSize = 3;
-	cu1.x = 0;
-	cu1.y = 0;
-/*
-	parsePartMode(baeState, tempBst, ctxTables, symbolVal);
-	if(symbolVal==1){
-		cu1.IntraSplitFlag = 1;
+	if(data_in.firstCTU){
+		arith_init(tempBst, baeState);
 	} else {
-		cu1.IntraSplitFlag=0;
+		memcpy(&baeState, (arith_t*)initArithState,sizeof(arith_t));
 	}
-#ifndef __SYNTHESIS__
-	std::cout << "4 part mode symbol val :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.part_mode = symbolVal;
 
-	parsePrevIntraLumaPredFlag(baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "5 prev intra luma pred flag :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.prev_intra_luma_pred_flag[0] = symbolVal;
 
-	parsePrevIntraLumaPredFlag(baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "6 prev intra luma pred flag :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.prev_intra_luma_pred_flag[1] = symbolVal;
 
-	parsePrevIntraLumaPredFlag(baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "7 prev intra luma pred flag :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.prev_intra_luma_pred_flag[2] = symbolVal;
 
-	parsePrevIntraLumaPredFlag(baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "8 prev intra luma pred flag :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.prev_intra_luma_pred_flag[3] = symbolVal;
-
-	parseMpmIdx(baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "9 mpm idx :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.mpm_idx[0] = symbolVal;
-
-	parseMpmIdx(baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "10 mpm idx :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.mpm_idx[1] = symbolVal;
-
-	parseRemIntraLumaPredMode(baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "11 rem intra luma pred :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.rem_intra_luma_pred_mode[2] = symbolVal;
-
-	parseMpmIdx(baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "12 mpm idx :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.mpm_idx[3] = symbolVal;
-
-	parseIntraChromaPredMode(baeState, tempBst, ctxTables, symbolVal);
-#ifndef __SYNTHESIS__
-	std::cout << "13 Intra Chroma Pred Mode :" << symbolVal << std::endl << std::endl;
-#endif
-	cu1.intra_chroma_pred_mode=symbolVal;
-	cu1.cu_transquant_bypass_flag=0;
-	setIntraPredMode(0, 4, cu1, data_in, data_out, dint);
-	setIntraPredMode(1, 4, cu1, data_in, data_out, dint);
-	setIntraPredMode(2, 4, cu1, data_in, data_out, dint);
-	setIntraPredMode(3, 4, cu1, data_in, data_out, dint);
-/*
-	parseCbfC(0, baeState, tempBst, ctxTables, symbolVal);
-	cu1.cbf_cb[1]= symbolVal;
-	parseCbfC(0, baeState, tempBst, ctxTables, symbolVal);
-	cu1.cbf_cr[1]=symbolVal;
-	parseCbfLuma(1, baeState, tempBst, ctxTables, symbolVal);
-	cu1.cbf_luma[0]=symbolVal;
-	TU_t tu1;
-		tu1.x = 0;
-		tu1.y = 0;
-		tu1.xBase = 0;
-		tu1.yBase = 0;
-		tu1.log2TrafoSize = 2;
-		tu1.blkIdx = 0;
-		tu1.trafoDepth = 1;
-		tu1.lastGreater1Flag = 0;
-		tu1.lastGreater1Ctx=0;
-		tu1.greater1Ctx=0;
-		tu1.ctxSet=0;
-		tu1.cLastRiceParam=0;
-		tu1.cLastAbsLevel=0;
-		tu1.cAbsLevel=0;
-		tu1.G2ctxSet=0;
-
-	//residual_coding(0, data_in, data_out, dint, cu1, tu1, baeState, tempBst, ctxTables, bitOut);
-	//transform_unit(data_in, data_out,dint, cu1, tu1, baeState, tempBst, ctxTables, bitOut);
-
-	coding_unit(cu1, data_in, data_out, dint, baeState, tempBst, ctxTables);
-	transform_tree(data_in, data_out, dint, cu1, baeState, tempBst, ctxTables);
-*/
 #ifndef __SYNTHESIS__
 	std::cout << std::dec << std::endl;
-	//printArray<int8_t, int>("Transform Coefficient ", 64, 64, (int8_t*)(dint.TransCoeffLevel_0));
 #endif
-
+	// Initializing variables
+	init_buffer_int(dint);
+	sao_top(data_in, data_out, baeState, tempBst, ctxTables);
 	coding_quadtree(data_in,data_out,dint, baeState, tempBst,ctxTables);
 	parseEOSSF(baeState, tempBst,  ctxTables, symbolVal);
 
 #ifndef __SYNTHESIS__
 	std::cout << std::dec << std::endl;
-	//printArray<int8_t, int>("Transform Coefficient ", 64, 64, (int8_t*)(dint.TransCoeffLevel_0));
 #endif
 
-	memcpy((int8_t*)tranCoeff, dint.TransCoeffLevel_0, 64*64*sizeof(int8_t));
-	//data_out_s.write(data_out);
+//Store Data
+	memcpy((int8_t*)tranCoeff_0, dint.TransCoeffLevel_0, 64*64*sizeof(int8_t));
+	memcpy((int8_t*)tranCoeff_1, dint.TransCoeffLevel_1, 64*64*sizeof(int8_t));
+	memcpy((int8_t*)tranCoeff_2, dint.TransCoeffLevel_2, 64*64*sizeof(int8_t));
+	memcpy((char*)cqtDepth, dint.cqtDepth, 64*64*sizeof(char));
+	memcpy((UChar*)IntraPredModeY, dint.IntraPredModeY, 64*64*sizeof(UChar));
+	memcpy((UChar*)IntraPredModeC, dint.IntraPredModeC, 64*64*sizeof(UChar));
+	memcpy((arith_t*)initArithState, &baeState,sizeof(arith_t));
 	memcpy((data_out_t*)data_out_s, &data_out,sizeof(data_out_t));
-	store_global_ram(globalCtx, ctxTables, ctxWritten);
+
+	store_global_ram(globalCtx, ctxTables);
 }
 
 

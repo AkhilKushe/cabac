@@ -88,14 +88,7 @@ typedef struct _sps {
 	uint32_t pic_height_in_luma_samples;
 	//coding_unit
 	UChar max_transform_hierarchy_depth_intra;
-	//Macros
-	/*
-	UChar log2_min_luma_coding_block_size_minus3;
-	UChar log2_diff_max_min_luma_coding_block_size;
-	UChar chroma_format_idc;
-	UChar log2_min_luma_transform_block_size_minus2;
-	UChar log2_diff_max_min_luma_transform_block_size;
-	*/
+
 } sps_t;
 
 typedef struct _s_header {

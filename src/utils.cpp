@@ -198,10 +198,30 @@ void init_buffer_int(internal_data_t& dint){
 	for(int i=0; i<64; i++){
 		for(int j=0; j<64; j++){
 			dint.IntraPredModeC[i][j] = 0;
+		}
+	}
+	for(int i=0; i<64; i++){
+		for(int j=0; j<64; j++){
 			dint.IntraPredModeY[i][j] = 0;
+		}
+	}
+	for(int i=0; i<64; i++){
+		for(int j=0; j<64; j++){
 			dint.TransCoeffLevel_0[i][j] = 0;
+		}
+	}
+	for(int i=0; i<64; i++){
+		for(int j=0; j<64; j++){
 			dint.TransCoeffLevel_1[i][j] = 0;
+		}
+	}
+	for(int i=0; i<64; i++){
+		for(int j=0; j<64; j++){
 			dint.TransCoeffLevel_2[i][j] = 0;
+		}
+	}
+	for(int i=0; i<64; i++){
+		for(int j=0; j<64; j++){
 			dint.cqtDepth[i][j] = 0;
 		}
 	}

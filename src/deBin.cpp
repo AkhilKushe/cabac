@@ -188,24 +188,24 @@ void sao_top(data_in_t& inp,data_out_t& out, arith_t& state, UChar* bStream, UCh
 			for(int i=0; i<3; i++){
 				out.SaoTypeIdx[i] = inp.left_ctu.SaoTypeIdx[i];
 				out.SaoEOClass[i] = inp.left_ctu.SaoEOClass[i];
-				out.SaoOffsetVal[i][0] = inp.left_ctu.SaoOffsetVal[i][0];
-				out.SaoOffsetVal[i][1] = inp.left_ctu.SaoOffsetVal[i][1];
-				out.SaoOffsetVal[i][2] = inp.left_ctu.SaoOffsetVal[i][2];
-				out.SaoOffsetVal[i][3] = inp.left_ctu.SaoOffsetVal[i][3];
-				out.SaoOffsetVal[i][4] = inp.left_ctu.SaoOffsetVal[i][4];
 				out.sao_band_position[i] = inp.left_ctu.sao_band_position[i];
+			}
+			for(int i=0; i<3; i++){
+				for(int j=0; j<5; j++){
+					out.SaoOffsetVal[i][j] = inp.left_ctu.SaoOffsetVal[i][j];
+				}
 			}
 		}
 		if (sao_merge_up_flag) {
 			for(int i=0; i<3; i++){
 				out.SaoTypeIdx[i] = inp.up_ctu.SaoTypeIdx[i];
 				out.SaoEOClass[i] = inp.up_ctu.SaoEOClass[i];
-				out.SaoOffsetVal[i][0] = inp.up_ctu.SaoOffsetVal[i][0];
-				out.SaoOffsetVal[i][1] = inp.up_ctu.SaoOffsetVal[i][1];
-				out.SaoOffsetVal[i][2] = inp.up_ctu.SaoOffsetVal[i][2];
-				out.SaoOffsetVal[i][3] = inp.up_ctu.SaoOffsetVal[i][3];
-				out.SaoOffsetVal[i][4] = inp.up_ctu.SaoOffsetVal[i][4];
 				out.sao_band_position[i] = inp.up_ctu.sao_band_position[i];
+			}
+			for(int i=0; i<3; i++){
+				for(int j=0; j<5; j++){
+					out.SaoOffsetVal[i][j] = inp.up_ctu.SaoOffsetVal[i][j];
+				}
 			}
 		}
 	}

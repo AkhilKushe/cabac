@@ -45,22 +45,24 @@ stream interface aggrigates the struct into single packet, thus cannot have wide
 Maxi working
 
 **** Struct data currupted at top level interface, currently using stream interface
-	- try struct padding
+	- try struct padding -> solved by configuring maxi bus for struct
 
 
 
 
 6 JUNE TODO :
-1. Get bitstream from dat file (1 CTU), DONE
+1. + Get bitstream from dat file (1 CTU), DONE
 2. Complete CTU Tree code, 
 	+ done coding unit
 	- initializer for all units
 	+ done cu recursive wrapper
 	+ done top ctu call
 
-3. Interface
-4. Fix all initialization of arith state for first ctu, pass and recieve state info
-5. Clean code
+3. + Interface
+4. + Fix all initialization of arith state for first ctu, pass and recieve state info
+5. Extract output Vectors and add verification step into test bench.
+6. Add support for passing neighbour values
+7. Clean code
 
 Future scope:
 adding error control -> hardware prone to hangs
