@@ -187,7 +187,7 @@ void setIntraPredMode(UChar partIdx, UChar partSize, CU_t& cu ,data_in_t& din, d
 		}
 		PredModeY = cu.rem_intra_luma_pred_mode[partIdx];
 		for(int i=0; i<3; i++){
-			if(PredModeY > candModeList[i]) {
+			if(PredModeY >= candModeList[i]) {
 				PredModeY +=1;
 			}
 		}
@@ -216,8 +216,8 @@ void setIntraPredMode(UChar partIdx, UChar partSize, CU_t& cu ,data_in_t& din, d
 
 		if (cu.part_mode==PART_NxN){
 			// set pred buffer chroma
-			for(int i=0; i<(x+partSize); i++) {
-				for(int j=0; j<(y+partSize); j++){
+			for(int i=x; i<(x+partSize); i++) {
+				for(int j=y; j<(y+partSize); j++){
 					dinternal.IntraPredModeC[i][j] = PredModeC;
 				}
 			}

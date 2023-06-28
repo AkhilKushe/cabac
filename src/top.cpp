@@ -25,31 +25,37 @@ void store_global_ram(volatile UChar globalCtx[MAX_NUM_CTX_MOD], UChar ctxTable[
 // TODO : fix top inteface with input/output declaration
 //void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD], volatile int8_t tranCoeff[64][64], volatile UChar bitStream[1024], hls::stream<data_in_t>& data_in_s, hls::stream<data_out_t>& data_out_s){
 void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD],volatile arith_t initArithState[1], volatile int8_t tranCoeff_0[64][64], volatile int8_t tranCoeff_1[64][64], volatile int8_t tranCoeff_2[64][64], volatile char cqtDepth[64][64], volatile UChar IntraPredModeY[64][64], volatile UChar IntraPredModeC[64][64], volatile UChar bitStream[1024], volatile data_in_t data_in_s[1], volatile data_out_t data_out_s[1]){
-#pragma HLS INTERFACE mode=m_axi bundle=ctx name=gCtx port=globalCtx
+
+
+
+
+#pragma HLS INTERFACE mode=m_axi bundle=gmem0 name=cqtD port=cqtDepth
+#pragma HLS INTERFACE mode=s_axilite port=cqtDepth
+#pragma HLS INTERFACE mode=m_axi bundle=gmem0 name=bst port=bitStream
+#pragma HLS INTERFACE mode=s_axilite port=bitStream
+#pragma HLS INTERFACE mode=m_axi bundle=gmem1 name=gCtx port=globalCtx
 #pragma HLS INTERFACE mode=s_axilite port=globalCtx
 
-#pragma HLS INTERFACE mode=m_axi bundle=tran name=tranC port=tranCoeff_0
+#pragma HLS INTERFACE mode=m_axi bundle=gmem2 name=tranC port=tranCoeff_0
 #pragma HLS INTERFACE mode=s_axilite port=tranCoeff_0
-#pragma HLS INTERFACE mode=m_axi bundle=tran name=tranC port=tranCoeff_1
+#pragma HLS INTERFACE mode=m_axi bundle=gmem2 name=tranC port=tranCoeff_1
 #pragma HLS INTERFACE mode=s_axilite port=tranCoeff_1
-#pragma HLS INTERFACE mode=m_axi bundle=tran name=tranC port=tranCoeff_2
+#pragma HLS INTERFACE mode=m_axi bundle=gmem2 name=tranC port=tranCoeff_2
 #pragma HLS INTERFACE mode=s_axilite port=tranCoeff_2
+#pragma HLS INTERFACE mode=m_axi bundle=gmem2 name=State port=initArithState
+#pragma HLS INTERFACE mode=s_axilite port=initArithState
 
-#pragma HLS INTERFACE mode=m_axi bundle=cqt name=cqtD port=cqtDepth
-#pragma HLS INTERFACE mode=s_axilite port=cqtDepth
-
-#pragma HLS INTERFACE mode=m_axi bundle=pred name=predDir port=IntraPredModeY
+#pragma HLS INTERFACE mode=m_axi bundle=gmem2 name=predDir port=IntraPredModeY
 #pragma HLS INTERFACE mode=s_axilite port=IntraPredModeY
-#pragma HLS INTERFACE mode=m_axi bundle=pred name=predDir port=IntraPredModeC
+#pragma HLS INTERFACE mode=m_axi bundle=gmem2 name=predDir port=IntraPredModeC
 #pragma HLS INTERFACE mode=s_axilite port=IntraPredModeC
 
-#pragma HLS INTERFACE mode=m_axi bundle=bstream name=bst port=bitStream
-#pragma HLS INTERFACE mode=s_axilite port=bitStream
 
-#pragma HLS INTERFACE mode=m_axi bundle=inp name=inpt port=data_in_s
+
+#pragma HLS INTERFACE mode=m_axi bundle=gmem3 name=inpt port=data_in_s
 #pragma HLS INTERFACE mode=s_axilite port=data_in_s
 
-#pragma HLS INTERFACE mode=m_axi bundle=out name=outp port=data_out_s
+#pragma HLS INTERFACE mode=m_axi bundle=gmem3 name=outp port=data_out_s
 #pragma HLS INTERFACE mode=s_axilite port=data_out_s
 
 	hls::stream<UChar> streamCtxRAM;
@@ -93,6 +99,7 @@ void cabac_top(volatile UChar globalCtx[MAX_NUM_CTX_MOD],volatile arith_t initAr
 
 #ifndef __SYNTHESIS__
 	std::cout << std::dec << std::endl;
+	printArray<UChar, int>("Intra Prediction Chroma ", 64, 64, (UChar*)dint.IntraPredModeC);
 #endif
 
 //Store Data

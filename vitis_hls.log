@@ -1,49 +1,49 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running 'F:/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'HP' on host 'desktop-8u8c26t' (Windows NT_amd64 version 6.2) on Fri Jun 09 12:54:01 +0530 2023
+INFO: [HLS 200-10] For user 'HP' on host 'desktop-8u8c26t' (Windows NT_amd64 version 6.2) on Wed Jun 28 14:52:17 +0530 2023
 INFO: [HLS 200-10] In directory 'F:/petaProj/cabac_hls/cabac'
 Sourcing Tcl script 'F:/petaProj/cabac_hls/cabac/cabac_top/solution1/export.tcl'
 INFO: [HLS 200-1510] Running: open_project cabac_top 
 INFO: [HLS 200-10] Opening project 'F:/petaProj/cabac_hls/cabac/cabac_top'.
 INFO: [HLS 200-1510] Running: set_top cabac_top 
-INFO: [HLS 200-1510] Running: add_files src/utils.h 
-INFO: [HLS 200-10] Adding design file 'src/utils.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/utils.cpp 
-INFO: [HLS 200-10] Adding design file 'src/utils.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/typedef.h 
-INFO: [HLS 200-10] Adding design file 'src/typedef.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/transform.h 
-INFO: [HLS 200-10] Adding design file 'src/transform.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/transform.cpp 
-INFO: [HLS 200-10] Adding design file 'src/transform.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/top.h 
-INFO: [HLS 200-10] Adding design file 'src/top.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/top.cpp 
-INFO: [HLS 200-10] Adding design file 'src/top.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/quad_tree.h 
-INFO: [HLS 200-10] Adding design file 'src/quad_tree.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/quad_tree.cpp 
-INFO: [HLS 200-10] Adding design file 'src/quad_tree.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/intra_se.h 
-INFO: [HLS 200-10] Adding design file 'src/intra_se.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/intra_se.cpp 
-INFO: [HLS 200-10] Adding design file 'src/intra_se.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/initializer.h 
-INFO: [HLS 200-10] Adding design file 'src/initializer.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/initializer.cpp 
-INFO: [HLS 200-10] Adding design file 'src/initializer.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/init_tables.h 
-INFO: [HLS 200-10] Adding design file 'src/init_tables.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/deBin.h 
-INFO: [HLS 200-10] Adding design file 'src/deBin.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/deBin.cpp 
-INFO: [HLS 200-10] Adding design file 'src/deBin.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files src/arith_dec.h 
-INFO: [HLS 200-10] Adding design file 'src/arith_dec.h' to the project
-INFO: [HLS 200-1510] Running: add_files src/arith_dec.cpp 
-INFO: [HLS 200-10] Adding design file 'src/arith_dec.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files TODO.txt 
 INFO: [HLS 200-10] Adding design file 'TODO.txt' to the project
+INFO: [HLS 200-1510] Running: add_files src/arith_dec.cpp 
+INFO: [HLS 200-10] Adding design file 'src/arith_dec.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/arith_dec.h 
+INFO: [HLS 200-10] Adding design file 'src/arith_dec.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/deBin.cpp 
+INFO: [HLS 200-10] Adding design file 'src/deBin.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/deBin.h 
+INFO: [HLS 200-10] Adding design file 'src/deBin.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/init_tables.h 
+INFO: [HLS 200-10] Adding design file 'src/init_tables.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/initializer.cpp 
+INFO: [HLS 200-10] Adding design file 'src/initializer.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/initializer.h 
+INFO: [HLS 200-10] Adding design file 'src/initializer.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/intra_se.cpp 
+INFO: [HLS 200-10] Adding design file 'src/intra_se.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/intra_se.h 
+INFO: [HLS 200-10] Adding design file 'src/intra_se.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/quad_tree.cpp 
+INFO: [HLS 200-10] Adding design file 'src/quad_tree.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/quad_tree.h 
+INFO: [HLS 200-10] Adding design file 'src/quad_tree.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/top.cpp 
+INFO: [HLS 200-10] Adding design file 'src/top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/top.h 
+INFO: [HLS 200-10] Adding design file 'src/top.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/transform.cpp 
+INFO: [HLS 200-10] Adding design file 'src/transform.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/transform.h 
+INFO: [HLS 200-10] Adding design file 'src/transform.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/typedef.h 
+INFO: [HLS 200-10] Adding design file 'src/typedef.h' to the project
+INFO: [HLS 200-1510] Running: add_files src/utils.cpp 
+INFO: [HLS 200-10] Adding design file 'src/utils.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/utils.h 
+INFO: [HLS 200-10] Adding design file 'src/utils.h' to the project
 INFO: [HLS 200-1510] Running: add_files -tb tb_src/test_1.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'tb_src/test_1.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files -tb tb_src/typedef.h -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
@@ -54,20 +54,20 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
 INFO: [HLS 200-1505] Using flow_target 'vitis'
 Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
 INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
 INFO: [HLS 200-1464] Running solution command: config_export -output=F:/petaProj/cabac_hls/cabac/ip_t1
 INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
 INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=20
 INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_addr64=0
 INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
 INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
 INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
-INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
 INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
 INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output F:/petaProj/cabac_hls/cabac/ip_t1 -rtl verilog -vivado_clock 20 
-INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
-INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_addr64=0 -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 
 INFO: [HLS 200-1510] Running: set_directive_top -name cabac_top cabac_top 
 INFO: [HLS 200-1510] Running: export_design -flow syn -rtl verilog -format ip_catalog -output F:/petaProj/cabac_hls/cabac/ip_t1 
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
@@ -81,7 +81,7 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Xilinx/Vivado/2021.2/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Fri Jun  9 12:54:21 2023...
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 28 14:52:33 2023...
 INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
 
 F:\petaProj\cabac_hls\cabac\cabac_top\solution1\impl\verilog>F:/Xilinx/Vivado/2021.2/bin/vivado  -mode batch -source run_vivadosyn.tcl   || exit $? 
@@ -137,7 +137,7 @@ source run_vivadosyn.tcl
 # dict set report_options language $language
 # dict set report_options clock_name $clock
 # dict set report_options error_if_impl_timing_fails false
-# dict set report_options bindmodules {cabac_top_mul_7s_6ns_13_1_1 cabac_top_cabac_top_Pipeline_VITIS_LOOP_39_1_I_FRAME_INIT_VALS_ROM_AUTO_1R cabac_top_flow_control_loop_pipe_sequential_init cabac_top_decode_regular_lpsTable_ROM_AUTO_1R cabac_top_decode_regular_transMPS_ROM_AUTO_1R cabac_top_decode_regular_transLPS_ROM_AUTO_1R cabac_top_mux_32_8_1_1 cabac_top_sao_top_sao_offset_abs_RAM_AUTO_1R1W cabac_top_sao_top_sao_offset_sign_RAM_AUTO_1R1W cabac_top_mux_42_1_1_1 cabac_top_mux_42_8_1_1 cabac_top_mul_7ns_32ns_39_1_1 cabac_top_mul_32ns_32ns_64_1_1 cabac_top_mul_8ns_8ns_16_1_1 cabac_top_mul_2s_8s_8_1_1 cabac_top_residual_coding_FL_CONVERT_ROM_AUTO_1R cabac_top_residual_coding_CTX_IDX_MAP_ROM_AUTO_1R cabac_top_residual_coding_coded_sub_block_RAM_AUTO_1R1W cabac_top_residual_coding_sig_coeff_flag_RAM_AUTO_1R1W cabac_top_residual_coding_coeff_abs_level_greater1_flag_RAM_AUTO_1R1W cabac_top_residual_coding_coeff_abs_level_remaining_RAM_AUTO_1R1W cabac_top_residual_coding_subBlockScan_0_RAM_AUTO_1R1W cabac_top_residual_coding_coeffBlockScan_1_RAM_AUTO_1R1W cabac_top_transform_tree_rec_TS2RS_ROM_AUTO_1R cabac_top_ctxTables_RAM_AUTO_1R1W cabac_top_dint_RAM_AUTO_1R1W cabac_top_data_in_left_ctu_cqtDepth_RAM_AUTO_1R1W cabac_top_data_in_left_ctu_SaoOffsetVal_RAM_AUTO_1R1W cabac_top_data_out_3_RAM_AUTO_1R1W cabac_top_tempBst_RAM_AUTO_1R1W cabac_top_fifo_w8_d256_A cabac_top_control_s_axi cabac_top_ctx_m_axi cabac_top_gmem_m_axi cabac_top_tran_r_m_axi cabac_top_cqt_m_axi cabac_top_pred_r_m_axi cabac_top_bstream_m_axi cabac_top_inp_m_axi cabac_top_out_r_m_axi}
+# dict set report_options bindmodules {cabac_top_mul_7s_6ns_13_1_1 cabac_top_cabac_top_Pipeline_VITIS_LOOP_39_1_I_FRAME_INIT_VALS_ROM_AUTO_1R cabac_top_flow_control_loop_pipe_sequential_init cabac_top_decode_regular_lpsTable_ROM_AUTO_1R cabac_top_decode_regular_transMPS_ROM_AUTO_1R cabac_top_decode_regular_transLPS_ROM_AUTO_1R cabac_top_mux_32_8_1_1 cabac_top_sao_top_sao_offset_abs_RAM_AUTO_1R1W cabac_top_sao_top_sao_offset_sign_RAM_AUTO_1R1W cabac_top_mux_42_1_1_1 cabac_top_mux_42_8_1_1 cabac_top_mul_32ns_32ns_64_1_1 cabac_top_mul_8ns_8ns_16_1_1 cabac_top_mul_2s_8s_8_1_1 cabac_top_residual_coding_FL_CONVERT_ROM_AUTO_1R cabac_top_residual_coding_CTX_IDX_MAP_ROM_AUTO_1R cabac_top_residual_coding_coded_sub_block_RAM_AUTO_1R1W cabac_top_residual_coding_sig_coeff_flag_RAM_AUTO_1R1W cabac_top_residual_coding_coeff_abs_level_greater1_flag_RAM_AUTO_1R1W cabac_top_residual_coding_coeff_abs_level_remaining_RAM_AUTO_1R1W cabac_top_residual_coding_subBlockScan_0_RAM_AUTO_1R1W cabac_top_residual_coding_coeffBlockScan_1_RAM_AUTO_1R1W cabac_top_transform_tree_rec_TS2RS_ROM_AUTO_1R cabac_top_ctxTables_RAM_AUTO_1R1W cabac_top_dint_RAM_AUTO_1R1W cabac_top_data_in_left_ctu_cqtDepth_RAM_AUTO_1R1W cabac_top_data_in_left_ctu_SaoOffsetVal_RAM_AUTO_1R1W cabac_top_data_out_3_RAM_AUTO_1R1W cabac_top_tempBst_RAM_AUTO_1R1W cabac_top_fifo_w8_d256_A cabac_top_control_s_axi cabac_top_gmem1_m_axi cabac_top_gmem2_m_axi cabac_top_gmem0_m_axi cabac_top_gmem3_m_axi}
 # dict set report_options max_module_depth 13
 # create_project $vivado_proj_name $vivado_proj_dir -part $target_device -force
 # set_property target_language $language [current_project]
@@ -180,14 +180,10 @@ INFO: Updating /s_axi_control CONFIG.ADDR_WIDTH to 32
 # set_msg_config -id {[BD 41-1265]} -severity {CRITICAL WARNING} -new_severity {INFO}
 # assign_bd_address
 Slave segment '/hls_inst/s_axi_control/Reg' is being assigned into address space '/s_axi_control' at <0x0000_0000 [ 64K ]>.
-Slave segment '/m_axi_bstream/Reg' is being assigned into address space '/hls_inst/Data_m_axi_bstream' at <0x44A0_0000 [ 64K ]>.
-Slave segment '/m_axi_cqt/Reg' is being assigned into address space '/hls_inst/Data_m_axi_cqt' at <0x44A0_0000 [ 64K ]>.
-Slave segment '/m_axi_ctx/Reg' is being assigned into address space '/hls_inst/Data_m_axi_ctx' at <0x44A0_0000 [ 64K ]>.
-Slave segment '/m_axi_gmem/Reg' is being assigned into address space '/hls_inst/Data_m_axi_gmem' at <0x44A0_0000 [ 64K ]>.
-Slave segment '/m_axi_inp/Reg' is being assigned into address space '/hls_inst/Data_m_axi_inp' at <0x44A0_0000 [ 64K ]>.
-Slave segment '/m_axi_out_r/Reg' is being assigned into address space '/hls_inst/Data_m_axi_out_r' at <0x44A0_0000 [ 64K ]>.
-Slave segment '/m_axi_pred_r/Reg' is being assigned into address space '/hls_inst/Data_m_axi_pred_r' at <0x44A0_0000 [ 64K ]>.
-Slave segment '/m_axi_tran_r/Reg' is being assigned into address space '/hls_inst/Data_m_axi_tran_r' at <0x44A0_0000 [ 64K ]>.
+Slave segment '/m_axi_gmem0/Reg' is being assigned into address space '/hls_inst/Data_m_axi_gmem0' at <0x44A0_0000 [ 64K ]>.
+Slave segment '/m_axi_gmem1/Reg' is being assigned into address space '/hls_inst/Data_m_axi_gmem1' at <0x44A0_0000 [ 64K ]>.
+Slave segment '/m_axi_gmem2/Reg' is being assigned into address space '/hls_inst/Data_m_axi_gmem2' at <0x44A0_0000 [ 64K ]>.
+Slave segment '/m_axi_gmem3/Reg' is being assigned into address space '/hls_inst/Data_m_axi_gmem3' at <0x44A0_0000 [ 64K ]>.
 WARNING: [BD 41-927] Following properties on pin /hls_inst/ap_clk have been updated from connected ip, but BD cell '/hls_inst' does not accept parameter changes, so they may not be synchronized with cell properties:
 	FREQ_HZ = 50000000.0 
 Please resolve any mismatches by directly setting properties on BD cell </hls_inst> to completely resolve these warnings.
@@ -213,13 +209,13 @@ INFO: [BD 41-1029] Generation completed for the IP Integrator block hls_inst .
 Exporting to file F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hw_handoff/bd_0.hwh
 Generated Hardware Definition File F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.hwdef
 WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
-launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1261.914 ; gain = 0.000
+launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1261.508 ; gain = 0.000
 # foreach run [get_runs -filter {IS_SYNTHESIS == 1}] {
 #   reset_run [get_runs $run]
 # }
 # set_property XPM_LIBRARIES {XPM_MEMORY XPM_FIFO} [current_project]
 # hls_vivado_reports_setup $report_options
-TIMESTAMP: HLS-REPORT: initialize report directories: 2023-06-09 12:54:37 +0530
+TIMESTAMP: HLS-REPORT: initialize report directories: 2023-06-28 14:52:48 +0530
 # if { $has_synth || $has_impl } {
 #   # synth properties setting
 #   set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
@@ -253,11 +249,11 @@ TIMESTAMP: HLS-REPORT: initialize report directories: 2023-06-09 12:54:37 +0530
 #   }
 # }
 WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
-[Fri Jun  9 12:54:37 2023] Launched bd_0_hls_inst_0_synth_1...
+[Wed Jun 28 14:52:49 2023] Launched bd_0_hls_inst_0_synth_1...
 Run output will be captured here: F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/runme.log
-[Fri Jun  9 12:54:37 2023] Launched synth_1...
+[Wed Jun 28 14:52:49 2023] Launched synth_1...
 Run output will be captured here: F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.runs/synth_1/runme.log
-[Fri Jun  9 12:54:37 2023] Waiting for synth_1 to finish...
+[Wed Jun 28 14:52:49 2023] Waiting for synth_1 to finish...
 
 
 *** Running vivado
@@ -281,29 +277,29 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 7464
+INFO: [Synth 8-7075] Helper process launched with PID 16012
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'bd_0_wrapper' [f:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'bd_0' [f:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v:13]
-INFO: [Synth 8-6157] synthesizing module 'bd_0_hls_inst_0' [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.runs/synth_1/.Xil/Vivado-5580-DESKTOP-8U8C26T/realtime/bd_0_hls_inst_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'bd_0_hls_inst_0' (1#1) [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.runs/synth_1/.Xil/Vivado-5580-DESKTOP-8U8C26T/realtime/bd_0_hls_inst_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'bd_0_hls_inst_0' [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.runs/synth_1/.Xil/Vivado-13372-DESKTOP-8U8C26T/realtime/bd_0_hls_inst_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'bd_0_hls_inst_0' (1#1) [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.runs/synth_1/.Xil/Vivado-13372-DESKTOP-8U8C26T/realtime/bd_0_hls_inst_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'bd_0' (2#1) [f:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'bd_0_wrapper' (3#1) [f:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1261.242 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -316,20 +312,20 @@ Parsing XDC File [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/p
 Finished Parsing XDC File [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1261.242 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.099 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -337,10 +333,10 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property KEEP_HIERARCHY = SOFT for bd_0_i. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bd_0_i/hls_inst. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -363,25 +359,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1262.113 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1261.242 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1265.543 ; gain = 3.430
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 1262.910 ; gain = 1.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1268.949 ; gain = 6.836
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 1264.797 ; gain = 3.555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1288.062 ; gain = 25.949
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1284.676 ; gain = 23.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -399,37 +395,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1295.445 ; gain = 33.332
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1289.488 ; gain = 28.246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1295.445 ; gain = 33.332
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1289.488 ; gain = 28.246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1295.445 ; gain = 33.332
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1289.488 ; gain = 28.246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1295.445 ; gain = 33.332
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1289.488 ; gain = 28.246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1295.445 ; gain = 33.332
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1289.488 ; gain = 28.246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1295.445 ; gain = 33.332
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1289.488 ; gain = 28.246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -449,53 +445,52 @@ Report Cell Usage:
 |1     |bd_0_hls_inst |     1|
 +------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1295.445 ; gain = 33.332
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1289.488 ; gain = 28.246
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 1295.445 ; gain = 33.332
-Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1295.445 ; gain = 33.332
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 1289.488 ; gain = 28.246
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1289.488 ; gain = 28.246
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 1295.445 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1289.488 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1328.391 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1320.555 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 81ed398e
+Synth Design complete, checksum: a08adcb
 INFO: [Common 17-83] Releasing license: Synthesis
 21 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1328.391 ; gain = 66.277
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1320.555 ; gain = 59.312
 INFO: [Common 17-1381] The checkpoint 'F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.runs/synth_1/bd_0_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file bd_0_wrapper_utilization_synth.rpt -pb bd_0_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jun  9 12:59:53 2023...
-[Fri Jun  9 12:59:55 2023] synth_1 finished
-wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:05:18 . Memory (MB): peak = 1261.914 ; gain = 0.000
-TIMESTAMP: HLS-REPORT: synthesis open_run: 2023-06-09 12:59:55 +0530
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 28 14:57:41 2023...
+[Wed Jun 28 14:57:44 2023] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:04:56 . Memory (MB): peak = 1261.508 ; gain = 0.000
+TIMESTAMP: HLS-REPORT: synthesis open_run: 2023-06-28 14:57:45 +0530
 INFO: HLS-REPORT: Opening synthesis design database: open_run synth_1
 Design is defaulting to impl run constrset: constrs_1
 Design is defaulting to synth run part: xc7z020clg484-1
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-454] Reading design checkpoint 'f:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0.dcp' for cell 'bd_0_i/hls_inst'
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.855 . Memory (MB): peak = 1261.914 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3249 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.832 . Memory (MB): peak = 1261.508 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2785 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2021.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/cabac_top.xdc]
 Finished Parsing XDC File [F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/cabac_top.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1261.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1261.508 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 62 instances were transformed.
+  A total of 61 instances were transformed.
   RAM16X1D => RAM32X1D (RAMD32(x2)): 16 instances
   RAM16X1S => RAM32X1S (RAMS32): 19 instances
-  RAM64X1D => RAM64X1D (RAMD64E(x2)): 1 instance 
   RAM64X1S => RAM64X1S (RAMS64E): 26 instances
 
-open_run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 1261.914 ; gain = 0.000
-TIMESTAMP: HLS-REPORT: synthesis generate_reports_vivado: 2023-06-09 13:00:08 +0530
+open_run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1261.508 ; gain = 0.000
+TIMESTAMP: HLS-REPORT: synthesis generate_reports_vivado: 2023-06-28 14:57:58 +0530
 INFO: HLS-REPORT: Running report: report_utilization -file ./report/cabac_top_utilization_synth.rpt
 INFO: HLS-REPORT: Running report: report_utilization -hierarchical -hierarchical_depth 13 -file ./report/cabac_top_utilization_hierarchical_synth.rpt
 INFO: HLS-REPORT: Running report: report_timing_summary -file ./report/cabac_top_timing_synth.rpt
@@ -504,7 +499,7 @@ INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
 WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
 Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
-report_timing_summary: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1942.625 ; gain = 680.711
+report_timing_summary: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1943.879 ; gain = 682.371
 INFO: HLS-REPORT: Running report: report_timing -max_paths 10 -file ./report/cabac_top_timing_paths_synth.rpt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
@@ -519,8 +514,8 @@ INFO: HLS-REPORT: Running report: ::tclapp::xilinx::designutils::report_failfast
  -I- control set metrics completed in 0 seconds
  -I- methodology check metrics completed in 4 seconds
  -I- average fanout metrics completed in 3 seconds (0 modules)
- -I- non-FD high fanout nets completed in 3 seconds
- -I- path budgeting metrics completed in 3 seconds
+ -I- non-FD high fanout nets completed in 4 seconds
+ -I- path budgeting metrics completed in 2 seconds
 #  +-----------------------------------------------------------------------------------------+
 #  | Design Summary                                                                          |
 #  | design_1                                                                                |
@@ -528,18 +523,18 @@ INFO: HLS-REPORT: Running report: ::tclapp::xilinx::designutils::report_failfast
 #  +-----------------------------------------------------------+-----------+--------+--------+
 #  | Criteria                                                  | Guideline | Actual | Status |
 #  +-----------------------------------------------------------+-----------+--------+--------+
-#  | LUT                                                       | 70%       | 68.93% | OK     |
-#  | FD                                                        | 50%       | 43.22% | OK     |
-#  | LUTRAM+SRL                                                | 25%       | 13.38% | OK     |
-#  | MUXF7                                                     | 15%       | 3.57%  | OK     |
-#  | LUT Combining                                             | 20%       | 30.09% | REVIEW |
+#  | LUT                                                       | 70%       | 67.95% | OK     |
+#  | FD                                                        | 50%       | 44.94% | OK     |
+#  | LUTRAM+SRL                                                | 25%       | 6.76%  | OK     |
+#  | MUXF7                                                     | 15%       | 2.89%  | OK     |
+#  | LUT Combining                                             | 20%       | 30.97% | REVIEW |
 #  | DSP                                                       | 80%       | 7.73%  | OK     |
-#  | RAMB/FIFO                                                 | 80%       | 35.36% | OK     |
-#  | DSP+RAMB+URAM (Avg)                                       | 70%       | 21.55% | OK     |
+#  | RAMB/FIFO                                                 | 80%       | 47.86% | OK     |
+#  | DSP+RAMB+URAM (Avg)                                       | 70%       | 27.80% | OK     |
 #  | BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
 #  | DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
 #  | MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
-#  | Control Sets                                              | 998       | 744    | OK     |
+#  | Control Sets                                              | 998       | 716    | OK     |
 #  | Average Fanout for modules > 100k cells                   | 4         | 0      | OK     |
 #  | Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
 #  +-----------------------------------------------------------+-----------+--------+--------+
@@ -556,16 +551,16 @@ INFO: HLS-REPORT: Running report: ::tclapp::xilinx::designutils::report_failfast
  -I- Number of criteria to review: 1
  -I- This report should be run before placing the design and uses conservative guidelines beyond which runtime and timing closure will likely be more challenging
  -I- report_failfast completed in 17 seconds
-TIMESTAMP: HLS-REPORT: synthesis gen_data_dict_vivado: 2023-06-09 13:00:40 +0530
-TIMESTAMP: HLS-REPORT: synth extract_util_hier: 2023-06-09 13:00:40 +0530
-TIMESTAMP: HLS-REPORT: synth get_cell_hier_data: 2023-06-09 13:00:40 +0530
-TIMESTAMP: HLS-REPORT: synth get_timing_paths: 2023-06-09 13:00:40 +0530
-TIMESTAMP: HLS-REPORT: synth process timing paths: 2023-06-09 13:00:40 +0530
-TIMESTAMP: HLS-REPORT: synth get_all_vv_rpt_files: 2023-06-09 13:00:40 +0530
-TIMESTAMP: HLS-REPORT: synthesis write_reports_vivado: 2023-06-09 13:00:40 +0530
+TIMESTAMP: HLS-REPORT: synthesis gen_data_dict_vivado: 2023-06-28 14:58:30 +0530
+TIMESTAMP: HLS-REPORT: synth extract_util_hier: 2023-06-28 14:58:30 +0530
+TIMESTAMP: HLS-REPORT: synth get_cell_hier_data: 2023-06-28 14:58:30 +0530
+TIMESTAMP: HLS-REPORT: synth get_timing_paths: 2023-06-28 14:58:30 +0530
+TIMESTAMP: HLS-REPORT: synth process timing paths: 2023-06-28 14:58:31 +0530
+TIMESTAMP: HLS-REPORT: synth get_all_vv_rpt_files: 2023-06-28 14:58:31 +0530
+TIMESTAMP: HLS-REPORT: synthesis write_reports_vivado: 2023-06-28 14:58:31 +0530
 HLS EXTRACTION: synth area_totals:  0 53200 106400 220 280 0 0
-HLS EXTRACTION: synth area_current: 0 36671 45985 17 99 0 2249 0 0 0
-HLS EXTRACTION: synth resources_dict: AVAIL_LUT 53200 LUT 36671 AVAIL_FF 106400 FF 45985 AVAIL_DSP 220 DSP 17 AVAIL_BRAM 280 BRAM 99 AVAIL_URAM 0 URAM 0 LATCH 0 SRL 2249 AVAIL_CLB 0 CLB 0
+HLS EXTRACTION: synth area_current: 0 36147 47815 17 134 0 1099 0 0 0
+HLS EXTRACTION: synth resources_dict: AVAIL_LUT 53200 LUT 36147 AVAIL_FF 106400 FF 47815 AVAIL_DSP 220 DSP 17 AVAIL_BRAM 280 BRAM 134 AVAIL_URAM 0 URAM 0 LATCH 0 SRL 1099 AVAIL_CLB 0 CLB 0
 INFO: HLS-REPORT: generated F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/verilog/report/vivado_syn.xml
 INFO: HLS-REPORT: generated F:/petaProj/cabac_hls/cabac/cabac_top/solution1/impl/report/verilog/cabac_top_export.rpt
 
@@ -574,25 +569,25 @@ Implementation tool: Xilinx Vivado v.2021.2
 Project:             cabac_top
 Solution:            solution1
 Device target:       xc7z020-clg484-1
-Report date:         Fri Jun 09 13:00:41 +0530 2023
+Report date:         Wed Jun 28 14:58:31 +0530 2023
 
 #=== Post-Synthesis Resource usage ===
 SLICE:            0
-LUT:          36671
-FF:           45985
+LUT:          36147
+FF:           47815
 DSP:             17
-BRAM:            99
+BRAM:           134
 URAM:             0
 LATCH:            0
-SRL:           2249
+SRL:           1099
 CLB:              0
 
 #=== Final timing ===
 CP required:                     20.000
-CP achieved post-synthesis:      12.923
+CP achieved post-synthesis:      12.117
 Timing met
 
-TIMESTAMP: HLS-REPORT: synthesis end: 2023-06-09 13:00:41 +0530
+TIMESTAMP: HLS-REPORT: synthesis end: 2023-06-28 14:58:31 +0530
 # if { $has_impl } {
 #   # launch run impl
 #   if { [llength $impl_props] } {
@@ -604,8 +599,8 @@ TIMESTAMP: HLS-REPORT: synthesis end: 2023-06-09 13:00:41 +0530
 #   hls_vivado_reports_impl impl_1 $report_options
 # }
 # hls_vivado_reports_finalize $report_options
-TIMESTAMP: HLS-REPORT: all reports complete: 2023-06-09 13:00:41 +0530
-INFO: [Common 17-206] Exiting Vivado at Fri Jun  9 13:00:41 2023...
+TIMESTAMP: HLS-REPORT: all reports complete: 2023-06-28 14:58:31 +0530
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 28 14:58:31 2023...
 INFO: [HLS 200-802] Generated output file ip_t1/export.zip
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 8 seconds. CPU system time: 1 seconds. Elapsed time: 400.104 seconds; current allocated memory: 195.695 MB.
-INFO: [HLS 200-112] Total CPU user time: 9 seconds. Total CPU system time: 1 seconds. Total elapsed time: 401.484 seconds; peak allocated memory: 1.090 GB.
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 6 seconds. CPU system time: 1 seconds. Elapsed time: 373.997 seconds; current allocated memory: 222.859 MB.
+INFO: [HLS 200-112] Total CPU user time: 7 seconds. Total CPU system time: 1 seconds. Total elapsed time: 375.175 seconds; peak allocated memory: 1.090 GB.

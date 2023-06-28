@@ -158,7 +158,37 @@ void parseSigCoeffSuffix(UInt prefix, arith_t& state, UChar* bStream, UChar ctxT
 #endif
 }
 
-void parseSigCoeffFlag(UChar xC, UChar yC, UChar scanIdx, UChar coded_sub_block_xS_plus_1, UChar coded_sub_block_yS_plus_1, UChar log2TrafoSize, UChar cIdx, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
+void parseCodedSubBlockFlag(UChar xS, UChar yS, bool coded_sub_block[8][8], UChar log2TrafoSize, UChar cIdx, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
+	UChar csbf;
+	UChar ctxInc;
+	bool binVal;
+	symbolVal = 0;
+
+	csbf=0;
+	if(xS < ((1<<(log2TrafoSize-2))-1)){
+		csbf += coded_sub_block[xS+1][yS];
+	}
+
+	if(yS < ((1<<(log2TrafoSize-2))-1)){
+		csbf += coded_sub_block[xS][yS+1];
+	}
+
+	if(cIdx==0){
+		ctxInc = min<UChar>(csbf, 1);
+	} else {
+		ctxInc = min<UChar>(csbf, 1) + 2;
+	}
+	//Decode bin
+	decode_decision(REGULAR, state, binVal, bStream, CODED_SUB_BLOCK_FLAG_CTX_ADDR+ctxInc, ctxTables);
+	symbolVal=binVal;
+#ifndef __SYNTHESIS__
+	std::cout << "////////////////// Decoding coded sub block flag at" << (int)xS << " " <<(int)yS <<  "////////////////" << std::endl;
+	std::cout << "ctxInc : " << (int)ctxInc << std::endl;
+	std::cout << "Symbol Val : " << (int)symbolVal << std::endl << std::endl;
+#endif
+}
+
+void parseSigCoeffFlag(UChar xC, UChar yC, UChar scanIdx, bool coded_sub_block[8][8], UChar log2TrafoSize, UChar cIdx, arith_t& state, UChar* bStream, UChar ctxTables[MAX_NUM_CTX_MOD], UInt& symbolVal){
 	UChar xS, yS, xP, yP;
 	UChar prevCsbf;
 	UChar sigCtx;
@@ -178,10 +208,10 @@ void parseSigCoeffFlag(UChar xC, UChar yC, UChar scanIdx, UChar coded_sub_block_
 	} else{
 		prevCsbf=0;
 		if (xS < (1<<(log2TrafoSize-2))-1) {
-			prevCsbf += coded_sub_block_xS_plus_1;
+			prevCsbf += coded_sub_block[xS+1][yS];
 		}
 		if (yS < (1<<(log2TrafoSize-2))-1) {
-			prevCsbf += coded_sub_block_yS_plus_1<<1;
+			prevCsbf += coded_sub_block[xS][yS+1]<<1;
 		}
 		switch(prevCsbf){
 		case 0 : sigCtx = (xP+yP == 0)?2:(xP+yP < 3) ? 1:0;
@@ -274,7 +304,7 @@ void parseCoeffAbsLevelG2(UChar cIdx, TU_t& tu, arith_t& state, UChar* bStream, 
 	symbolVal=0;
 
 	if(cIdx>0){
-		ctxInc += 16;
+		ctxInc += 4;
 	}
 
 	// Decode bin
@@ -527,8 +557,9 @@ void residual_coding(UChar cIdx,UChar trafoSize, data_in_t& din, data_out_t& dou
 		escapeDataPresent = 0;
 		inferSbDcSigCoeffFlag = 0;
 		if(i<lastSubBlock && i>0){
-			// Skipping coded subblock for now
-			//assert(1);
+			parseCodedSubBlockFlag(xS, yS, coded_sub_block,  tu.log2TrafoSize,  cIdx,  state, bStream, ctxTables, symbolVal);
+			coded_sub_block[xS][yS] = symbolVal;
+			inferSbDcSigCoeffFlag = 1;
 		} else {
 			if ((xS == 0 && yS == 0) || (xS == (LastSignificantCoeffX >> 2) && yS == (LastSignificantCoeffY >> 2))) {
 				coded_sub_block[xS][yS] = 1;
@@ -554,7 +585,7 @@ void residual_coding(UChar cIdx,UChar trafoSize, data_in_t& din, data_out_t& dou
 			xC = (xS << 2) + coeffBlockScan[n][0];
 			yC = (yS << 2) + coeffBlockScan[n][1];
 			if (coded_sub_block[xS][yS] && (n > 0 || !inferSbDcSigCoeffFlag)) {
-				parseSigCoeffFlag(xC, yC, scanIdx, coded_sub_block[xS+1][yS], coded_sub_block[xS][yS+1], trafoSize, cIdx, state, bStream, ctxTables, symbolVal);
+				parseSigCoeffFlag(xC, yC, scanIdx, coded_sub_block, trafoSize, cIdx, state, bStream, ctxTables, symbolVal);
 				sig_coeff_flag[xC][yC] = symbolVal;
 				//bitOut.write(symbolVal);
 			} else {
